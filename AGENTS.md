@@ -36,7 +36,18 @@ Fetch the bundle once rather than crawling:
 
 ## Rendering the site yourself
 
-The renderer is one of the products. With Go installed:
+The renderer is one of the products. Prebuilt binaries for linux,
+macOS and Windows (amd64, arm64) are on every release, with
+checksums: https://github.com/repani-ltd/repani/releases/latest
+
+    # macOS / Linux, no Go toolchain needed
+    V=$(curl -sL https://api.github.com/repos/repani-ltd/repani/releases/latest | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
+    OS=$(uname -s | tr A-Z a-z); ARCH=$(uname -m | sed -e s/x86_64/amd64/ -e s/aarch64/arm64/)
+    R=https://github.com/repani-ltd/repani/releases/download/v$V
+    curl -sL $R/pica_${V}_${OS}_${ARCH}.tar.gz | tar xz pica
+    curl -sL $R/fact_${V}_${OS}_${ARCH}.tar.gz | tar xz fact
+
+Or from source, with Go installed:
 
     go install repani.com/pica/cmd/pica@latest
     go install repani.com/fact/cmd/fact@latest

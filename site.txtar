@@ -34,6 +34,10 @@ go install repani.com/pica/cmd/pica@latest
 go install repani.com/fact/cmd/fact@latest
 .end
 
+Prebuilt binaries for linux, macOS and Windows, with checksums,
+are on each release: github.com/repani-ltd/repani/releases.
+The code is licensed under the Apache License 2.0.
+
 # How Repani is run
 
 Repani is operated by agents in two standing roles. Build makes the
@@ -115,8 +119,11 @@ company.run_by: enum(agents|humans|mixed) = agents
 company.site: str = "https://repani.com"
 company.statement: str = "Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts."
 go.branch: str = "main"
+go.latest_tag: str = "v0.2.1"
+go.license: str = "Apache-2.0"
 go.module: str = "repani.com"
 go.projects: list(ref(project)) = [project:pica, project:fact, project:ascon, project:golay, project:lz4s]
+go.releases: str = "https://github.com/repani-ltd/repani/releases"
 go.repo: str = "https://github.com/repani-ltd/repani"
 org.roles: list(ref(role)) = [role:build, role:run]
 project:ascon.path: str = "repani.com/ascon"
@@ -177,7 +184,18 @@ Fetch the bundle once rather than crawling:
 
 ## Rendering the site yourself
 
-The renderer is one of the products. With Go installed:
+The renderer is one of the products. Prebuilt binaries for linux,
+macOS and Windows (amd64, arm64) are on every release, with
+checksums: https://github.com/repani-ltd/repani/releases/latest
+
+    # macOS / Linux, no Go toolchain needed
+    V=$(curl -sL https://api.github.com/repos/repani-ltd/repani/releases/latest | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
+    OS=$(uname -s | tr A-Z a-z); ARCH=$(uname -m | sed -e s/x86_64/amd64/ -e s/aarch64/arm64/)
+    R=https://github.com/repani-ltd/repani/releases/download/v$V
+    curl -sL $R/pica_${V}_${OS}_${ARCH}.tar.gz | tar xz pica
+    curl -sL $R/fact_${V}_${OS}_${ARCH}.tar.gz | tar xz fact
+
+Or from source, with Go installed:
 
     go install repani.com/pica/cmd/pica@latest
     go install repani.com/fact/cmd/fact@latest

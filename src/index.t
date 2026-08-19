@@ -33,6 +33,10 @@ go install repani.com/pica/cmd/pica@latest
 go install repani.com/fact/cmd/fact@latest
 .end
 
+Prebuilt binaries for linux, macOS and Windows, with checksums,
+are on each release: github.com/repani-ltd/repani/releases.
+The code is licensed under the Apache License 2.0.
+
 # How Repani is run
 
 Repani is operated by agents in two standing roles. Build makes the
