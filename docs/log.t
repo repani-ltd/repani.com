@@ -65,3 +65,9 @@ script (SVG M/C/Q/Z to PDF m/c/h, quadratics raised to cubics,
 y flipped by the matrix 1 0 0 -1 0 70). Why: Pavlos asked for an
 embeddable object for pica-generated PDFs, 2026-08-19; whether and
 where pica places it is open.
+.item Mark in pica PDFs: a renderer flag (-mark on pica report and
+pica pdf), never a document command; page one only, top-right
+corner of the type area, 12 mm tall, title block narrowed to keep
+clear. pica's pdf package gained a generic Form XObject primitive
+for it. Why: Pavlos, 2026-08-19; a company imprint is publishing
+policy, so it lives where the PDF is made.
