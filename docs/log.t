@@ -58,3 +58,10 @@ Drawn from scratch in the idiom of a stock-logo reference Pavlos
 supplied; not a copy. Exploration canvas:
 https://claude.ai/code/artifact/45b1ccea-e74d-40bb-9fee-ab7a6d974d16
 Why: Pavlos, 2026-08-19.
+.item Mark as PDF object: docs/mark/ holds the drawing as two PDF
+Form XObject content streams (colour, mono) plus a test page; see
+docs/mark/README.t. Derived from the header SVG by a throwaway
+script (SVG M/C/Q/Z to PDF m/c/h, quadratics raised to cubics,
+y flipped by the matrix 1 0 0 -1 0 70). Why: Pavlos asked for an
+embeddable object for pica-generated PDFs, 2026-08-19; whether and
+where pica places it is open.
