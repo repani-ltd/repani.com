@@ -44,3 +44,7 @@ they exist. Why: Pavlos, 2026-08-19.
 .item Project index: one entry per module directory (pica, fact,
 ascon, golay, lz4s), each with a one-sentence description taken
 from the package doc and a source link. Why: Pavlos, 2026-08-19.
+.item Intro paragraph: states that specs are small, precise and do
+not change; the mechanism (append-only registries, companions) is
+not explained on the root page. Why: Pavlos, 2026-08-19; the
+enterprise reader needs the promise, not the method.
