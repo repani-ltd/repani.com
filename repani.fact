@@ -7,7 +7,6 @@ company.run_by: enum(agents|humans|mixed) = agents
 company.site: str = "https://repani.com"
 company.statement: str = "Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts."
 go.branch: str = "main"
-go.latest_tag: str = "v0.2.1"
 go.license: str = "Apache-2.0"
 go.module: str = "repani.com"
 go.projects: list(ref(project)) = [project:pica, project:fact, project:ascon, project:golay, project:lz4s]
