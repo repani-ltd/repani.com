@@ -104,3 +104,14 @@ route and Apache-2.0 noted on the page. The bank paragraph is held
 back as a .rem in src/index.t until Pavlos clears it (it does
 appear in site.txtar, which carries the source; move it out of the
 source if that is not acceptable). Why: Pavlos, 2026-08-19.
+.item 2026-08-20. pica gained an HTML writer (Doc.HTML: one
+semantic article fragment) and "pica html -txtar ARCHIVE -page
+NAME", which assembles a page from an archive's page.tmpl (Go
+html/template), NAME.t, data.fact and raw *.html/*.svg members.
+The site adopts it: site.txtar is now the single source (page.tmpl,
+index.t, legal.t, data.fact, mark.svg); index.html and
+legal/index.html are rendered from it; src/, repani.fact,
+docs/build.sh and docs/shell.html are retired. Prose URLs became
+.link lines (the writer infers nothing). Why: Pavlos, 2026-08-20;
+the archive a visitor fetches reproduces the pages exactly, and
+no shell script assembles HTML.

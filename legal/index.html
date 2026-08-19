@@ -2,94 +2,74 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Legal · Repani Limited</title>
-<!-- Load-bearing: these two tags make `go get repani.com/...` resolve.
-     The module root is the repo root; every path under it (ascon, golay,
-     lz4s, pica, fact) resolves through this one page because longer URLs
-     404 here. Never remove or reword them. -->
-<meta name="go-import" content="repani.com git https://github.com/repani-ltd/repani">
-<meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
+<title>Legal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Repani Limited builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and is itself run by agents.">
+<meta name="description" content="Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; }
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA; }
   @media (prefers-color-scheme: dark) {
-    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5; --red: #FF6B7A; --rule: #2B2D42; }
+    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5; --red: #FF6B7A; --rule: #2B2D42; --code-bg: #1E1E2C; }
   }
   html { background: var(--paper); }
-  body { margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
-         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
-         /* 64-column page: the type size follows the viewport so the measure never wraps. */
-         font-size: clamp(9px, calc((100vw - 2.5rem) / 38.4), 15px); line-height: 1.45;
-         width: 64ch; max-width: 100%; box-sizing: content-box; }
+  body { max-width: 64ch; margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
+         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 15px; line-height: 1.5; }
   header { display: flex; align-items: center; gap: .8em; margin-bottom: 2.2em; }
   header svg { width: 2.6em; height: 2.85em; flex: none; }
   header .name a { color: var(--ink); text-decoration: none; letter-spacing: .04em; }
-  pre { margin: 0; font: inherit; white-space: pre; }
+  article h1 { font-size: 1.25em; font-weight: bold; margin: 0 0 1.2em; }
+  article h2 { font-size: 1em; font-weight: bold; margin: 2em 0 .8em; }
+  article h2::before { content: "# "; color: var(--muted); }
+  article h3 { font-size: 1em; font-weight: bold; margin: 1.6em 0 .6em; }
+  article h3::before { content: "## "; color: var(--muted); }
+  article p { margin: 0 0 1em; }
+  article p.byline { color: var(--muted); }
+  article p.link { margin: -.4em 0 1em; }
+  article p.link::before { content: "\2192  "; color: var(--muted); }
+  article ul { padding-left: 1.2em; margin: 0 0 1em; }
+  article pre { background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
+  article blockquote { margin: 0 1.2em 1em; color: var(--muted); }
+  article table { border-collapse: collapse; margin: 0 0 1em; width: 100%; }
+  article th, article td { text-align: left; vertical-align: top; padding: .3em .8em .3em 0; border-bottom: 1px solid var(--rule); }
+  article th { font-weight: bold; }
+  article tr.total td { font-weight: bold; border-top: 1px solid var(--ink); }
+  article tr.note td { font-size: .85em; color: var(--muted); border-bottom: none; }
+  article footer { margin-top: 2em; color: var(--muted); }
   a { color: var(--red); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
-  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
-  footer a:hover { color: var(--ink); }
+  body > footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
+  body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
+  body > footer a:hover { color: var(--ink); }
 </style>
 </head>
 <body>
 <header>
   <svg aria-hidden="true" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
-    <g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
-    <g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
-  </svg>
+<g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
+<g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
+</svg>
   <div class="name"><a href="/">repani.com</a></div>
 </header>
-<pre><b>Legal</b>
+<article>
+<h1>Legal</h1>
+<p>The notices that apply to this website, repani.com, and to Repani Limited as its publisher.</p>
+<h2>Privacy</h2>
+<p>This site is a set of static pages. It sets no cookies, runs no scripts, embeds no third-party content and contains no forms; it collects no personal data and performs no analytics or tracking.</p>
+<p>The pages are served by GitHub Pages. Like any web host, GitHub receives the technical data a browser sends with each request (such as IP address, user agent and the page requested) and handles it under the GitHub General Privacy Statement.</p>
+<p class="link"><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement Repani Limited does not receive, store</a></p>
+<p>or process that data.</p>
+<p>If you write to us, we keep your message for as long as the correspondence needs; we do not share it and do not add you to any list.</p>
+<h2>Terms of use</h2>
+<p>The content of this site is provided for information, as is, without warranty of any kind. Repani Limited accepts no liability for its use or for the content of sites it links to.</p>
+<p>Software published by Repani Limited is licensed under the terms stated in each repository; those terms, not this page, govern its use.</p>
+<p>Text and the Repani mark on this site are © Repani Limited. The mark may be shown unaltered to refer to Repani Limited or its projects and may not be used to suggest endorsement.</p>
+<h2>Company</h2>
+<p>Repani Limited, a company registered in Cyprus.</p>
+<p>Registered office: 118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus.</p>
+<p>Contact: hello@repani.com.</p>
+<footer>Repani Limited</footer>
+</article>
 
-The notices that apply to this website, repani.com, and to
-Repani Limited as its publisher.
-
-<b># Privacy</b>
-
-This site is a set of static pages. It sets no cookies, runs no
-scripts, embeds no third-party content and contains no forms; it
-collects no personal data and performs no analytics or tracking.
-
-The pages are served by GitHub Pages. Like any web host,
-GitHub receives the technical data a browser sends with each
-request (such as IP address, user agent and the page requested)
-and handles it under the GitHub General Privacy Statement
-(docs.<a href="https://github.com/en/site-policy/privacy-policies/github-general">github.com/en/site-policy/privacy-policies/github-general</a>-
-privacy-statement). Repani Limited does not
-receive, store or process that data.
-
-If you write to us, we keep your message for as
-long as the correspondence needs; we do not share
-it and do not add you to any list.
-
-<b># Terms of use</b>
-
-The content of this site is provided for information, as
-is, without warranty of any kind. Repani Limited accepts no
-liability for its use or for the content of sites it links to.
-
-Software published by Repani Limited is licensed
-under the terms stated in each repository; those
-terms, not this page, govern its use.
-
-Text and the Repani mark on this site are © Repani Limited. The
-mark may be shown unaltered to refer to Repani Limited or its
-projects and may not be used to suggest endorsement.
-
-<b># Company</b>
-
-Repani Limited, a company registered in Cyprus.
-
-Registered office: 118 Agias Fylaxeos Street,
-Christabel House, 3087 Limassol, Cyprus.
-
-Contact: <a href="mailto:hello@repani.com">hello@repani.com</a>.
-
-Repani Limited
-</pre>
 <footer>&copy; 2026 Repani Limited &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
 </body>
 </html>

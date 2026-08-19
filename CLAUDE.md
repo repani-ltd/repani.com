@@ -43,7 +43,12 @@ forks the text.
   `GOFLAGS=-mod=mod GOPROXY=direct go get repani.com/pica@latest`
   (see `repani-private/ops/runbooks.t`, "Verify the vanity import").
 - No build tooling, no JS, no analytics, no external assets.
-  Static hand-written files only; CSS inline or in one local file.
+  Static files only. The pages are rendered, not hand-written:
+  `site.txtar` is the single source (page.tmpl, index.t, legal.t,
+  data.fact, mark.svg) and `pica html -txtar site.txtar -page NAME`
+  produces `index.html` / `legal/index.html`; both the archive and
+  the rendered pages are committed. Edit the archive, re-render,
+  commit. Never edit the HTML by hand.
 
 ## Working protocol
 

@@ -15,22 +15,19 @@ owner where it counts. Contact: hello@repani.com.
 
 ## The site, as files
 
-The site is made of the formats it describes. These are the
-sources; the HTML pages are rendered from them and carry nothing
-the sources do not.
+The site is made of the formats it describes, and its single source
+is one file. The HTML pages are rendered from it and carry nothing
+it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | every file below in one fetch | txtar (`-- name --` sections) |
-| `/repani.fact` | the company, projects, roles and site as facts | FACT (`key: type = value`, one fact per line) |
-| `/src/index.t` | the root page | pica source |
-| `/src/legal.t` | privacy, terms, company | pica source |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t` and `legal.t` (the pages, pica), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg` | the mark | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |
-| `/docs/log.t` | the site's decision log, append-only | pica source |
+| `/docs/log.t`, `/docs/brief.t` | the site's decision log (append-only) and brief | pica source |
 
-Fetch the bundle once rather than crawling:
+One fetch is the site:
 
     curl -s https://repani.com/site.txtar
 
@@ -51,10 +48,15 @@ Or from source, with Go installed:
 
     go install repani.com/pica/cmd/pica@latest
     go install repani.com/fact/cmd/fact@latest
-    pica text src/index.t            # the root page, as a text page
-    pica report -mark src/index.t    # the same, as a PDF with the mark
-    fact validate repani.fact        # the facts, checked
-    pica spec                        # the pica language reference
+    curl -s https://repani.com/site.txtar -o site.txtar
+    pica html -txtar site.txtar -page index   # the root page, exactly as served
+    pica html -txtar site.txtar -page legal   # the legal page
+    pica spec                                 # the pica language reference
+
+To work with one member on its own, cut it out of the archive
+(everything between its "-- name --" marker and the next): a `.t`
+member renders with `pica text`, `pica report -mark` or `pica html`
+alone; `data.fact` checks with `fact validate`.
 
 `pica spec` and `fact` (see the module's `fact/SPEC.t`) are the
 authoritative references for the two formats.
