@@ -17,10 +17,11 @@ render() { # $1 source, $2 target, $3 title
     -e 's#([^/"a-zA-Z>])(repani\.com/(AGENTS\.md|legal/|repani\.fact|site\.txtar))#\1<a href="https://\2">\2</a>#g' \
     -e 's#([^/"a-zA-Z>])(/repani\.fact|/legal/|/AGENTS\.md|/site\.txtar)#\1<a href="\2">\2</a>#g' \
     -e 's#([^/"a-zA-Z>])(docs\.github\.com/[a-zA-Z0-9./_-]*[a-zA-Z0-9])#\1<a href="https://\2">\2</a>#g' \
-    -e 's#hello@repani\.com#<a href="mailto:hello@repani.com">hello@repani.com</a>#g')
+    -e 's#hello@repani\.com#<a href="mailto:hello@repani.com">hello@repani.com</a>#g' \
+    -e '1s#^(.+)$#<b>\1</b>#' -e 's#^(\#+ .+)$#<b>\1</b>#')
   printf '%s' "$body" > "$2.body"
   awk -v title="$3" -v bodyfile="$2.body" '
-    /@@BODY@@/ { while ((getline line < bodyfile) > 0) print line; next }
+    /@@BODY@@/ { printf "%s", "<pre>"; while ((getline line < bodyfile) > 0) print line; print "</pre>"; next }
     { gsub(/@@TITLE@@/, title); print }' docs/shell.html > "$2"
   rm -f "$2.body"
 }
