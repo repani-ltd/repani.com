@@ -37,3 +37,7 @@ radish mark (no sunglasses) beside the name; dark mode respected.
 The one wink is the footer line "Repani is Greek for radish".
 Org section: one paragraph stating the principle, no chart. Why:
 brief register and audience order, 2026-08-19.
+.item Footer: "(c) 2026 Repani Limited" only; the "Greek for radish"
+line is removed, so the page now carries no wink beyond the mark
+itself. Standard links (privacy etc.) will join the footer when
+they exist. Why: Pavlos, 2026-08-19.
