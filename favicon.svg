@@ -1,39 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <radialGradient id="body" cx="50%" cy="40%" r="50%">
-      <stop offset="0%" stop-color="#FF6B7A"/>
-      <stop offset="70%" stop-color="#E63946"/>
-      <stop offset="100%" stop-color="#C1121F"/>
-    </radialGradient>
-    <linearGradient id="leaf" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#2D6A4F"/>
-      <stop offset="100%" stop-color="#52B788"/>
-    </linearGradient>
-  </defs>
-
-  <g transform="translate(32, 34)">
-    <!-- Leaves -->
-    <path d="M-2,-18 C-10,-28 -16,-34 -12,-38 C-8,-42 -2,-35 -1,-25 Z"
-          fill="url(#leaf)" stroke="#1B4332" stroke-width="0.8"/>
-    <path d="M0,-19 C-2,-30 0,-40 2,-40 C4,-40 2,-30 0,-19 Z"
-          fill="url(#leaf)" stroke="#1B4332" stroke-width="0.8"/>
-    <path d="M2,-18 C10,-28 16,-34 12,-38 C8,-42 2,-35 1,-25 Z"
-          fill="url(#leaf)" stroke="#1B4332" stroke-width="0.8"/>
-    <!-- Rogue leaf -->
-    <path d="M4,-19 C14,-24 18,-20 15,-17 C12,-14 6,-16 3,-18 Z"
-          fill="#52B788" stroke="#1B4332" stroke-width="0.5"/>
-
-    <!-- Body -->
-    <ellipse cx="0" cy="0" rx="18" ry="20" fill="url(#body)"
-             stroke="#C1121F" stroke-width="1"/>
-
-    <!-- Highlight -->
-    <ellipse cx="-6" cy="-6" rx="4" ry="6" fill="#FFFFFF" opacity="0.25"
-             transform="rotate(-20, -6, -6)"/>
-
-    <!-- Root -->
-    <path d="M0,19 C1,24 -1,28 0,30 C1,28 1,24 0,19 Z"
-          fill="#F4A0A8" stroke="#C1121F" stroke-width="0.5"/>
-
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="70" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
+  <g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
+  <g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
 </svg>

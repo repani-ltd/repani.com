@@ -48,3 +48,13 @@ from the package doc and a source link. Why: Pavlos, 2026-08-19.
 not change; the mechanism (append-only registries, companions) is
 not explained on the root page. Why: Pavlos, 2026-08-19; the
 enterprise reader needs the promise, not the method.
+.item Mark: "Pointed offset" -- bold even outline (3.2 on a 64
+grid) in ink #2B2D42, body an inverted teardrop ending in a point,
+two leaves off the crown, three gently curved ridge strokes; flat
+fill (radish red #E63946, leaf green #52B788) offset 2 units from
+the line. One artwork for light and dark (option D): the ink line
+stays navy on dark. Same SVG in the header (inline) and favicon.svg.
+Drawn from scratch in the idiom of a stock-logo reference Pavlos
+supplied; not a copy. Exploration canvas:
+https://claude.ai/code/artifact/45b1ccea-e74d-40bb-9fee-ab7a6d974d16
+Why: Pavlos, 2026-08-19.
