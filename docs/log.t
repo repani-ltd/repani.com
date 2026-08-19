@@ -23,3 +23,8 @@ the joke lands harder against a serious surround.
 .item Audience order: enterprise reader, then go-get engineer, then
 the agent-run-company curious. Why: Pavlos, 2026-08-19; it fixes
 the fold order (company, index, org).
+.item Company statement: "protocols and specifications that agents
+can be trusted to build against, such as pica and fact"; the
+run-by-agents clause is the headline's second clause. Why: Pavlos
+set the claim, 2026-08-19; the order keeps the enterprise reader on
+the offer before the unusual part.

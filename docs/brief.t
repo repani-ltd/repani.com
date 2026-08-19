@@ -28,6 +28,14 @@ to know what repani.com/<project> is and how to use it.
 The order decides what goes above the fold: company first, project
 index second, the org story third. Set 2026-08-19.
 
+# Company statement
+
+The one claim the root page makes, above the fold: Repani Limited
+builds protocols and specifications that agents can be trusted to
+build against, such as pica and fact, and is itself run by agents,
+with humans where it counts. The "run by agents" clause stays in
+the headline as the second clause, never the first. Set 2026-08-19.
+
 # Voice
 
 Restrained engineering house. Plain declarative sentences; no
