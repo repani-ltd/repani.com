@@ -71,3 +71,10 @@ corner of the type area, 12 mm tall, title block narrowed to keep
 clear. pica's pdf package gained a generic Form XObject primitive
 for it. Why: Pavlos, 2026-08-19; a company imprint is publishing
 policy, so it lives where the PDF is made.
+.item Second page, /legal/: Privacy, Terms of use, Company on one
+page, linked from the footer of every page as three anchors, in
+the footer's muted colour. Privacy states only what is true of a
+static GitHub Pages site. Company details (registration, office,
+contact) come from Pavlos before this ships. Why: Pavlos asked for
+the standard footer links, 2026-08-19; one page, three anchors,
+rather than three pages.
