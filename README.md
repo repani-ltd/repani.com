@@ -13,7 +13,7 @@ is made of Repani's own formats: pica sources in `src/`, `repani.fact`,
 
 Releases of the `repani.com` module -- prebuilt `pica` and `fact`
 binaries for linux, macOS and Windows, with checksums -- are at
-https://github.com/repani-ltd/repani/releases (latest: v0.2.1).
+https://github.com/repani-ltd/repani/releases.
 
 How it is managed (DNS, Pages settings, verification, tagging,
 releases) lives in `repani-private/ops/`.
