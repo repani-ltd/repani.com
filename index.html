@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>repani.com</title>
+<!-- Load-bearing: these two tags make `go get repani.com/...` resolve.
+     The module root is the repo root; every path under it (prim, pica,
+     fact) resolves through this one page because longer URLs 404 here. -->
+<meta name="go-import" content="repani.com git https://github.com/repani/repani">
+<meta name="go-source" content="repani.com https://github.com/repani/repani https://github.com/repani/repani/tree/main{/dir} https://github.com/repani/repani/blob/main{/dir}/{file}#L{line}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { max-width: 36em; margin: 4em auto; padding: 0 1em; font: 16px/1.5 Georgia, serif; color: #222; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 0.95em; }
+  h1 { font-weight: normal; font-size: 1.6em; }
+</style>
+</head>
+<body>
+<h1>repani.com</h1>
+<p>Repani Limited. Go module <code>repani.com</code>, public on
+<a href="https://github.com/repani/repani">github.com/repani/repani</a>:</p>
+<ul>
+  <li><code>repani.com/prim</code> &mdash; shared primitives (ascon, golay, lz4s)</li>
+  <li><code>repani.com/pica</code> &mdash; the pica typesetting language and CLI</li>
+  <li><code>repani.com/fact</code> &mdash; the FACT format, Go projections and CLI</li>
+</ul>
+<p><code>go install repani.com/pica/cmd/pica@latest</code></p>
+</body>
+</html>
