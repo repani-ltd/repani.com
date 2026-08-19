@@ -85,10 +85,16 @@ spec today and still be right about it next year.</p>
   for agents: one complete typed fact per line, no nesting, no
   external schema. Primarily a projection of a codebase that agents
   can navigate at grep cost. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/fact">source</a></span></dd>
-  <dt><code>repani.com/ascon</code>, <code>golay</code>, <code>lz4s</code></dt>
-  <dd>Shared primitives: Ascon-XOF128 and AEAD; the extended
-  Golay(24,12) code; LZ4s, the LZ4 sequence scheme re-tuned for small
-  texts. <span class="repo"><a href="https://github.com/repani-ltd/repani">source</a></span></dd>
+  <dt><code>repani.com/ascon</code></dt>
+  <dd>Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP
+  800-232. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/ascon">source</a></span></dd>
+  <dt><code>repani.com/golay</code></dt>
+  <dd>The extended Golay(24,12) code: systematic encoder and
+  syndrome-table decoder, correcting up to 3 bit errors per codeword
+  and detecting 4. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/golay">source</a></span></dd>
+  <dt><code>repani.com/lz4s</code></dt>
+  <dd>LZ4s: the LZ4 sequence architecture with its economics re-tuned
+  for small texts. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/lz4s">source</a></span></dd>
 </dl>
 <pre><code>go install repani.com/pica/cmd/pica@latest
 go install repani.com/fact/cmd/fact@latest</code></pre>

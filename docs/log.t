@@ -41,3 +41,6 @@ brief register and audience order, 2026-08-19.
 line is removed, so the page now carries no wink beyond the mark
 itself. Standard links (privacy etc.) will join the footer when
 they exist. Why: Pavlos, 2026-08-19.
+.item Project index: one entry per module directory (pica, fact,
+ascon, golay, lz4s), each with a one-sentence description taken
+from the package doc and a source link. Why: Pavlos, 2026-08-19.
