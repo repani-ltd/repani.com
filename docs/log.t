@@ -30,3 +30,10 @@ set the claim, 2026-08-19; the order keeps the enterprise reader on
 the offer before the unusual part.
 .item Site map: one page (/) at launch; no further pages until
 demanded. Why: Pavlos, 2026-08-19; nothing speculative.
+.item Typography, colour, layout (designer's call): paper #FEFAE0 /
+ink #2B2D42, Radish Red for links only; Georgia for all text,
+monospace for module paths; single column, 38em measure; plain
+radish mark (no sunglasses) beside the name; dark mode respected.
+The one wink is the footer line "Repani is Greek for radish".
+Org section: one paragraph stating the principle, no chart. Why:
+brief register and audience order, 2026-08-19.

@@ -2,28 +2,102 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>repani.com</title>
+<title>Repani Limited</title>
 <!-- Load-bearing: these two tags make `go get repani.com/...` resolve.
-     The module root is the repo root; every path under it (prim, pica,
-     fact) resolves through this one page because longer URLs 404 here. -->
+     The module root is the repo root; every path under it (ascon, golay,
+     lz4s, pica, fact) resolves through this one page because longer URLs
+     404 here. Never remove or reword them. -->
 <meta name="go-import" content="repani.com git https://github.com/repani-ltd/repani">
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Repani Limited builds protocols and specifications that agents can be trusted to build against, and is itself run by agents.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-  body { max-width: 36em; margin: 4em auto; padding: 0 1em; font: 16px/1.5 Georgia, serif; color: #222; }
-  code { font-family: ui-monospace, Menlo, monospace; font-size: 0.95em; }
-  h1 { font-weight: normal; font-size: 1.6em; }
+  :root {
+    --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383;
+    --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5;
+            --red: #FF6B7A; --rule: #2B2D42; --code-bg: #1E1E2C; }
+  }
+  html { background: var(--paper); }
+  body {
+    max-width: 38em; margin: 0 auto; padding: 3.5em 1.25em 4em;
+    font: 17px/1.55 Georgia, "Times New Roman", serif; color: var(--ink);
+  }
+  header { display: flex; align-items: center; gap: .7em; margin-bottom: 2.5em; }
+  header svg { width: 2em; height: 2em; flex: none; }
+  header .name { font-size: 1.15em; letter-spacing: .02em; }
+  header .name small { color: var(--muted); font-size: .8em; margin-left: .6em; }
+  h1 { font-weight: normal; font-size: 1.7em; line-height: 1.3; margin: 0 0 .6em; }
+  h2 { font-weight: normal; font-size: 1.1em; text-transform: uppercase; letter-spacing: .12em;
+       color: var(--muted); margin: 2.8em 0 .8em; padding-top: 1.2em; border-top: 1px solid var(--rule); }
+  p { margin: 0 0 1em; }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em; }
+  code { background: var(--code-bg); padding: .05em .3em; border-radius: 2px; }
+  pre { background: var(--code-bg); padding: .7em .9em; border-radius: 3px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  dl { margin: 0; }
+  dt { margin-top: 1em; }
+  dd { margin: .15em 0 0 0; color: var(--ink); }
+  dd .repo { color: var(--muted); font-size: .9em; }
+  footer { margin-top: 3.5em; padding-top: 1.2em; border-top: 1px solid var(--rule);
+           color: var(--muted); font-size: .85em; }
 </style>
 </head>
 <body>
-<h1>repani.com</h1>
-<p>Repani Limited. Go module <code>repani.com</code>, public on
-<a href="https://github.com/repani-ltd/repani">github.com/repani-ltd/repani</a>:</p>
-<ul>
-  <li><code>repani.com/ascon</code>, <code>repani.com/golay</code>, <code>repani.com/lz4s</code> &mdash; shared primitives</li>
-  <li><code>repani.com/pica</code> &mdash; the pica typesetting language and CLI</li>
-  <li><code>repani.com/fact</code> &mdash; the FACT format, Go projections and CLI</li>
-</ul>
-<p><code>go install repani.com/pica/cmd/pica@latest</code></p>
+<header>
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <g transform="translate(32,34)">
+      <path d="M-2,-18 C-10,-28 -16,-34 -12,-38 C-8,-42 -2,-35 -1,-25 Z" fill="#52B788" stroke="#1B4332" stroke-width="1"/>
+      <path d="M0,-19 C-2,-30 0,-40 2,-40 C4,-40 2,-30 0,-19 Z" fill="#52B788" stroke="#1B4332" stroke-width="1"/>
+      <path d="M2,-18 C10,-28 16,-34 12,-38 C8,-42 2,-35 1,-25 Z" fill="#52B788" stroke="#1B4332" stroke-width="1"/>
+      <path d="M4,-19 C14,-24 18,-20 15,-17 C12,-14 6,-16 3,-18 Z" fill="#52B788" stroke="#1B4332" stroke-width=".7"/>
+      <ellipse cx="0" cy="0" rx="18" ry="20" fill="#E63946" stroke="#C1121F" stroke-width="1"/>
+      <ellipse cx="-6" cy="-6" rx="4" ry="6" fill="#FFFFFF" opacity=".25" transform="rotate(-20,-6,-6)"/>
+      <path d="M0,19 C1,24 -1,28 0,30 C1,28 1,24 0,19 Z" fill="#F4A0A8" stroke="#C1121F" stroke-width=".6"/>
+    </g>
+  </svg>
+  <div class="name">Repani Limited <small>repani.com</small></div>
+</header>
+
+<h1>Protocols and specifications that agents can be trusted to build against&nbsp;&mdash; from a company that is itself run by agents, with humans where it counts.</h1>
+
+<p>Repani builds small, frozen formats and the reference tooling
+around them. Each specification is fixed once published; growth
+happens through append-only registries and companion documents,
+never revisions. That is what lets an agent build against a Repani
+spec today and still be right about it next year.</p>
+
+<h2>Projects</h2>
+<p>All public code is one Go module, <code>repani.com</code>, at
+<a href="https://github.com/repani-ltd/repani">github.com/repani-ltd/repani</a>.</p>
+<dl>
+  <dt><code>repani.com/pica</code></dt>
+  <dd>A minimal, troff-inspired source language and typesetter:
+  one parse to a typed block model, writers for fixed-width text and
+  PDF. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/pica">source</a></span></dd>
+  <dt><code>repani.com/fact</code></dt>
+  <dd>FACT, a line-oriented format for facts about systems, built
+  for agents: one complete typed fact per line, no nesting, no
+  external schema. Primarily a projection of a codebase that agents
+  can navigate at grep cost. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/fact">source</a></span></dd>
+  <dt><code>repani.com/ascon</code>, <code>golay</code>, <code>lz4s</code></dt>
+  <dd>Shared primitives: Ascon-XOF128 and AEAD; the extended
+  Golay(24,12) code; LZ4s, the LZ4 sequence scheme re-tuned for small
+  texts. <span class="repo"><a href="https://github.com/repani-ltd/repani">source</a></span></dd>
+</dl>
+<pre><code>go install repani.com/pica/cmd/pica@latest
+go install repani.com/fact/cmd/fact@latest</code></pre>
+
+<h2>How Repani is run</h2>
+<p>Repani is operated by agents. A human owner sets direction and
+ratifies irreversible decisions; agents do the rest, including the
+maintenance of this page.</p>
+
+<footer>Repani Limited. <i>Repani</i> is Greek for radish.</footer>
 </body>
 </html>
