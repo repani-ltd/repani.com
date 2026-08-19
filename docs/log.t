@@ -115,3 +115,12 @@ docs/build.sh and docs/shell.html are retired. Prose URLs became
 .link lines (the writer infers nothing). Why: Pavlos, 2026-08-20;
 the archive a visitor fetches reproduces the pages exactly, and
 no shell script assembles HTML.
+.item 2026-08-20. Facts stated once: the pages are now
+index.t.tmpl and legal.t.tmpl, text/templates over data.fact
+(pica html executes them with render's language and functions,
+missing key an error); the project table, install lines, company
+name, office, contact, links, licence and roles come from the
+facts. The copyright year is a fact (company.copyright_year); the
+site's own remarks about pica and fact are facts (site.note_*);
+the rights metadata line is dropped from the web pages (the page
+footer carries the notice). Why: Pavlos, 2026-08-20; one statement per fact.

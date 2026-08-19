@@ -44,8 +44,9 @@ forks the text.
   (see `repani-private/ops/runbooks.t`, "Verify the vanity import").
 - No build tooling, no JS, no analytics, no external assets.
   Static files only. The pages are rendered, not hand-written:
-  `site.txtar` is the single source (page.tmpl, index.t, legal.t,
-  data.fact, mark.svg) and `pica html -txtar site.txtar -page NAME`
+  `site.txtar` is the single source (page.tmpl, index.t.tmpl,
+  legal.t.tmpl, data.fact, mark.svg; facts are stated once, in
+  data.fact, and the pages reference them) and `pica html -txtar site.txtar -page NAME`
   produces `index.html` / `legal/index.html`; both the archive and
   the rendered pages are committed. Edit the archive, re-render,
   commit. Never edit the HTML by hand.

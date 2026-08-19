@@ -55,30 +55,31 @@
 </header>
 <article>
 <h1>Repani Limited</h1>
-<p>Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents -- and owns them as source code. The company is itself run by agents, with a human owner where it counts.</p>
+<p>Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts.</p>
 <h2>What Repani makes</h2>
 <p>Formats and tools precise enough that an agent builds against them correctly, and the operating model that turns that into delivered, audited software: one human role, every line vetted, release and change control designed for agents rather than bolted on.</p>
 <h2>Public projects</h2>
 <p>All public code is one Go module, repani.com.</p>
-<p class="link"><a href="https://github.com/repani-ltd/repani">github.com/repani-ltd/repani</a></p>
+<p class="link"><a href="https://github.com/repani-ltd/repani">https://github.com/repani-ltd/repani</a></p>
 <table>
 <thead>
 <tr><th>module</th><th>what it is</th></tr>
 </thead>
 <tbody>
-<tr><td>repani.com/pica</td><td>A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF. This page is a pica document.</td></tr>
-<tr><td>repani.com/fact</td><td>FACT, a line-oriented format for facts about systems, built for agents: one complete typed fact per line, no nesting, no external schema. This site&#39;s facts are the data.fact member of site.txtar.</td></tr>
+<tr><td>repani.com/pica</td><td>A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF.</td></tr>
+<tr><td>repani.com/fact</td><td>FACT, a line-oriented format for facts about systems, built for agents: one complete typed fact per line, no nesting, no external schema.</td></tr>
 <tr><td>repani.com/ascon</td><td>Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP 800-232.</td></tr>
-<tr><td>repani.com/golay</td><td>The extended Golay(24,12) code: systematic encoder and syndrome-table decoder.</td></tr>
-<tr><td>repani.com/lz4s</td><td>LZ4s: the LZ4 sequence architecture re-tuned for small texts.</td></tr>
+<tr><td>repani.com/golay</td><td>The extended Golay(24,12) code: systematic encoder and syndrome-table decoder, correcting up to 3 bit errors per codeword and detecting 4.</td></tr>
+<tr><td>repani.com/lz4s</td><td>LZ4s: the LZ4 sequence architecture with its economics re-tuned for small texts.</td></tr>
 </tbody>
 </table>
+<p>This page is a pica document. This site&#39;s facts are the data.fact member of site.txtar.</p>
 <pre>go install repani.com/pica/cmd/pica@latest
 go install repani.com/fact/cmd/fact@latest</pre>
-<p>Prebuilt binaries for linux, macOS and Windows, with checksums, are on each release. The code is licensed under the Apache License 2.0.</p>
+<p>Prebuilt binaries for linux, macOS and Windows, with checksums, are on each release. The code is licensed under the Apache-2.0 licence.</p>
 <p class="link"><a href="https://github.com/repani-ltd/repani/releases">Releases</a></p>
 <h2>How Repani is run</h2>
-<p>Repani is operated by agents in two standing roles. Build makes the products: specifications, code and documentation. Run keeps the company present and operating: this site, publishing, operations and outreach. A human owner sets direction and ratifies irreversible decisions; the agents do the rest, including the maintenance of this page.</p>
+<p>Repani is operated by agents in two standing roles. Build makes the products: specifications, code and documentation. Run keeps the company&#39;s presence and operation: this site, publishing, operations and outreach. A human owner sets direction and ratifies irreversible decisions; the agents do the rest, including the maintenance of this page.</p>
 <h2>For agents</h2>
 <p>This site is made of the formats it describes, and its single source is one file: site.txtar holds the pica pages, the facts, the mark and the page template; pica html assembles each page from it. Point your agent at AGENTS.md.</p>
 <p class="link"><a href="https://repani.com/AGENTS.md">AGENTS.md</a></p>
@@ -86,7 +87,6 @@ go install repani.com/fact/cmd/fact@latest</pre>
 <h2>Legal</h2>
 <p>Privacy, terms of use and company details are on the legal page. Contact: hello@repani.com.</p>
 <p class="link"><a href="https://repani.com/legal/">Legal</a></p>
-<footer>Repani Limited</footer>
 </article>
 
 <footer>&copy; 2026 Repani Limited &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>

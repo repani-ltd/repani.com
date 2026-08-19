@@ -21,7 +21,7 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t` and `legal.t` (the pages, pica), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl` and `legal.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg` | the mark | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |

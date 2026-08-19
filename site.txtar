@@ -1,8 +1,9 @@
 repani.com -- the site as one archive. Render a page:
     pica html -txtar site.txtar -page index -o index.html
     pica html -txtar site.txtar -page legal -o legal/index.html
-Members: page.tmpl (html/template shell), index.t and legal.t (pica
-documents), data.fact (the site's facts), mark.svg (the mark).
+Members: page.tmpl (html/template shell), index.t.tmpl and
+legal.t.tmpl (pica documents as text/templates over the facts),
+data.fact (the site's facts, stated once), mark.svg (the mark).
 -- page.tmpl --
 <!doctype html>
 <html lang="en">
@@ -62,18 +63,14 @@ documents), data.fact (the site's facts), mark.svg (the mark).
   <div class="name"><a href="/">repani.com</a></div>
 </header>
 {{.Article}}
-<footer>&copy; 2026 {{.Facts.company.name}} &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
+<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
 </body>
 </html>
--- index.t --
-Repani Limited
+-- index.t.tmpl --
+{{.company.name}}
 .rem Root page. Rendered by: pica html -txtar site.txtar -page index -o index.html
-.rights Repani Limited
 
-Repani builds the tools, the method and the agentic setup for
-delivering enterprise software with AI agents -- and owns them as
-source code. The company is itself run by agents, with a human
-owner where it counts.
+{{.company.statement}}
 
 # What Repani makes
 
@@ -84,36 +81,28 @@ change control designed for agents rather than bolted on.
 
 # Public projects
 
-All public code is one Go module, repani.com.
-.link https://github.com/repani-ltd/repani github.com/repani-ltd/repani
+All public code is one Go module, {{.go.module}}.
+.link {{.go.repo}} {{.go.repo}}
 
-.table 18L *L
-module | what it is
-repani.com/pica | A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF. This page is a pica document.
-repani.com/fact | FACT, a line-oriented format for facts about systems, built for agents: one complete typed fact per line, no nesting, no external schema. This site's facts are the data.fact member of site.txtar.
-repani.com/ascon | Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP 800-232.
-repani.com/golay | The extended Golay(24,12) code: systematic encoder and syndrome-table decoder.
-repani.com/lz4s | LZ4s: the LZ4 sequence architecture re-tuned for small texts.
-.end
+{{table "18L *L" "module | what it is" .go.projects "path" "summary"}}
+
+{{.site.note_pica}} {{.site.note_fact}}
 
 .pre
-go install repani.com/pica/cmd/pica@latest
-go install repani.com/fact/cmd/fact@latest
+{{.project.pica.cli}}
+{{.project.fact.cli}}
 .end
 
 Prebuilt binaries for linux, macOS and Windows, with checksums,
-are on each release. The code is licensed under the Apache
-License 2.0.
-.link https://github.com/repani-ltd/repani/releases Releases
+are on each release. The code is licensed under the {{.go.license}} licence.
+.link {{.go.releases}} Releases
 
 # How Repani is run
 
-Repani is operated by agents in two standing roles. Build makes the
-products: specifications, code and documentation. Run keeps the
-company present and operating: this site, publishing, operations
-and outreach. A human owner sets direction and ratifies
-irreversible decisions; the agents do the rest, including the
-maintenance of this page.
+Repani is operated by agents in two standing roles. Build makes
+{{.role.build.scope}}. Run keeps {{.role.run.scope}}. A human owner
+sets direction and ratifies irreversible decisions; the agents do
+the rest, including the maintenance of this page.
 
 # For agents
 
@@ -121,22 +110,21 @@ This site is made of the formats it describes, and its single
 source is one file: site.txtar holds the pica pages, the facts,
 the mark and the page template; pica html assembles each page
 from it. Point your agent at AGENTS.md.
-.link https://repani.com/AGENTS.md AGENTS.md
-.link https://repani.com/site.txtar site.txtar
+.link {{.site.agent_contract}} AGENTS.md
+.link {{.site.bundle}} site.txtar
 
 # Legal
 
 Privacy, terms of use and company details are on the legal page.
-Contact: hello@repani.com.
-.link https://repani.com/legal/ Legal
+Contact: {{.company.contact_email}}.
+.link {{.company.site}}/legal/ Legal
 
 .width 64
--- legal.t --
+-- legal.t.tmpl --
 Legal
 .rem Legal page. Rendered by: pica html -txtar site.txtar -page legal -o legal/index.html
-.rights Repani Limited
 
-The notices that apply to this website, repani.com, and to Repani
+The notices that apply to this website, {{.company.site}}, and to Repani
 Limited as its publisher.
 
 # Privacy
@@ -148,7 +136,7 @@ collects no personal data and performs no analytics or tracking.
 The pages are served by GitHub Pages. Like any web host, GitHub
 receives the technical data a browser sends with each request (such
 as IP address, user agent and the page requested) and handles it
-under the GitHub General Privacy Statement. Repani Limited does not
+under the GitHub General Privacy Statement. {{.company.name}} does not
 receive, store or process that data.
 .link https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement GitHub General Privacy Statement
 
@@ -159,27 +147,28 @@ list.
 # Terms of use
 
 The content of this site is provided for information, as is,
-without warranty of any kind. Repani Limited accepts no liability
+without warranty of any kind. {{.company.name}} accepts no liability
 for its use or for the content of sites it links to.
 
-Software published by Repani Limited is licensed under the terms
+Software published by {{.company.name}} is licensed under the terms
 stated in each repository; those terms, not this page, govern its
 use.
 
-Text and the Repani mark on this site are © Repani Limited.
-The mark may be shown unaltered to refer to Repani Limited or its
+Text and the Repani mark on this site are © {{.company.name}}.
+The mark may be shown unaltered to refer to {{.company.name}} or its
 projects and may not be used to suggest endorsement.
 
 # Company
 
-Repani Limited, a company registered in Cyprus.
+{{.company.name}}, a company registered in {{.company.jurisdiction}}.
 
-Registered office: 118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus.
+Registered office: {{.company.registered_office}}.
 
-Contact: hello@repani.com.
+Contact: {{.company.contact_email}}.
 
 .width 64
 -- data.fact --
+company.copyright_year: int = 2026
 company.contact_email: str = "hello@repani.com"
 company.human_roles: list(str) = ["owner"]
 company.jurisdiction: str = "Cyprus"
@@ -209,6 +198,8 @@ project:pica.path: str = "repani.com/pica"
 project:pica.summary: str = "A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF."
 role:build.scope: str = "the products: specifications, code and documentation"
 role:run.scope: str = "the company's presence and operation: this site, publishing, operations and outreach"
+site.note_pica: str = "This page is a pica document."
+site.note_fact: str = "This site's facts are the data.fact member of site.txtar."
 site.agent_contract: str = "https://repani.com/AGENTS.md"
 site.bundle: str = "https://repani.com/site.txtar"
 site.renderer: str = "pica html -txtar site.txtar -page NAME (repani.com/pica)"
