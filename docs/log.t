@@ -97,3 +97,10 @@ method and agentic setup, owned as source code; the bank story is
 one paragraph marked [pending clearance] until Pavlos clears it.
 Why: Pavlos's direction 2026-08-19 -- a distinct site that is the
 product, readable by humans and by their agents.
+.item Shipped the site-as-its-own-formats design (the agentsite
+mock, merged 2026-08-19): pica sources, repani.fact, AGENTS.md,
+llms.txt, site.txtar, docs/build.sh; prebuilt-binary download
+route and Apache-2.0 noted on the page. The bank paragraph is held
+back as a .rem in src/index.t until Pavlos clears it (it does
+appear in site.txtar, which carries the source; move it out of the
+source if that is not acceptable). Why: Pavlos, 2026-08-19.
