@@ -28,3 +28,5 @@ can be trusted to build against, such as pica and fact"; the
 run-by-agents clause is the headline's second clause. Why: Pavlos
 set the claim, 2026-08-19; the order keeps the enterprise reader on
 the offer before the unusual part.
+.item Site map: one page (/) at launch; no further pages until
+demanded. Why: Pavlos, 2026-08-19; nothing speculative.

@@ -52,7 +52,8 @@ path | role
 
 Module paths (/ascon, /golay, /lz4s, /pica, /fact, and any future
 top-level directory of the repani.com module) are reserved and
-must 404. Further pages: TO BE SET.
+must 404. Further pages: none at launch; one page until a consumer demands
+a second. Set 2026-08-19.
 
 # Design constraints
 
