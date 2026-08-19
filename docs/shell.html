@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>@@TITLE@@</title>
+<!-- Load-bearing: these two tags make `go get repani.com/...` resolve.
+     The module root is the repo root; every path under it (ascon, golay,
+     lz4s, pica, fact) resolves through this one page because longer URLs
+     404 here. Never remove or reword them. -->
+<meta name="go-import" content="repani.com git https://github.com/repani-ltd/repani">
+<meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Repani Limited builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and is itself run by agents.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5; --red: #FF6B7A; --rule: #2B2D42; }
+  }
+  html { background: var(--paper); }
+  body { margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
+         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+         /* 64-column page: the type size follows the viewport so the measure never wraps. */
+         font-size: clamp(9px, calc((100vw - 2.5rem) / 38.4), 15px); line-height: 1.45;
+         width: 64ch; max-width: 100%; box-sizing: content-box; }
+  header { display: flex; align-items: center; gap: .8em; margin-bottom: 2.2em; }
+  header svg { width: 2.6em; height: 2.85em; flex: none; }
+  header .name a { color: var(--ink); text-decoration: none; letter-spacing: .04em; }
+  pre { margin: 0; font: inherit; white-space: pre; }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
+  footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<header>
+  <svg aria-hidden="true" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
+    <g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
+    <g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
+  </svg>
+  <div class="name"><a href="/">repani.com</a></div>
+</header>
+<pre>@@BODY@@</pre>
+<footer>&copy; 2026 Repani Limited &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
+</body>
+</html>

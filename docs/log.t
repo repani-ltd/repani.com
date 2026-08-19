@@ -86,3 +86,14 @@ work crossing roles goes to the owner. Run may split internally
 agent until then. The root page's third section states the two
 roles. Why: Pavlos, 2026-08-19; a new, simpler structure, not the
 old hub-and-spoke.
+.item MOCK (branch agentsite, not merged): the site made of its own
+formats. Sources are src/index.t and src/legal.t (pica), repani.fact
+(FACT), AGENTS.md (the visiting-agent contract; CLAUDE.md and
+llms.txt point to it); site.txtar bundles every source in one
+fetch; docs/build.sh renders the HTML pages (pica text into a
+monospace 64-column shell, URLs autolinked) and the bundle. The
+root page restates the company as a product company: tools,
+method and agentic setup, owned as source code; the bank story is
+one paragraph marked [pending clearance] until Pavlos clears it.
+Why: Pavlos's direction 2026-08-19 -- a distinct site that is the
+product, readable by humans and by their agents.

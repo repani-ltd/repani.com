@@ -1,5 +1,9 @@
 # repani.com (site)
 
+Visiting agent? This file is the job description of the agent that
+maintains this site. The public entry point for agents is
+[AGENTS.md](AGENTS.md).
+
 Static GitHub Pages site for https://repani.com: the Repani Limited
 company page plus the project index, served from this repo (`main`,
 root, custom domain in `CNAME`).

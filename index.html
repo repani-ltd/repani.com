@@ -10,41 +10,26 @@
 <meta name="go-import" content="repani.com git https://github.com/repani-ltd/repani">
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Repani Limited builds protocols and specifications that agents can be trusted to build against, and is itself run by agents.">
+<meta name="description" content="Repani Limited builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and is itself run by agents.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-  :root {
-    --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383;
-    --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA;
-  }
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; }
   @media (prefers-color-scheme: dark) {
-    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5;
-            --red: #FF6B7A; --rule: #2B2D42; --code-bg: #1E1E2C; }
+    :root { --paper: #14141F; --ink: #E8E8ED; --muted: #9AA3B5; --red: #FF6B7A; --rule: #2B2D42; }
   }
   html { background: var(--paper); }
-  body {
-    max-width: 38em; margin: 0 auto; padding: 3.5em 1.25em 4em;
-    font: 17px/1.55 Georgia, "Times New Roman", serif; color: var(--ink);
-  }
-  header { display: flex; align-items: center; gap: .7em; margin-bottom: 2.5em; }
+  body { margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
+         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+         /* 64-column page: the type size follows the viewport so the measure never wraps. */
+         font-size: clamp(9px, calc((100vw - 2.5rem) / 38.4), 15px); line-height: 1.45;
+         width: 64ch; max-width: 100%; box-sizing: content-box; }
+  header { display: flex; align-items: center; gap: .8em; margin-bottom: 2.2em; }
   header svg { width: 2.6em; height: 2.85em; flex: none; }
-  header .name { font-size: 1.15em; letter-spacing: .02em; }
-  h1 { font-weight: normal; font-size: 1.7em; line-height: 1.3; margin: 0 0 .6em; }
-  h2 { font-weight: normal; font-size: 1.1em; text-transform: uppercase; letter-spacing: .12em;
-       color: var(--muted); margin: 2.8em 0 .8em; padding-top: 1.2em; border-top: 1px solid var(--rule); }
-  p { margin: 0 0 1em; }
+  header .name a { color: var(--ink); text-decoration: none; letter-spacing: .04em; }
+  pre { margin: 0; font: inherit; white-space: pre; }
   a { color: var(--red); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  code, pre { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em; }
-  code { background: var(--code-bg); padding: .05em .3em; border-radius: 2px; }
-  pre { background: var(--code-bg); padding: .7em .9em; border-radius: 3px; overflow-x: auto; }
-  pre code { background: none; padding: 0; }
-  dl { margin: 0; }
-  dt { margin-top: 1em; }
-  dd { margin: .15em 0 0 0; color: var(--ink); }
-  dd .repo { color: var(--muted); font-size: .9em; }
-  footer { margin-top: 3.5em; padding-top: 1.2em; border-top: 1px solid var(--rule);
-           color: var(--muted); font-size: .85em; }
+  footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
   footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   footer a:hover { color: var(--ink); }
 </style>
@@ -55,51 +40,71 @@
     <g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
     <g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
   </svg>
-  <div class="name">repani.com</div>
+  <div class="name"><a href="/">repani.com</a></div>
 </header>
+Repani Limited
 
-<h1>Protocols and specifications that agents can be trusted to build against&nbsp;&mdash; from a company that is itself run by agents, with humans where it counts.</h1>
+Repani builds the tools, the method and the agentic setup
+for delivering enterprise software with AI agents -- and owns
+them as source code. The company is itself run by agents,
+with a human owner where it counts.
 
-<p>Repani builds small, precisely specified formats and the
-reference tooling around them. A published specification does not
-change, so what an agent builds against it today is still correct
-later.</p>
+# What Repani makes
 
-<h2>Projects</h2>
-<p>All public code is one Go module, <code>repani.com</code>, at
-<a href="https://github.com/repani-ltd/repani">github.com/repani-ltd/repani</a>.</p>
-<dl>
-  <dt><code>repani.com/pica</code></dt>
-  <dd>A minimal, troff-inspired source language and typesetter:
-  one parse to a typed block model, writers for fixed-width text and
-  PDF. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/pica">source</a></span></dd>
-  <dt><code>repani.com/fact</code></dt>
-  <dd>FACT, a line-oriented format for facts about systems, built
-  for agents: one complete typed fact per line, no nesting, no
-  external schema. Primarily a projection of a codebase that agents
-  can navigate at grep cost. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/fact">source</a></span></dd>
-  <dt><code>repani.com/ascon</code></dt>
-  <dd>Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP
-  800-232. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/ascon">source</a></span></dd>
-  <dt><code>repani.com/golay</code></dt>
-  <dd>The extended Golay(24,12) code: systematic encoder and
-  syndrome-table decoder, correcting up to 3 bit errors per codeword
-  and detecting 4. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/golay">source</a></span></dd>
-  <dt><code>repani.com/lz4s</code></dt>
-  <dd>LZ4s: the LZ4 sequence architecture with its economics re-tuned
-  for small texts. <span class="repo"><a href="https://github.com/repani-ltd/repani/tree/main/lz4s">source</a></span></dd>
-</dl>
-<pre><code>go install repani.com/pica/cmd/pica@latest
-go install repani.com/fact/cmd/fact@latest</code></pre>
+Formats and tools precise enough that an agent builds
+against them correctly, and the operating model that turns
+that into delivered, audited software: one human role,
+every line vetted, release and change control designed
+for agents rather than bolted on.
 
-<h2>How Repani is run</h2>
-<p>Repani is operated by agents in two standing roles. <i>Build</i>
-makes the public projects: specifications, code and documentation.
-<i>Run</i> keeps the company present and operating: this site,
-publishing, operations and outreach. A human owner sets direction
-and ratifies irreversible decisions; the agents do the rest,
-including the maintenance of this page.</p>
+# Public projects
 
-<footer>&copy; 2026 Repani Limited &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a></footer>
+All public code is one Go module, repani.com,
+at <a href="https://github.com/repani-ltd/repani">github.com/repani-ltd/repani</a>.
+
+module             what it is
+------------------ ---------------------------------------------
+repani.com/pica    A minimal, troff-inspired source language and
+                   typesetter: one parse to a typed block model,
+                   writers for fixed-width text and PDF. This
+                   page is a pica document.
+repani.com/fact    FACT, a line-oriented format for facts about
+                   systems, built for agents: one complete
+                   typed fact per line, no nesting, no external
+                   schema. This site as facts: <a href="/repani.fact">/repani.fact</a>.
+repani.com/ascon   Ascon-XOF128 and Ascon-AEAD128 as
+                   specified in NIST SP 800-232.
+repani.com/golay   The extended Golay(24,12) code: systematic
+                   encoder and syndrome-table decoder.
+repani.com/lz4s    LZ4s: the LZ4 sequence architecture
+                   re-tuned for small texts.
+
+go install repani.com/pica/cmd/pica@latest
+go install repani.com/fact/cmd/fact@latest
+
+# How Repani is run
+
+Repani is operated by agents in two standing roles. Build
+makes the products: specifications, code and documentation. Run
+keeps the company present and operating: this site, publishing,
+operations and outreach. A human owner sets direction and
+ratifies irreversible decisions; the agents do the rest,
+including the maintenance of this page.
+
+# For agents
+
+This site is made of the formats it describes. Point your
+agent at <a href="/AGENTS.md">/AGENTS.md</a>: it names every source file (the pica
+pages, the facts, the mark) and one bundle, <a href="/site.txtar">/site.txtar</a>,
+that carries them all. An agent can fetch the bundle, install
+pica, and render this site itself.
+
+# Legal
+
+Privacy, terms of use and company details: <a href="https://repani.com/legal/">repani.com/legal/</a>.
+Contact: <a href="mailto:hello@repani.com">hello@repani.com</a>.
+
+Repani Limited
+<footer>&copy; 2026 Repani Limited &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
 </body>
 </html>
