@@ -20,3 +20,6 @@ a single, very light wink per page, never the theme. System fonts
 only (old brand's Google Fonts are external assets). Why: Pavlos,
 2026-08-19; the new Repani reads as a quiet engineering house and
 the joke lands harder against a serious surround.
+.item Audience order: enterprise reader, then go-get engineer, then
+the agent-run-company curious. Why: Pavlos, 2026-08-19; it fixes
+the fold order (company, index, org).

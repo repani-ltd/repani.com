@@ -17,7 +17,16 @@ else changes.
 
 # Audience
 
-TO BE SET.
+In order of priority:
+
+.item An enterprise reader (prospective client or partner) checking
+whether Repani is real, what it does, and who stands behind it.
+.item An engineer who arrived via go get or a README link and wants
+to know what repani.com/<project> is and how to use it.
+.item A reader curious about the agent-run company itself.
+
+The order decides what goes above the fold: company first, project
+index second, the org story third. Set 2026-08-19.
 
 # Voice
 
