@@ -13,3 +13,10 @@ not one or the other). Why: Pavlos, 2026-08-19.
 .item Site pages live off paths that can never be Go packages;
 module paths stay 404. Why: go get walks path prefixes to the
 root page.
+.item Register: restrained engineering house. Radish mark (head-only,
+favicon style, not the finger-guns CEO) and palette carry over from
+the old brand in ~/workspace/main/proxy/static; the radish humour is
+a single, very light wink per page, never the theme. System fonts
+only (old brand's Google Fonts are external assets). Why: Pavlos,
+2026-08-19; the new Repani reads as a quiet engineering house and
+the joke lands harder against a serious surround.

@@ -21,7 +21,10 @@ TO BE SET.
 
 # Voice
 
-TO BE SET.
+Restrained engineering house. Plain declarative sentences; no
+marketing register. The radish (the name means radish in Greek)
+appears as a small mark and at most one very light wink per page;
+it is never the theme. Set 2026-08-19.
 
 # Site map
 
