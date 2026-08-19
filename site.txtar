@@ -124,8 +124,8 @@ Contact: {{.company.contact_email}}.
 Legal
 .rem Legal page. Rendered by: pica html -txtar site.txtar -page legal -o legal/index.html
 
-The notices that apply to this website, {{.company.domain}}, and to Repani
-Limited as its publisher.
+The notices that apply to this website, {{.company.domain}}, and to
+{{.company.name}} as its publisher.
 
 # Privacy
 
