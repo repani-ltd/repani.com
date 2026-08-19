@@ -78,3 +78,11 @@ static GitHub Pages site. Company details (registration, office,
 contact) come from Pavlos before this ships. Why: Pavlos asked for
 the standard footer links, 2026-08-19; one page, three anchors,
 rather than three pages.
+.item Org structure: owner plus two standing agent roles, Build
+(public projects: specs, code, docs) and Run (site, publishing,
+operations, outreach). No manager agent, no hierarchy among roles;
+work crossing roles goes to the owner. Run may split internally
+(site, marketing, social media, ops) when the work demands it; one
+agent until then. The root page's third section states the two
+roles. Why: Pavlos, 2026-08-19; a new, simpler structure, not the
+old hub-and-spoke.
