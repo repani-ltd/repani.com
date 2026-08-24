@@ -31,3 +31,4 @@ the title block narrowed to keep clear of it. mark-test.pdf is a
 hand-built A4 page showing the colour object at
 12 mm and 24 mm and the mono object at 12 mm; regenerate it with
 the script in log.t's entry for this date if the drawing changes.
+.font sans

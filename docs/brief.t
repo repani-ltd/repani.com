@@ -67,3 +67,4 @@ analytics, or external assets (fonts, CDNs).
 .item Add a page at a module path.
 .item Duplicate project documentation here; link to or render the
 source of truth in the project repos.
+.font sans

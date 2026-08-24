@@ -124,3 +124,4 @@ facts. The copyright year is a fact (company.copyright_year); the
 site's own remarks about pica and fact are facts (site.note_*);
 the rights metadata line is dropped from the web pages (the page
 footer carries the notice). Why: Pavlos, 2026-08-20; one statement per fact.
+.font sans
