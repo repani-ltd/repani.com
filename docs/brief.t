@@ -46,7 +46,7 @@ it is never the theme. Set 2026-08-19.
 # Site map
 
 .table 14L *L
-path | role
+^path | role
 / | landing: company, vanity import, project index
 .end
 
