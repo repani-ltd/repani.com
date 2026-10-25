@@ -1,0 +1,43 @@
+# Deploys the site: main's committed files at /, and the draft branch's
+# (when it exists) under /_draft/. It copies, never renders or rewrites:
+# the served bytes are the committed bytes (CLAUDE.md, "No build step").
+name: pages
+
+on:
+  push:
+    branches: [main, draft]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo
+      - name: Copy main to / and draft to /_draft/
+        run: |
+          mkdir _site
+          git -C repo archive HEAD | tar -x -C _site
+          if git -C repo fetch --depth 1 origin draft; then
+            mkdir _site/_draft
+            git -C repo archive FETCH_HEAD | tar -x -C _site/_draft
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

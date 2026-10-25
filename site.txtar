@@ -5,6 +5,9 @@ Members: page.tmpl (html/template shell), index.t.tmpl and
 legal.t.tmpl (pica documents as text/templates over the facts),
 data.fact (the site's facts, stated once), mark.svg (the mark).
 -- page.tmpl --
+{{- /* Site links are relative ($up is the way back to the site root),
+       so a page works at / and under /_draft/ alike. */ -}}
+{{- $up := "./"}}{{if ne .Page "index"}}{{$up = "../"}}{{end -}}
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{.Facts.company.statement}}">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{$up}}favicon.svg" type="image/svg+xml">
 <style>
   :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA; }
   @media (prefers-color-scheme: dark) {
@@ -60,10 +63,10 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
 <body>
 <header>
   {{.Raw.mark}}
-  <div class="name"><a href="/">repani.com</a></div>
+  <div class="name"><a href="{{$up}}">repani.com</a></div>
 </header>
 {{.Article}}
-<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="/legal/#privacy">Privacy</a> &middot; <a href="/legal/#terms">Terms</a> &middot; <a href="/legal/#company">Company</a> &middot; <a href="/AGENTS.md">Agents</a> &middot; <a href="/site.txtar">Source</a></footer>
+<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}legal/#privacy">Privacy</a> &middot; <a href="{{$up}}legal/#terms">Terms</a> &middot; <a href="{{$up}}legal/#company">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
 </body>
 </html>
 -- index.t.tmpl --

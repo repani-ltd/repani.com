@@ -42,8 +42,12 @@ forks the text.
 - After any change to `index.html`, verify from a clean module cache:
   `GOFLAGS=-mod=mod GOPROXY=direct go get repani.com/pica@latest`
   (see the private ops runbooks, "Verify the vanity import").
-- No build tooling, no JS, no analytics, no external assets.
-  Static files only. The pages are rendered, not hand-written:
+- No build step: the served files are the committed files, byte
+  for byte. `.github/workflows/pages.yml` only copies (main to `/`,
+  the `draft` branch to `/_draft/`); it never renders or rewrites,
+  and must not start to. No JS, no analytics, no external assets.
+  Site links in `page.tmpl` are relative (`$up`) so a page works at
+  both roots. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,
   legal.t.tmpl, data.fact, mark.svg; facts are stated once, in
   data.fact, and the pages reference them) and `pica html -txtar site.txtar -page NAME`
@@ -53,14 +57,14 @@ forks the text.
 
 ## Working protocol
 
-- Pushing `main` deploys. Design work happens on a branch; preview
-  locally (`python3 -m http.server` in the repo root), show the
-  result, and merge + push only on explicit go-ahead, one step at
-  a time.
-- In a cloud session (Claude Code on the web, from the phone) there
-  is no local preview: push only the session's branch and open a
-  pull request; Pavlos reviews and merges it. Never push `main`
-  from there. The SessionStart hook (`.claude/session-start.sh`)
+- Pushing `main` deploys the live site. Work happens on the `draft`
+  branch: render, commit, push `draft`, and it is live at
+  https://repani.com/_draft/ within a minute or two (on the Mac a
+  local `python3 -m http.server` preview also works). Pushing
+  `draft` needs no approval. Merging `draft` into `main` is
+  Pavlos's call, one step at a time.
+- In a cloud session (Claude Code on the web, from the phone): work
+  on `draft` and push it; never push `main`. The SessionStart hook (`.claude/session-start.sh`)
   clones the public repo to `../repani` and installs `pica` from
   it, so rendering and the path check work as on the Mac.
 - Record each settled design decision in `docs/log.t` in the same

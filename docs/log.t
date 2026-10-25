@@ -124,4 +124,15 @@ facts. The copyright year is a fact (company.copyright_year); the
 site's own remarks about pica and fact are facts (site.note_*);
 the rights metadata line is dropped from the web pages (the page
 footer carries the notice). Why: Pavlos, 2026-08-20; one statement per fact.
+.item 2026-10-25. Draft preview at /_draft/: a Pages workflow
+(.github/workflows/pages.yml) copies main's committed files to /
+and the draft branch's to /_draft/; robots.txt keeps the draft out
+of search. The leading underscore because Go ignores such
+directories, so the path can never shadow a repani package. The site links in page.tmpl became
+relative ($up) so a page works at both roots; prose .link URLs stay
+absolute. The brief's "static files, hand-written; no build
+tooling" is restated as what it protected since 2026-08-20: no
+build step, served bytes are committed bytes, the workflow copies
+and never renders. Why: Pavlos, 2026-10-25; work on the site from
+the phone, pushing draft freely and merging to main when ready.
 .font sans
