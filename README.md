@@ -16,4 +16,4 @@ binaries for linux, macOS and Windows, with checksums -- are at
 https://github.com/repani-ltd/repani/releases.
 
 How it is managed (DNS, Pages settings, verification, tagging,
-releases) lives in `repani-private/ops/`.
+releases) lives in Repani's private ops repo.

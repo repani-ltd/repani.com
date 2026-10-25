@@ -41,7 +41,7 @@ forks the text.
   processing files. Both stay.
 - After any change to `index.html`, verify from a clean module cache:
   `GOFLAGS=-mod=mod GOPROXY=direct go get repani.com/pica@latest`
-  (see `repani-private/ops/runbooks.t`, "Verify the vanity import").
+  (see the private ops runbooks, "Verify the vanity import").
 - No build tooling, no JS, no analytics, no external assets.
   Static files only. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,
@@ -57,14 +57,20 @@ forks the text.
   locally (`python3 -m http.server` in the repo root), show the
   result, and merge + push only on explicit go-ahead, one step at
   a time.
+- In a cloud session (Claude Code on the web, from the phone) there
+  is no local preview: push only the session's branch and open a
+  pull request; Pavlos reviews and merges it. Never push `main`
+  from there. The SessionStart hook (`.claude/session-start.sh`)
+  clones the public repo to `../repani` and installs `pica` from
+  it, so rendering and the path check work as on the Mac.
 - Record each settled design decision in `docs/log.t` in the same
   commit as the change (date, decision, why). Questions go to
   Pavlos one at a time; don't batch.
-- GitHub org, Pages settings, DNS: state in
-  `../repani-private/ops/github.fact`, procedures in
-  `../repani-private/ops/runbooks.t`, agent contract in
-  `../repani-private/ops/CLAUDE.md`. Read it before any action
-  that touches them; nothing secret lives in this public repo.
+- GitHub org, Pages settings, DNS: state, procedures and the agent
+  contract live in the private ops repo (on the Mac, located by
+  `~/repos/CLAUDE.md`). Read its CLAUDE.md before any action that
+  touches them. A cloud session has no copy, so it touches none of
+  them: stop and ask. Nothing secret lives in this public repo.
 - Documentation here is pica (`.t`): `pica spec` is the reference,
   `pica check FILE.t` validates. This file and README.md are the
   Markdown exceptions.
