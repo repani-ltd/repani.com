@@ -1,7 +1,7 @@
 # repani.com
 
 The website at https://repani.com, served by GitHub Pages from this
-repo (`main` at the root, the `draft` branch at `/_draft/`, custom
+repo (`main` at the root, the `draft` branch at `/draft/`, custom
 domain in `CNAME`).
 
 Its load-bearing job is the Go vanity import: `index.html` carries the

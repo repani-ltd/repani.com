@@ -6,7 +6,7 @@ legal.t.tmpl (pica documents as text/templates over the facts),
 data.fact (the site's facts, stated once), mark.svg (the mark).
 -- page.tmpl --
 {{- /* Site links are relative ($up is the way back to the site root),
-       so a page works at / and under /_draft/ alike. */ -}}
+       so a page works at / and under /draft/ alike. */ -}}
 {{- $up := "./"}}{{if ne .Page "index"}}{{$up = "../"}}{{end -}}
 <!doctype html>
 <html lang="en">

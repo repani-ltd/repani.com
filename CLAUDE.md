@@ -36,7 +36,10 @@ forks the text.
   and must fall through to the root page. Site pages live under
   paths that can never be Go packages (e.g. `/about/`,
   `/projects/`); check `../repani` before adding a new top-level
-  path.
+  path. `/draft/` is the one exception, reserved by both sides: the
+  repani module may never have a top-level `draft` directory
+  (stated in its CLAUDE.md). Pages does not serve paths that begin
+  with an underscore, so `/_draft/` was not an option.
 - `CNAME` holds the custom domain; `.nojekyll` keeps Pages from
   processing files. Both stay.
 - After any change to `index.html`, verify from a clean module cache:
@@ -44,7 +47,7 @@ forks the text.
   (see the private ops runbooks, "Verify the vanity import").
 - No build step: the served files are the committed files, byte
   for byte. `.github/workflows/pages.yml` only copies (main to `/`,
-  the `draft` branch to `/_draft/`); it never renders or rewrites,
+  the `draft` branch to `/draft/`); it never renders or rewrites,
   and must not start to. No JS, no analytics, no external assets.
   Site links in `page.tmpl` are relative (`$up`) so a page works at
   both roots. The pages are rendered, not hand-written:
@@ -59,7 +62,7 @@ forks the text.
 
 - Pushing `main` deploys the live site. Work happens on the `draft`
   branch: render, commit, push `draft`, and it is live at
-  https://repani.com/_draft/ within a minute or two (on the Mac a
+  https://repani.com/draft/ within a minute or two (on the Mac a
   local `python3 -m http.server` preview also works). Pushing
   `draft` needs no approval. Merging `draft` into `main` is
   Pavlos's call, one step at a time.

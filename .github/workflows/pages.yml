@@ -1,5 +1,5 @@
 # Deploys the site: main's committed files at /, and the draft branch's
-# (when it exists) under /_draft/. It copies, never renders or rewrites:
+# (when it exists) under /draft/. It copies, never renders or rewrites:
 # the served bytes are the committed bytes (CLAUDE.md, "No build step").
 name: pages
 
@@ -28,13 +28,13 @@ jobs:
         with:
           ref: main
           path: repo
-      - name: Copy main to / and draft to /_draft/
+      - name: Copy main to / and draft to /draft/
         run: |
           mkdir _site
           git -C repo archive HEAD | tar -x -C _site
           if git -C repo fetch --depth 1 origin draft; then
-            mkdir _site/_draft
-            git -C repo archive FETCH_HEAD | tar -x -C _site/_draft
+            mkdir _site/draft
+            git -C repo archive FETCH_HEAD | tar -x -C _site/draft
           fi
       - uses: actions/upload-pages-artifact@v3
         with:

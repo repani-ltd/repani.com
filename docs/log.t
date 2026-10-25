@@ -135,4 +135,11 @@ tooling" is restated as what it protected since 2026-08-20: no
 build step, served bytes are committed bytes, the workflow copies
 and never renders. Why: Pavlos, 2026-10-25; work on the site from
 the phone, pushing draft freely and merging to main when ready.
+.item 2026-10-25. The preview path is /draft/, not /_draft/: the
+deployed artifact held the draft, but GitHub Pages served nothing
+under a path beginning with an underscore (dot paths it serves).
+/draft/ could be a Go package path, so it is reserved instead: the
+repani module may never have a top-level draft directory, stated in
+its CLAUDE.md. Why: Pavlos, 2026-10-25, choosing /draft/ over
+/.draft/ for the cleaner URL.
 .font sans

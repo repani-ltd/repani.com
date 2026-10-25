@@ -60,7 +60,7 @@ a second. Set 2026-08-19.
 .item No build step: the served files are the committed files, byte
 for byte. Pages are rendered before commit (pica html), never at
 deploy; the deploy workflow only copies (main to /, the draft
-branch to /_draft/). No JavaScript, analytics, or external assets
+branch to /draft/). No JavaScript, analytics, or external assets
 (fonts, CDNs). Restated 2026-10-25 from "static files,
 hand-written; no build tooling" (see log).
 .item Typography, colour, layout: TO BE SET.
