@@ -10,9 +10,8 @@ other action.
 
 Repani Limited takes on the software institutions have been told
 cannot be built or replaced, and turns it into routine work. Agents
-do the work. Fleet Engineers direct them and sign for it; the fleet
-is a fleet of agents, not servers. The way of working is called Zero
-Handoff: every engineer takes their work from the first conversation
+do the work. Fleet Engineers direct them and sign for it. The way of
+working is called Zero Handoff: every engineer takes their work from the first conversation
 to production, and nobody waits for anybody. Fleet Engineer is
 defined at https://repani.com/fleet-engineer/. Repani is itself
 operated by agents.

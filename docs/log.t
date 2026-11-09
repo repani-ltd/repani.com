@@ -282,4 +282,10 @@ module path. Each licence text is in fonts/. Why: the brief, Design constraints.
 the chain" against "The Fleet Engineer who signs", replacing "Split among the
 specialists". The two cells are parallel and add no new fact. Why: the session
 holding the brief, asked on Pavlos's instruction, 2026-11-09.
+.item 2026-11-09. "The fleet is a fleet of agents, not servers." leaves the
+statement, reversing the entry above that added it, and site.fleet_gloss goes
+with it. "Agents do the work. Fleet Engineers direct them" already satisfies the
+first-use rule, and a disclaimer above the fold costs the opening its
+confidence. The definition says it positively: "with a fleet of agents". Why:
+the session holding the brief, asked on Pavlos's instruction, 2026-11-09.
 .font sans

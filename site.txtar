@@ -25,7 +25,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{{.Facts.site.subhead}} {{.Facts.company.statement}} {{.Facts.site.fleet_gloss}}">
+<meta name="description" content="{{.Facts.site.subhead}} {{.Facts.company.statement}}">
 <link rel="icon" href="{{$up}}favicon.ico" sizes="32x32">
 <link rel="icon" href="{{$up}}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{$up}}apple-touch-icon.png">
@@ -91,7 +91,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
 
 {{.site.subhead}}
 
-{{.company.statement}} {{.site.fleet_gloss}}
+{{.company.statement}}
 
 # Zero Handoff.
 
@@ -281,7 +281,6 @@ reference.result: str = "The whole software was rewritten in six months, by less
 site.title: str = "Repani"
 site.headline: str = "Make the impossible boring."
 site.subhead: str = "The end of the software project."
-site.fleet_gloss: str = "The fleet is a fleet of agents, not servers."
 site.fleet_engineer: str = "A Fleet Engineer takes a piece of work end to end with a fleet of agents, in parallel with others doing the same, vets what the agents produce, and signs for it."
 site.zero_handoff: str = "Every engineer takes their work from the first conversation to production, and nobody waits for anybody."
 -- logo.svg --
