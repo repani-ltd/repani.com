@@ -144,4 +144,6 @@ a footer of those three links, pinned to the foot of the viewport. Why: Pavlos,
 is kept on branch full-site, at da6bc4d, the last commit before the root page
 became the mark and one line. It will be worked on and released later; the
 branch does not deploy. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. The contact address is removed from the Company page and from
+data.fact: the mailbox does not exist yet. Why: Pavlos, 2026-11-09.
 .font sans

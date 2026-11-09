@@ -11,7 +11,7 @@ other action.
 Repani Limited builds the tools, the method and the agentic setup
 for delivering enterprise software with AI agents, and owns them as
 source code. The company is itself run by agents, with a human
-owner where it counts. Contact: hello@repani.com.
+owner where it counts.
 
 ## The site, as files
 

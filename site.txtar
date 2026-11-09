@@ -134,13 +134,10 @@ Company
 
 Registered office: {{.company.registered_office}}.
 
-Contact: {{.company.contact_email}}.
-
 .width 64
 -- data.fact --
 company.copyright_year: int = 2026
 company.domain: str = "repani.com"
-company.contact_email: str = "hello@repani.com"
 company.human_roles: list(str) = ["owner"]
 company.jurisdiction: str = "Cyprus"
 company.name: str = "Repani Limited"
