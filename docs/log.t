@@ -183,4 +183,10 @@ paper colour) join favicon.svg at the root, which is where browsers and iOS look
 for them. favicon.svg gets a square viewBox. The copy embedded in pica
 (cmd/pica/mark.stream, repani repo) is not touched here and still holds the old
 mark. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. New brief, replacing that of 2026-08-19: the site's job is to
+show within two minutes that Repani is real, what it does and why to believe it.
+Mission above the fold, "Make the impossible boring. One engineer. A fleet of
+agents."; Fleet Engineer defined on its own page; evidence over adjectives;
+English only, so the Greek lines leave the root page when the site is rebuilt.
+The site itself is unchanged by this entry. Why: Pavlos, 2026-11-09.
 .font sans

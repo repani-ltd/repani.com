@@ -2,64 +2,107 @@ repani.com brief
 .rem Direction for the repani.com site. Set by Pavlos; an agent reads it, does
 .rem not write it. Changes arrive as new direction and are logged in log.t.
 .by Pavlos Christoforou
-.date 2026-08-19
+.date 2026-11-09
 
 This document is the direction for the site: what it is for, who it is for, how
 it should read and look, and what it must never do. The invariants that protect
-the Go vanity import live in CLAUDE.md and are not repeated here.
+the Go vanity import live in CLAUDE.md and are not repeated here. It replaces
+the brief of 2026-08-19.
 
 # Purpose
 
-Two jobs, one site: the company page for Repani Limited, and the index of its
-public projects. The vanity import is served by the root page and is the one
-thing that must keep working whatever else changes.
+Someone the reader trusts has mentioned Repani. In two minutes the site must
+show that Repani is real, what it does, and why to believe it. It also indexes
+the public projects, and the vanity import served by the root page must keep
+working whatever else changes.
 
 # Audience
 
 In order of priority:
 
-.item An enterprise reader (prospective client or partner) checking whether
-Repani is real, what it does, and who stands behind it.
-.item An engineer who arrived via go get or a README link and wants to know what
-repani.com/<project> is and how to use it.
-.item A reader curious about the agent-run company itself.
+.item Senior technology and business leaders at large institutions, and at the
+AI companies and investment firms that work with them. Short of time, sceptical,
+fluent in banking and enterprise risk.
+.item An engineer checking whether the work is real, who will read the code.
+.item An agent, through AGENTS.md.
 
-The order decides what goes above the fold: company first, project index second,
-the org story third. Set 2026-08-19.
+# The message
 
-# Company statement
+Above the fold, in this order and these words:
 
-The one claim the root page makes, above the fold: Repani Limited builds
-protocols and specifications that agents can be trusted to build against, such
-as pica and fact, and is itself run by agents, with humans where it counts. The
-"run by agents" clause stays in the headline as the second clause, never the
-first. Set 2026-08-19.
+.pre
+Make the impossible boring.
+One engineer. A fleet of agents.
+.end
+
+Then the plain statement of what the company does: Repani takes on the software
+institutions have been told cannot be built or replaced, and turns it into
+routine work. Agents do the work. A Fleet Engineer directs them and signs for
+it.
+
+The confidence is in the claim, never in the adjectives.
+
+# Fleet Engineer
+
+Repani's term, and the site is where it is defined. A Fleet Engineer is one
+person who directs a fleet of agents across a whole delivery, vets what they
+produce, and signs for it. Always introduce the title together with "one
+engineer, a fleet of agents", so that it is not read as server infrastructure.
+The definition has its own page so that it can be cited.
+
+# Evidence
+
+Everything claimed is shown or can be checked.
+
+.item The reference: a platform of global importance at a tier-1 global bank,
+delivered by agents, with one human role in place of the usual split of
+specialists, and every line vetted by a human. The client stays unnamed, and
+nothing may identify it: no country, no business line, no product.
+.item Numbers (time, team, cost) appear only once Pavlos has cleared each one.
+Until then write the sentence without the number.
+.item The public code: pica, fact and the other modules, linked, because an
+engineer can inspect them today.
+.item The method: enough to show that it exists and how it differs. Not the
+prompts, the playbooks or the internal setup.
+
+That Repani is itself operated by agents is supporting evidence, stated plainly
+and never the headline.
 
 # Voice
 
 Restrained engineering house. Plain declarative sentences; no marketing
-register. The radish (the name means radish in Greek) appears as a small mark
-and at most one very light wink per page; it is never the theme. Set 2026-08-19.
+register. English only. The radish appears as the logo and nowhere else.
 
 # Site map
 
-.table 14L *L
+.table 22L *L
 ^path | role
-/ | landing: company, vanity import, project index
+/ | the message, the evidence, the project index, the vanity import
+/fleet-engineer/ | the definition
+/legal/ | privacy, terms, company
 .end
 
 Module paths (/ascon, /golay, /lz4s, /pica, /fact, and any future top-level
-directory of the repani.com module) are reserved and must 404. Further pages:
-none at launch; one page until a consumer demands a second. Set 2026-08-19.
+directory of the repani.com module) are reserved and must 404. Another page
+needs a reader who demands it. The earlier full site is on branch full-site and
+may be drawn from.
+
+A contact address appears once the mailbox exists, and not before.
 
 # Design constraints
 
 .item No build step: the served files are the committed files, byte for byte.
 Pages are rendered before commit (pica html), never at deploy; the deploy
 workflow only copies (main to /, the draft branch to /draft/). No JavaScript,
-analytics, or external assets (fonts, CDNs). Restated 2026-10-25 from "static
-files, hand-written; no build tooling" (see log).
-.item Typography, colour, layout: TO BE SET.
+analytics, or external assets (fonts, CDNs).
+.item The logo, its colours and the paper colour are settled; use them as they
+are. Light mode only, for now.
+
+# Done means
+
+A reader with no context can answer these from the page, in two minutes: what
+does this company do; why should I believe it; what is a Fleet Engineer. Each
+answer must be supported by something on the page.
 
 # Never
 
@@ -67,4 +110,8 @@ files, hand-written; no build tooling" (see log).
 .item Add a page at a module path.
 .item Duplicate project documentation here; link to or render the source of
 truth in the project repos.
+.item Use the word consultant or consulting for anything Repani does.
+.item State a headcount, a team's availability, or who holds rights in any
+client work.
+.item Make statements about the company's future or plans.
 .font sans
