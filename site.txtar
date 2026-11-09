@@ -51,7 +51,6 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
   article h2::before { content: counter(section) "."; display: inline-block; min-width: 2.2em; color: var(--muted); font-weight: 400; }
   article h3 { font-size: clamp(1.3rem, 4.4vw, 1.6rem); line-height: 1.25; letter-spacing: -.02em; margin: 0 0 1.25rem; }
   article h3 + h3 { margin-top: -.85rem; }
-  article h3 + h3 + h3 { margin-top: 1.9rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
   article p.link { font-size: .9rem; margin: 0 0 1em; }
@@ -147,10 +146,8 @@ The Fleet Engineer is what is left when the team has been rebuilt.
 
 ## That's why you're here.
 
-## We took out the waiting. We kept the controls.
-
-The institution keeps requirements, UAT approval, compliance, security and
-internal audit.
+We know what a tier-1 bank demands before anything goes live. The controls stay.
+The waiting goes.
 
 # The Decision Desk
 
@@ -160,11 +157,12 @@ Agents are not only the makers. In operations too, embedded agents, local and
 hosted, do the work, and people approve it.
 
 The Decision Desk is what an operations team becomes when it no longer has to do
-the work: deciding the cases that are not routine, saying no when the machine is
+the work: approving what the agents have done, deciding the cases that are not routine, saying no when the machine is
 wrong, answering for the result.
 
 The experienced people on it are the stars. Engineers have seldom given their
-operations colleagues a thought. Here they are the point.
+operations colleagues a thought. In this way of working, those colleagues are
+the point.
 
 # The reference
 
@@ -172,15 +170,14 @@ operations colleagues a thought. Here they are the point.
 ^ | Tier-1 global bank
 Platform | Of global importance
 Delivery | By agents
-Human roles | One, in place of the usual split of specialists
+Human roles on the team | One, in place of the usual split of specialists
 Vetting | Every line, by a human
 Result | {{.reference.result}}
 .end
 
 Zero Handoff was the way of working.
 
-The public code was built with agents and signed by a person. An engineer can
-read it.
+The public code was built with agents. An engineer can read it.
 .link {{.go.repo}} Public code
 
 # The company
@@ -196,7 +193,7 @@ Fleet Engineer
 
 {{.site.fleet_engineer}}
 
-The term is Repani's, and this page is where it is defined.
+Repani's use of the term is defined here.
 
 # The role
 
@@ -207,7 +204,7 @@ production.
 Fleet Engineers work in parallel, each with a fleet of agents. Nobody waits for
 anybody.
 .term Vets
-Every line the agents produce is vetted by a human.
+A Fleet Engineer vets what the agents produce.
 .term Signs
 The Fleet Engineer signs for it. The signature is a person's, not an agent's.
 
