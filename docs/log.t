@@ -134,4 +134,10 @@ Why: Pavlos, 2026-11-09, who chose the wording.
 and the one line, and the company statement, project index and org sections
 leave the page. This is new direction over the brief's site map and fold order.
 /legal/ remains served but is not linked from the root. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. Legal notices become three pages, /legal/privacy.html,
+/legal/terms.html and /legal/company.html, replacing the single /legal/ page of
+2026-08-19, whose anchors never existed in the render (pica emits no heading
+ids), so its footer links only reached the top of the page. The root page gains
+a footer of those three links, pinned to the foot of the viewport. Why: Pavlos,
+2026-11-09; the notices must be reachable from the root.
 .font sans

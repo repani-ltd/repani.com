@@ -21,7 +21,7 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl` and `legal.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg` | the mark | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |
@@ -50,7 +50,7 @@ Or from source, with Go installed:
     go install repani.com/fact/cmd/fact@latest
     curl -s https://repani.com/site.txtar -o site.txtar
     pica html -txtar site.txtar -page index   # the root page, exactly as served
-    pica html -txtar site.txtar -page legal   # the legal page
+    pica html -txtar site.txtar -page privacy # also: terms, company
     pica spec                                 # the pica language reference
 
 To work with one member on its own, cut it out of the archive

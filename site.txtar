@@ -1,9 +1,11 @@
 repani.com -- the site as one archive. Render a page:
     pica html -txtar site.txtar -page index -o index.html
-    pica html -txtar site.txtar -page legal -o legal/index.html
-Members: page.tmpl (html/template shell), index.t.tmpl and
-legal.t.tmpl (pica documents as text/templates over the facts),
-data.fact (the site's facts, stated once), mark.svg (the mark).
+    pica html -txtar site.txtar -page privacy -o legal/privacy.html
+    pica html -txtar site.txtar -page terms -o legal/terms.html
+    pica html -txtar site.txtar -page company -o legal/company.html
+Members: page.tmpl (html/template shell), index.t.tmpl,
+privacy.t.tmpl, terms.t.tmpl and company.t.tmpl (pica documents
+as text/templates over the facts), data.fact (the site's facts, stated once), mark.svg (the mark).
 -- page.tmpl --
 {{- /* Site links are relative ($up is the way back to the site root),
        so a page works at / and under /draft/ alike. */ -}}
@@ -60,14 +62,16 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
   body > footer a:hover { color: var(--ink); }
   body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
               display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
-  body.home > svg { width: min(60vmin, 24rem); height: auto; }
+  body.home > svg { width: min(60vmin, 24rem); height: auto; margin-top: auto; }
   body.home article h1 { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
+  body.home > footer { margin-top: auto; padding-top: 0; border-top: none; }
 </style>
 </head>
 {{- if eq .Page "index"}}
 <body class="home">
 {{.Raw.mark}}
 {{.Article}}
+<footer lang="en"><a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a></footer>
 </body>
 {{- else}}
 <body>
@@ -76,7 +80,7 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
   <div class="name"><a href="{{$up}}">repani.com</a></div>
 </header>
 {{.Article}}
-<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}legal/#privacy">Privacy</a> &middot; <a href="{{$up}}legal/#terms">Terms</a> &middot; <a href="{{$up}}legal/#company">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
+<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
 </body>
 {{- end}}
 </html>
@@ -85,14 +89,9 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
 .rem Root page. Rendered by: pica html -txtar site.txtar -page index -o index.html
 
 .width 64
--- legal.t.tmpl --
-Legal
-.rem Legal page. Rendered by: pica html -txtar site.txtar -page legal -o legal/index.html
-
-The notices that apply to this website, {{.company.domain}}, and to
-{{.company.name}} as its publisher.
-
-# Privacy
+-- privacy.t.tmpl --
+Privacy
+.rem Rendered by: pica html -txtar site.txtar -page privacy -o legal/privacy.html
 
 This site is a set of static pages. It sets no cookies, runs no
 scripts, embeds no third-party content and contains no forms; it
@@ -109,7 +108,10 @@ If you write to us, we keep your message for as long as the
 correspondence needs; we do not share it and do not add you to any
 list.
 
-# Terms of use
+.width 64
+-- terms.t.tmpl --
+Terms of use
+.rem Rendered by: pica html -txtar site.txtar -page terms -o legal/terms.html
 
 The content of this site is provided for information, as is,
 without warranty of any kind. {{.company.name}} accepts no liability
@@ -123,7 +125,10 @@ Text and the Repani mark on this site are © {{.company.name}}.
 The mark may be shown unaltered to refer to {{.company.name}} or its
 projects and may not be used to suggest endorsement.
 
-# Company
+.width 64
+-- company.t.tmpl --
+Company
+.rem Rendered by: pica html -txtar site.txtar -page company -o legal/company.html
 
 {{.company.name}}, a company registered in {{.company.jurisdiction}}.
 
@@ -170,7 +175,7 @@ site.note_fact: str = "This site's facts are the data.fact member of site.txtar.
 site.agent_contract: str = "https://repani.com/AGENTS.md"
 site.bundle: str = "https://repani.com/site.txtar"
 site.renderer: str = "pica html -txtar site.txtar -page NAME (repani.com/pica)"
-site.sources: list(str) = ["site.txtar (members: page.tmpl, index.t, legal.t, data.fact, mark.svg)", "AGENTS.md", "favicon.svg", "docs/mark/mark-colour.stream", "docs/mark/mark-mono.stream"]
+site.sources: list(str) = ["site.txtar (members: page.tmpl, index.t.tmpl, privacy.t.tmpl, terms.t.tmpl, company.t.tmpl, data.fact, mark.svg)", "AGENTS.md", "favicon.svg", "docs/mark/mark-colour.stream", "docs/mark/mark-mono.stream"]
 site.updated: datetime = 2026-08-20
 -- mark.svg --
 <svg aria-hidden="true" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
