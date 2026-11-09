@@ -130,4 +130,8 @@ mark, enlarged and centred, over one line in Cypriot Greek, "Δουλεύκου�
 ατζέντηες" (site.slogan); no header, sections or footer. The go-import and
 go-source tags are unchanged and /legal/ still renders, unlinked from the root.
 Why: Pavlos, 2026-11-09, who chose the wording.
+.item 2026-11-09. Shipped the atzenties mock to main: the root page is the mark
+and the one line, and the company statement, project index and org sections
+leave the page. This is new direction over the brief's site map and fold order.
+/legal/ remains served but is not linked from the root. Why: Pavlos, 2026-11-09.
 .font sans
