@@ -31,8 +31,9 @@
   article h1 { font-size: 1.75rem; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 1.25rem; }
   article h2 { counter-increment: section; font-size: .9rem; line-height: 1.4; margin: 3.75rem 0 1rem; padding-top: .7rem; border-top: 1px solid var(--ink); }
   article h2::before { content: counter(section) "."; display: inline-block; min-width: 2.2em; color: var(--muted); font-weight: 400; }
-  article h3 { font-size: .9rem; margin: 1.6rem 0 .6rem; }
-  article h2 + h3 { font-size: clamp(1.3rem, 4.4vw, 1.6rem); line-height: 1.25; letter-spacing: -.02em; margin: 0 0 1.25rem; }
+  article h3 { font-size: clamp(1.3rem, 4.4vw, 1.6rem); line-height: 1.25; letter-spacing: -.02em; margin: 0 0 1.25rem; }
+  article h3 + h3 { margin-top: -.85rem; }
+  article h3 + h3 + h3 { margin-top: 1.9rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
   article p.link { font-size: .9rem; margin: 0 0 1em; }
@@ -93,9 +94,21 @@
 </tbody>
 </table>
 <h2>Fleet Engineer</h2>
+<h3>Fewer engineers. Far better ones.</h3>
 <p>The Fleet Engineer is what is left when the team has been rebuilt.</p>
 <p>A Fleet Engineer takes a piece of work end to end with a fleet of agents, in parallel with others doing the same, vets what the agents produce, and signs for it.</p>
+<p>Agents do not make the engineer cheaper. The role takes more experience and broader knowledge than the old specialisms did.</p>
 <p class="link"><a href="fleet-engineer/">The definition</a></p>
+<h2>Accountability</h2>
+<h3>An agent can do the work. It can&#39;t answer for it.</h3>
+<h3>That&#39;s why you&#39;re here.</h3>
+<h3>We took out the waiting. We kept the controls.</h3>
+<p>The institution keeps requirements, UAT approval, compliance, security and internal audit.</p>
+<h2>The Decision Desk</h2>
+<h3>What is left is judgment.</h3>
+<p>Agents are not only the makers. In operations too, embedded agents, local and hosted, do the work, and people approve it.</p>
+<p>The Decision Desk is what an operations team becomes when it no longer has to do the work: deciding the cases that are not routine, saying no when the machine is wrong, answering for the result.</p>
+<p>The experienced people on it are the stars. Engineers have seldom given their operations colleagues a thought. Here they are the point.</p>
 <h2>The reference</h2>
 <table>
 <thead>

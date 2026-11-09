@@ -13,8 +13,9 @@ cannot be built or replaced, and turns it into routine work. Agents
 do the work. Fleet Engineers direct them and sign for it. The way of
 working is called Zero Handoff: every engineer takes their work from the first conversation
 to production, and nobody waits for anybody. Fleet Engineer is
-defined at https://repani.com/fleet-engineer/. Repani is itself
-operated by agents.
+defined at https://repani.com/fleet-engineer/. The Decision Desk is
+what an operations team becomes when agents do the work and people
+approve it. Repani is itself operated by agents.
 
 ## The site, as files
 
