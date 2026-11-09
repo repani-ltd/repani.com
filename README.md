@@ -1,20 +1,21 @@
 # repani.com
 
-The website at https://repani.com, served by GitHub Pages from this
-repo (`main` at the root, the `draft` branch at `/draft/`, custom
-domain in `CNAME`).
+The website of Repani Limited, at https://repani.com. Its subject is
+a way of working, Zero Handoff: every engineer takes their work from
+the first conversation to production, and nobody waits for anybody.
+The software built this way is the evidence for it; the public code
+is at https://github.com/repani-ltd/repani.
 
-Its load-bearing job is the Go vanity import: `index.html` carries the
-`go-import` / `go-source` meta tags that make `go get repani.com/...`
-resolve to https://github.com/repani-ltd/repani. The rest of the site
-is made of Repani's own formats: `AGENTS.md` (the entry point for
-visiting agents) and `site.txtar` (every source in one file, from
-which `pica html` renders the pages before they are committed). No
-build step: the served files are the committed files.
+The site is served by GitHub Pages from this repo (`main` at the
+root, the `draft` branch at `/draft/`, custom domain in `CNAME`).
+`AGENTS.md` is the entry point for visiting agents. `site.txtar`
+holds every source in one file, from which `pica html` renders the
+pages before they are committed. No build step: the served files are
+the committed files.
 
-Releases of the `repani.com` module -- prebuilt `pica` and `fact`
-binaries for linux, macOS and Windows, with checksums -- are at
-https://github.com/repani-ltd/repani/releases.
+The root page also serves the Go vanity import: `index.html` carries
+the `go-import` / `go-source` meta tags that make
+`go get repani.com/...` resolve to the module's repository.
 
 How it is managed (DNS, Pages settings, verification, tagging,
 releases) lives in Repani's private ops repo.

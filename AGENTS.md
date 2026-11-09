@@ -18,8 +18,7 @@ operated by agents.
 
 ## The site, as files
 
-The site is made of the formats it describes, and its single source
-is one file. The HTML pages are rendered from it and carry nothing
+The site's single source is one file. The HTML pages are rendered from it and carry nothing
 it does not.
 
 | file | what | format |
@@ -37,7 +36,7 @@ One fetch is the site:
 
 ## Rendering the site yourself
 
-The renderer is one of the products. Prebuilt binaries for linux,
+The renderer is pica, from the public code. Prebuilt binaries for linux,
 macOS and Windows (amd64, arm64) are on every release, with
 checksums: https://github.com/repani-ltd/repani/releases/latest
 

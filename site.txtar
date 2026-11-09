@@ -99,7 +99,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
 A software project is a chain of handoffs. Take away the handoffs and the
 project is gone.
 
-Many Fleet Engineers work in parallel. No one is blocked waiting for an analyst,
+Fleet Engineers work in parallel. No one is blocked waiting for an analyst,
 a backend or frontend developer, or QA. Expertise differs; the role does not.
 
 # The thesis
@@ -145,13 +145,12 @@ Delivery | By agents
 Human roles | One, in place of the usual split of specialists
 Vetting | Every line, by a human
 Result | {{.reference.result}}
-Client | Not named
 .end
 
-Zero Handoff is the method. The prompts, the playbooks and the internal setup
-are not published.
+Zero Handoff was the way of working.
 
-The public code was built the same way. An engineer can read it.
+The public code was built with agents and signed by a person. An engineer can
+read it.
 .link {{.go.repo}} Public code
 
 # The company
@@ -175,7 +174,7 @@ The term is Repani's, and this page is where it is defined.
 A Fleet Engineer takes a piece of work from the first conversation to
 production.
 .term In parallel
-Many Fleet Engineers work at once, each with a fleet of agents. Nobody waits for
+Fleet Engineers work in parallel, each with a fleet of agents. Nobody waits for
 anybody.
 .term Vets
 Every line the agents produce is vetted by a human.
