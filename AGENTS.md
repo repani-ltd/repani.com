@@ -24,7 +24,7 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, the reference, the modules and the site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, the reference and the site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` | the mark as icons | SVG, ICO, PNG |
 | `/fonts/` | the two typefaces, subset and renamed Repani Mono (from JuliaMono) and Repani Text (from Source Serif 4), each with its licence | woff2, OFL text |

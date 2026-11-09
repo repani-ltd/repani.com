@@ -292,4 +292,11 @@ the session holding the brief, asked on Pavlos's instruction, 2026-11-09.
 page: the brief asks the reader to feel it, so the page does not say it. What
 happened ends on the six-months sentence. Why: the session holding the brief,
 asked on Pavlos's instruction, 2026-11-09.
+.item 2026-11-09. The numbered Public code section and its list of module links
+leave the root page. One sentence and one link to the repository close the
+reference section, and the company becomes section 5. New direction over the
+brief's "small section near the foot" and the site map's project index: the code
+is an engineer's credential, and it should be available without being
+emphasised. go.modules and the other go.* facts no page uses are removed;
+go.repo stays. Why: Pavlos, 2026-11-09.
 .font sans

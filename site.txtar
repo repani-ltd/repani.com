@@ -55,9 +55,6 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
   article p.byline { color: var(--muted); }
   article p.link { font-size: .9rem; margin: 0 0 1em; }
   article p.link::before { content: "\2192\00a0"; color: var(--muted); }
-  article p.link:has(+ p.link), article p.link + p.link { display: inline-block; margin: 0 1.5em .5em 0; }
-  article p.link:has(+ p.link)::before, article p.link + p.link::before { content: none; }
-  article p.link + p:not(.link) { margin-top: .6em; }
   article ul { padding-left: 1.2em; margin: 0 0 1em; }
   article dl { margin: 0 0 1em; }
   article dt { font-size: .9rem; font-weight: 700; }
@@ -154,16 +151,8 @@ Client | Not named
 Zero Handoff is the method. The prompts, the playbooks and the internal setup
 are not published.
 
-# Public code
-
-The public code was built the same way. An engineer can read it today.
-
-{{range .go.modules}}.link {{$.go.repo}}/tree/{{$.go.branch}}/{{.}} {{.}}
-{{end}}
-One Go module, {{.go.module}}, under the {{.go.license}} licence.
-
-.link {{.go.repo}} Repository
-.link {{.go.releases}} Releases
+The public code was built the same way. An engineer can read it.
+.link {{.go.repo}} Public code
 
 # The company
 
@@ -269,11 +258,6 @@ company.name: str = "Repani Limited"
 company.registered_office: str = "118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus"
 company.site: str = "https://repani.com"
 company.statement: str = "Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. Fleet Engineers direct them and sign for it."
-go.branch: str = "main"
-go.license: str = "Apache-2.0"
-go.module: str = "repani.com"
-go.modules: list(str) = ["pica", "fact", "row", "kv", "kiosk", "chrometest", "ascon", "durable", "golay", "lz4s", "trudge", "typeset"]
-go.releases: str = "https://github.com/repani-ltd/repani/releases"
 go.repo: str = "https://github.com/repani-ltd/repani"
 reference.result: str = "The whole software was rewritten in six months, by less than half the team."
 site.title: str = "Repani"
