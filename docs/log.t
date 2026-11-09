@@ -248,4 +248,34 @@ anybody. "The end of the software project" becomes the second mission line,
 replacing "One engineer. A fleet of agents.", which wrongly implied one person.
 The new line is "Everyone is a Fleet Engineer. Nobody waits.", and the Fleet
 Engineer's definition now says many work in parallel. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. Site rewritten to the brief as it now stands. Root page order:
+the mission lines and statement, then numbered sections: Zero Handoff, the
+thesis (what happened, the precedent, the usual team against the rebuilt one),
+Fleet Engineer, the reference, public code, the company. Section numbers are CSS
+counters, so the headings keep the brief's exact words. Why: the brief.
+.item 2026-11-09. The statement keeps the brief's words and is followed by "The
+fleet is a fleet of agents, not servers." (site.fleet_gloss), because the
+statement is the title's first use and the brief requires the fleet to be clear
+there. Why: the brief, Fleet Engineer section.
+.item 2026-11-09. The copy that made one person the whole delivery is gone,
+including the method's bullets, which said how rather than what changed. The
+method is now named and left there: Zero Handoff, with the prompts, playbooks
+and internal setup unpublished. Why: the brief, "Say what changed; never how to
+get there."
+.item 2026-11-09. In the team table the usual team's "Who answers for it" reads
+"Split among the specialists": the brief says only "the usual split of
+specialists", and this is the nearest statement it supports. Why: the brief asks
+for that row and limits the table to what it says.
+.item 2026-11-09. The project index is twelve module names as source links, near
+the foot; the one-sentence summaries and their facts are removed and go.modules
+replaces the project entities. Why: the brief, "Proof, not a catalogue".
+.item 2026-11-09. Fonts, replacing the system fonts above: Repani Mono (Regular,
+Bold) from JuliaMono in the public module's pica/pdf/fonts, and Repani Text
+(Regular) from SourceSerif4-Regular.ttf on the release branch of
+adobe-fonts/source-serif. Both licences reserve a name (JuliaMono; Source), so
+name IDs 1 to 4 and 6 carry the new names; IDs 0, 5, 13 and 14 are kept. Recipe:
+fontTools Subsetter over the characters in the body text of the rendered pages
+plus 0-9, full stop, U+2192 and U+00A0, name IDs 0-6, 13, 14, hinting dropped,
+saved as woff2 to fonts/. /fonts has no index page, so it 404s and shadows no
+module path. Each licence text is in fonts/. Why: the brief, Design constraints.
 .font sans

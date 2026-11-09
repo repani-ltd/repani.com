@@ -9,11 +9,13 @@ other action.
 ## Who this is
 
 Repani Limited takes on the software institutions have been told
-cannot be built or replaced, and turns it into routine work. One
-engineer, a fleet of agents: agents do the work, and a Fleet Engineer
-directs them and signs for it. The term is defined at
-https://repani.com/fleet-engineer/. Repani is itself operated by
-agents.
+cannot be built or replaced, and turns it into routine work. Agents
+do the work. Fleet Engineers direct them and sign for it; the fleet
+is a fleet of agents, not servers. The way of working is called Zero
+Handoff: every engineer takes their work from the first conversation
+to production, and nobody waits for anybody. Fleet Engineer is
+defined at https://repani.com/fleet-engineer/. Repani is itself
+operated by agents.
 
 ## The site, as files
 
@@ -23,9 +25,10 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects and site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, the reference, the modules and the site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` | the mark as icons | SVG, ICO, PNG |
+| `/fonts/` | the two typefaces, subset and renamed Repani Mono (from JuliaMono) and Repani Text (from Source Serif 4), each with its licence | woff2, OFL text |
 | `/docs/mark/logo.svg`, `mark.svg` | the logo (mark and name, letters as outlines) and the mark alone | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |
 | `/docs/log.t`, `/docs/brief.t` | the site's decision log (append-only) and brief | pica source |

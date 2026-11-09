@@ -49,6 +49,9 @@ forks the text.
   for byte. `.github/workflows/pages.yml` only copies (main to `/`,
   the `draft` branch to `/draft/`); it never renders or rewrites,
   and must not start to. No JS, no analytics, no external assets.
+  The fonts are served from `/fonts/`, subset to the characters the
+  pages use: a new character in the copy needs a new subset (recipe
+  in `docs/log.t`, 2026-11-09).
   Site links in `page.tmpl` are relative (`$up`) so a page works at
   both roots. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,

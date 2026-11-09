@@ -4,46 +4,53 @@
 <meta charset="utf-8">
 <title>Company | Repani</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="One engineer. A fleet of agents. Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. A Fleet Engineer directs them and signs for it.">
+<meta name="description" content="The end of the software project. Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. Fleet Engineers direct them and sign for it. The fleet is a fleet of agents, not servers.">
 <link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>
-  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #5F6778; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA;
-          --mono: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
-          --text: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif; }
+  @font-face { font-family: "Repani Mono"; font-weight: 400; font-display: swap; src: url("../fonts/repani-mono-regular.woff2") format("woff2"); }
+  @font-face { font-family: "Repani Mono"; font-weight: 700; font-display: swap; src: url("../fonts/repani-mono-bold.woff2") format("woff2"); }
+  @font-face { font-family: "Repani Text"; font-weight: 400; font-display: swap; src: url("../fonts/repani-text-regular.woff2") format("woff2"); }
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #5F6778; --red: #C1121F; --rule: #E3DFC8;
+          --mono: "Repani Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          --text: "Repani Text", Georgia, serif; }
   html { background: var(--paper); -webkit-text-size-adjust: 100%; }
-  body { box-sizing: border-box; max-width: 46rem; margin: 0 auto; padding: 2.25rem 1.5rem 2.5rem; color: var(--ink);
-         font-family: var(--text); font-size: 1.125rem; line-height: 1.55; }
-  header { margin-bottom: 3.25rem; }
+  body { box-sizing: border-box; max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 2.5rem; color: var(--ink);
+         font-family: var(--text); font-size: 1.1875rem; line-height: 1.55; font-synthesis: none; }
+  header { margin-bottom: 4rem; }
   header a { display: inline-block; }
   header svg { display: block; height: 2.6rem; width: auto; }
   a { color: var(--red); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  article h1 { font-family: var(--mono); font-size: 1.75rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 1.1rem; }
-  article h2 { font-family: var(--mono); font-size: .95rem; margin: 2.75rem 0 .8rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
-  article h3 { font-family: var(--mono); font-size: .95rem; margin: 1.6rem 0 .6rem; }
+  h1, h2, h3, table, dt, p.link, body > footer { font-family: var(--mono); font-variant-ligatures: none; }
+  article { counter-reset: section; }
+  article h1 { font-size: 1.75rem; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 1.25rem; }
+  article h2 { counter-increment: section; font-size: .9rem; line-height: 1.4; margin: 3.75rem 0 1rem; padding-top: .7rem; border-top: 1px solid var(--ink); }
+  article h2::before { content: counter(section) "."; display: inline-block; min-width: 2.2em; color: var(--muted); font-weight: 400; }
+  article h3 { font-size: .9rem; margin: 1.6rem 0 .6rem; }
+  article h2 + h3 { font-size: clamp(1.3rem, 4.4vw, 1.6rem); line-height: 1.25; letter-spacing: -.02em; margin: 0 0 1.25rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
-  article p.link { font-family: var(--mono); font-size: .95rem; margin: 0 0 1em; }
+  article p.link { font-size: .9rem; margin: 0 0 1em; }
   article p.link::before { content: "\2192\00a0"; color: var(--muted); }
-  article p.link:has(+ p:not(.link)) { margin-bottom: .1rem; }
-  article p.link + p:not(.link) { margin-bottom: 1.1em; }
+  article p.link:has(+ p.link), article p.link + p.link { display: inline-block; margin: 0 1.5em .5em 0; }
+  article p.link:has(+ p.link)::before, article p.link + p.link::before { content: none; }
+  article p.link + p:not(.link) { margin-top: .6em; }
   article ul { padding-left: 1.2em; margin: 0 0 1em; }
-  article li { margin: 0 0 .45em; }
   article dl { margin: 0 0 1em; }
-  article dt { font-family: var(--mono); font-size: .95rem; font-weight: bold; }
-  article dd { margin: 0 0 .8em; }
-  article pre { font-family: var(--mono); font-size: .9rem; background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
-  article blockquote { margin: 0 1.2em 1em; color: var(--muted); }
-  article table { border-collapse: collapse; margin: 0 0 1em; width: 100%; }
-  article th, article td { text-align: left; vertical-align: top; padding: .3em .8em .3em 0; border-bottom: 1px solid var(--rule); }
-  article footer { margin-top: 2em; color: var(--muted); }
-  body.home article h1 { font-size: clamp(2rem, 5.6vw, 2.6rem); margin-bottom: .3em; }
-  body.home article h1 + p { font-family: var(--mono); font-size: clamp(1.15rem, 3vw, 1.45rem); line-height: 1.3; margin-bottom: 1.5rem; }
+  article dt { font-size: .9rem; font-weight: 700; }
+  article dd { margin: 0 0 .9em; }
+  article table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: .8rem; line-height: 1.45; }
+  article th, article td { text-align: left; vertical-align: top; padding: .55em 1em .55em 0; border-bottom: 1px solid var(--rule); }
+  article th { font-weight: 700; border-bottom: 1px solid var(--ink); }
+  article td:last-child, article th:last-child { padding-right: 0; }
+  article td:first-child { color: var(--muted); }
+  body.home header { margin-bottom: 4.5rem; }
+  body.home article h1 { font-size: clamp(2rem, 5.9vw, 2.55rem); margin-bottom: .35em; }
+  body.home article h1 + p { font-family: var(--mono); font-variant-ligatures: none; font-size: clamp(1.1rem, 3vw, 1.4rem); line-height: 1.3; margin-bottom: 1.75rem; }
   body.home article h1 + p + p { font-size: 1.3rem; line-height: 1.45; }
-  body > footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted);
-                  font-family: var(--mono); font-size: .85rem; }
+  body > footer { margin-top: 4rem; padding-top: .8rem; border-top: 1px solid var(--ink); color: var(--muted); font-size: .8rem; line-height: 1.8; }
   body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   body > footer a:hover { color: var(--ink); }
 </style>
