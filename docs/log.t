@@ -225,4 +225,9 @@ distinct engineering look instead of a templated site.
 headline, labels, tables and module paths, Source Serif 4 for running prose,
 both served from this site. Why: Pavlos, 2026-11-09; mono in some places, a fine
 text face for reading.
+.item 2026-11-09. The brief gains the thesis, "Don't add agents to the team.
+Rebuild the team around the agents.", as the first and most prominent section
+after the mission, supported by what happened, the factory-electricity precedent
+and a table of the usual team against the rebuilt one. Why: Pavlos, 2026-11-09;
+the reorganisation, not the agents alone, produced the gain.
 .font sans

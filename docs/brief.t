@@ -42,6 +42,33 @@ it.
 
 The confidence is in the claim, never in the adjectives.
 
+# The thesis
+
+The first section after the statement, and the most prominent thing on the page
+after the two mission lines, in these words:
+
+.pre
+Don't add agents to the team. Rebuild the team around the agents.
+.end
+
+Supported, directly beneath it, by:
+
+.item What happened, in these words: "Adding agents to the existing way of
+working would not have got us there. The step change came only when we changed
+how the team was organised and how it worked: one human role in place of the
+usual split of specialists, with release and management rebuilt to match."
+.item The precedent, briefly: when factories first got electricity, most swapped
+the steam engine for a motor and kept the layout, and productivity barely moved
+for decades; the gains came when the floor was redesigned around the new power.
+Cite Paul A. David, "The Dynamo and the Computer", American Economic Review,
+1990.
+.item A short table, the usual team against the rebuilt one, stating only what
+is said in this brief: who does the work, who answers for it, how many human
+roles. Do not add detail.
+
+The Fleet Engineer is what is left when the team has been rebuilt, and the page
+should read that way. Say what changed; never how to get there.
+
 # Fleet Engineer
 
 Repani's term, and the site is where it is defined. A Fleet Engineer is one
