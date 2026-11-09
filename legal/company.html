@@ -5,15 +5,17 @@
 <title>Company</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts.">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>
   :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA; }
   html { background: var(--paper); }
   body { max-width: 64ch; margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
          font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 15px; line-height: 1.5; }
-  header { display: flex; align-items: center; gap: .8em; margin-bottom: 2.2em; }
-  header svg { width: 2.6em; height: 2.85em; flex: none; }
-  header .name a { color: var(--ink); text-decoration: none; letter-spacing: .04em; }
+  header { margin-bottom: 2.2em; }
+  header a { display: inline-block; }
+  header svg { display: block; height: 2.85em; width: auto; }
   article h1 { font-size: 1.25em; font-weight: bold; margin: 0 0 1.2em; }
   article h2 { font-size: 1em; font-weight: bold; margin: 2em 0 .8em; }
   article h2::before { content: "# "; color: var(--muted); }
@@ -39,19 +41,20 @@
   body > footer a:hover { color: var(--ink); }
   body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
               display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
-  body.home > svg { width: min(60vmin, 24rem); height: auto; margin-top: auto; }
-  body.home article h1, body.home article p { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
+  body.home > svg { width: min(84vw, 38rem); height: auto; margin-top: auto; }
+  body.home article h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  body.home article p { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); }
   body.home > footer { margin-top: auto; padding-top: 0; border-top: none; }
 </style>
 </head>
 <body>
 <header>
-  <svg aria-hidden="true" viewBox="0 0 64 70" fill="none">
+  <a href="../" aria-label="repani"><svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">
 <path d="M32.72,27.69 C40.86,32.01 43.39,40.32 39.43,47.77 C35.11,55.90 27.52,57.08 21.66,58.31 C17.74,59.13 15.43,62.82 13.72,68.00 C14.35,62.25 15.03,57.69 13.53,53.99 C11.26,48.44 8.00,41.49 12.33,33.36 C16.29,25.90 24.59,23.37 32.72,27.69 Z" fill="#C9184A"/>
 <path d="M34.82,26.37 C36.14,17.34 44.08,10.26 53.74,8.44 C54.56,19.31 46.45,28.03 34.82,26.37 Z" fill="#2D9A6B"/>
 <path d="M32.65,25.22 C35.78,18.02 33.87,9.18 26.91,2.00 C18.98,9.08 22.36,19.40 32.65,25.22 Z" fill="#2D9A6B"/>
-</svg>
-  <div class="name"><a href="../">repani.com</a></div>
+<path d="M57.11 42.78Q57.11 40.24 56.97 39Q56.82 37.77 56.49 35.92H52.07V31.6H61.26L62.15 36.06Q63.28 33.21 65.34 32.12Q67.41 31.02 69.64 31.02Q71.17 31.02 73.15 31.94Q75.13 32.85 76.36 34.05L73.05 37.98Q72.25 37.24 71.16 36.8Q70.07 36.35 68.44 36.35Q66.93 36.35 65.67 37.41Q64.41 38.46 63.66 40.52Q62.92 42.57 62.92 45.47V58H57.06ZM81.37 44.94Q81.37 40.89 82.84 37.76Q84.3 34.62 87 32.9Q89.7 31.17 93.33 31.17Q99.11 31.17 101.67 35.13Q104.22 39.09 104.22 46.38H87.13Q87.28 49.94 89.09 51.76Q90.9 53.58 94 53.58Q96.25 53.58 98.35 52.94Q100.45 52.29 101.34 51.47L103.55 55.5Q102.61 56.25 100.99 56.94Q99.37 57.64 97.42 58.06Q95.46 58.48 93.61 58.48Q90.52 58.48 87.71 56.93Q84.9 55.38 83.14 52.32Q81.37 49.26 81.37 44.94ZM93.33 35.68Q91.72 35.68 90.35 36.47Q88.98 37.26 88.18 38.69Q87.37 40.12 87.37 41.97H98.89Q98.89 40.17 98.17 38.74Q97.45 37.31 96.18 36.5Q94.91 35.68 93.33 35.68ZM110.22 32.9 110.15 31.6H115.72L116.05 35.39Q117.35 33.14 119.04 32.13Q120.73 31.12 122.97 31.12Q126.37 31.12 128.64 33.15Q130.91 35.18 131.98 38.3Q133.05 41.42 133.05 44.78Q133.05 48.02 131.99 51.08Q130.93 54.14 128.57 56.16Q126.21 58.19 122.51 58.19Q120.37 58.19 118.87 57.41Q117.37 56.63 116.25 54.93V67.12H110.39V37.31Q110.39 35.08 110.22 32.9ZM127.24 44.92Q127.24 42.76 126.66 40.54Q126.09 38.32 124.85 36.81Q123.61 35.3 121.77 35.3Q119.94 35.3 118.61 36.8Q117.28 38.3 116.59 40.56Q115.91 42.83 115.91 45.06Q115.91 47.18 116.53 49.19Q117.16 51.21 118.45 52.52Q119.75 53.82 121.6 53.82Q123.42 53.82 124.71 52.53Q125.99 51.23 126.61 49.19Q127.24 47.15 127.24 44.92ZM138.61 50.42Q138.61 45.47 142.25 43.65Q145.89 41.82 151.72 41.82H154.65V40.77Q154.65 39.69 154.19 38.6Q153.73 37.5 152.63 36.74Q151.53 35.97 149.68 35.97Q147.88 35.97 146.23 36.7Q144.59 37.43 142.98 38.66L140.1 35.01Q142.31 33.16 144.67 32.21Q147.04 31.26 150.3 31.26Q155.77 31.26 158.11 33.88Q160.45 36.5 160.45 41.1V50.42Q160.45 53.44 160.93 58H154.98Q154.81 56.54 154.74 54.59Q152.51 58.48 147.09 58.48Q144.35 58.48 142.44 57.45Q140.53 56.42 139.57 54.6Q138.61 52.79 138.61 50.42ZM154.6 46H153.11Q149.99 46 148.05 46.42Q146.1 46.84 145.14 47.79Q144.18 48.74 144.18 50.34Q144.18 52.31 145.42 53.24Q146.65 54.16 148.6 54.16Q151.65 54.16 153.12 52.02Q154.6 49.89 154.6 46ZM168.25 32.78 168.16 31.6H173.82L174.23 35.44Q175.57 33.28 177.51 32.22Q179.44 31.17 182.1 31.17Q185.97 31.17 188.07 33.86Q190.17 36.54 190.17 41.39V58H184.21V43.31Q184.21 40.14 183.19 37.94Q182.17 35.73 179.51 35.73Q176.7 35.73 175.49 38.39Q174.28 41.06 174.28 44.85V58H168.52V37.74Q168.52 35.73 168.25 32.78ZM198.23 31.6H211.24V53.68H218.13V58H198.04V53.68H205.38V35.78H198.23ZM203.89 23.58Q203.89 21.5 204.76 20.64Q205.62 19.79 207.69 19.79Q209.77 19.79 210.63 20.64Q211.48 21.5 211.48 23.58Q211.48 25.65 210.63 26.51Q209.77 27.38 207.69 27.38Q205.65 27.38 204.77 26.5Q203.89 25.62 203.89 23.58Z" fill="#2B2D42"/>
+</svg></a>
 </header>
 <article>
 <h1>Company</h1>

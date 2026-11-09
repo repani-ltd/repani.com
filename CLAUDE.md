@@ -53,7 +53,7 @@ forks the text.
   both roots. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,
   privacy.t.tmpl, terms.t.tmpl, company.t.tmpl, data.fact,
-  mark.svg; facts are stated once, in
+  logo.svg; facts are stated once, in
   data.fact, and the pages reference them) and `pica html -txtar site.txtar -page NAME`
   produces `index.html` / `legal/NAME.html`; both the archive and
   the rendered pages are committed. Edit the archive, re-render,

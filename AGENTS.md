@@ -21,9 +21,10 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `mark.svg` (the mark) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
-| `/favicon.svg` | the mark | SVG |
+| `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` | the mark as icons | SVG, ICO, PNG |
+| `/docs/mark/logo.svg`, `mark.svg` | the logo (mark and name, letters as outlines) and the mark alone | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |
 | `/docs/log.t`, `/docs/brief.t` | the site's decision log (append-only) and brief | pica source |
 

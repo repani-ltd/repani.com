@@ -166,4 +166,21 @@ https://claude.ai/artifact/8b9jQQ3CJo8UgHmuAXZbij. Why: Pavlos, 2026-11-09;
 outside feedback that the old mark read as a strawberry (body a cone with no
 root, ridge strokes reading as seeds and as a face), and a solid shape holds at
 favicon size where an outline does not. docs/mark/ still holds the old drawing.
+.item 2026-11-09. The logo is the mark followed by "repani" in lowercase, set in
+JuliaMono Bold, the face pica uses, chosen over DM Sans: the name then shares a
+typeface with every pica document, and a rounded sans would sit too near a
+similar existing radish logo. The body stands on the baseline and the tail drops
+about as far as the p's descender. The word is outlines in the SVG, so no font
+is loaded (JuliaMono is OFL). The root page shows the logo above the two slogan
+lines; its title and its h1 (visually hidden, since the logo says it) become
+"repani" (site.title). Page headers show the logo as the link home, in place of
+the mark and the text "repani.com". site.txtar's mark.svg member is now
+logo.svg. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. Brand files and icons: docs/mark/ gains logo.svg and mark.svg,
+and its PDF streams and test page are redrawn from the new mark, the mono stream
+now a solid fill. favicon.ico (16, 32, 48) and apple-touch-icon.png (180, on the
+paper colour) join favicon.svg at the root, which is where browsers and iOS look
+for them. favicon.svg gets a square viewBox. The copy embedded in pica
+(cmd/pica/mark.stream, repani repo) is not touched here and still holds the old
+mark. Why: Pavlos, 2026-11-09.
 .font sans

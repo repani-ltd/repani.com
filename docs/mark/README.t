@@ -4,9 +4,10 @@ The Repani mark as a PDF object
 .date 2026-08-19
 
 Two PDF content streams draw the mark with path operators only (no images, no
-fonts): mark-colour.stream (navy line, red and green offset fill, DeviceRGB) and
-mark-mono.stream (black line only, DeviceGray, for grayscale writers). Each is
-the body of a Form XObject:
+fonts): mark-colour.stream (flat red and green fills, DeviceRGB) and
+mark-mono.stream (solid black fill, DeviceGray, for grayscale writers). Each is
+the body of a Form XObject. mark.svg is the mark alone and logo.svg the mark
+with the name, its letters as outlines, so neither needs a font.
 
 .pre
 << /Type /XObject /Subtype /Form /BBox [0 0 64 70] /Length N >>
