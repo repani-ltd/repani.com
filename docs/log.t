@@ -288,4 +288,8 @@ with it. "Agents do the work. Fleet Engineers direct them" already satisfies the
 first-use rule, and a disclaimer above the fold costs the opening its
 confidence. The definition says it positively: "with a fleet of agents". Why:
 the session holding the brief, asked on Pavlos's instruction, 2026-11-09.
+.item 2026-11-09. "Another way of building has already arrived." leaves the
+page: the brief asks the reader to feel it, so the page does not say it. What
+happened ends on the six-months sentence. Why: the session holding the brief,
+asked on Pavlos's instruction, 2026-11-09.
 .font sans
