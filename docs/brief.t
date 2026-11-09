@@ -32,20 +32,37 @@ Above the fold, in this order and these words:
 
 .pre
 Make the impossible boring.
-One engineer. A fleet of agents.
+The end of the software project.
 .end
 
 Then the plain statement of what the company does: Repani takes on the software
 institutions have been told cannot be built or replaced, and turns it into
-routine work. Agents do the work. A Fleet Engineer directs them and signs for
-it.
+routine work. Agents do the work. Fleet Engineers direct them and sign for it.
 
 The confidence is in the claim, never in the adjectives.
 
+# Zero Handoff
+
+Repani's name for the way of working, defined on this site. The first section
+after the statement, in these words:
+
+.pre
+Zero Handoff.
+Everyone is a Fleet Engineer. Nobody waits.
+.end
+
+Its meaning, in one sentence: every engineer takes their work from the first
+conversation to production, and nobody waits for anybody.
+
+A software project is a chain of handoffs. Take away the handoffs and the
+project is gone, which is what the second mission line promises. The
+breakthrough to get across is that many Fleet Engineers work in parallel, with
+no one blocked waiting for an analyst, a backend or frontend developer, or QA.
+Expertise differs; the role does not.
+
 # The thesis
 
-The first section after the statement, and the most prominent thing on the page
-after the two mission lines, in these words:
+Directly after Zero Handoff, in these words:
 
 .pre
 Don't add agents to the team. Rebuild the team around the agents.
@@ -57,10 +74,11 @@ Supported, directly beneath it, by:
 sentences at most, inspiring, never executive speak. The gist: a live project,
 in the middle of normal agile delivery, threw out the way software teams have
 worked for decades. Agents added to the old team would never have done it, so
-the team itself was rebuilt, one kind of human role where there used to be a
-chain of specialists. The whole software was rewritten in six months, by less
-than half the team. The reader should feel that another way of building has
-already arrived. Those facts are the limit: add none.
+the team itself was rebuilt: everyone a Fleet Engineer, working in parallel,
+where there used to be a chain of specialists waiting on each other. The whole
+software was rewritten in six months, by less than half the team. The reader
+should feel that another way of building has already arrived. Those facts are
+the limit: add none.
 .item The precedent, briefly: when factories first got electricity, most swapped
 the steam engine for a motor and kept the layout, and productivity barely moved
 for decades; the gains came when the floor was redesigned around the new power.
@@ -68,18 +86,19 @@ Cite Paul A. David, "The Dynamo and the Computer", American Economic Review,
 1990.
 .item A short table, the usual team against the rebuilt one, stating only what
 is said in this brief: who does the work, who answers for it, how many human
-roles. Do not add detail.
+roles, who waits for whom. Do not add detail.
 
 The Fleet Engineer is what is left when the team has been rebuilt, and the page
 should read that way. Say what changed; never how to get there.
 
 # Fleet Engineer
 
-Repani's term, and the site is where it is defined. A Fleet Engineer is one
-person who directs a fleet of agents across a whole delivery, vets what they
-produce, and signs for it. Always introduce the title together with "one
-engineer, a fleet of agents", so that it is not read as server infrastructure.
-The definition has its own page so that it can be cited.
+Repani's term, and the site is where it is defined. A Fleet Engineer takes a
+piece of work end to end with a fleet of agents, in parallel with others doing
+the same, vets what the agents produce, and signs for it. Never describe the
+role as one person doing everything alone. Always make clear at first use that
+the fleet is a fleet of agents, so that the title is not read as server
+infrastructure. The definition has its own page so that it can be cited.
 
 # What matters most
 
@@ -164,8 +183,8 @@ are. Light mode only, for now.
 # Done means
 
 A reader with no context can answer these from the page, in two minutes: what
-does this company do; why should I believe it; what is a Fleet Engineer. Each
-answer must be supported by something on the page.
+does this company do; why should I believe it; what is Zero Handoff; what is a
+Fleet Engineer. Each answer must be supported by something on the page.
 
 # Never
 
@@ -177,4 +196,6 @@ truth in the project repos.
 .item State a headcount, a team's availability, or who holds rights in any
 client work.
 .item Make statements about the company's future or plans.
+.item Explain how Fleet Engineers are able to work in parallel. Say that they
+do.
 .font sans

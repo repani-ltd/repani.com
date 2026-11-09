@@ -242,4 +242,10 @@ dictated paragraph was dry and verbose.
 second; software, the public code included, is proof and never the product, and
 the project index shrinks to a small section near the foot of the page. Why:
 Pavlos, 2026-11-09.
+.item 2026-11-09. The way of working is named Zero Handoff: every engineer takes
+their work from the first conversation to production, and nobody waits for
+anybody. "The end of the software project" becomes the second mission line,
+replacing "One engineer. A fleet of agents.", which wrongly implied one person.
+The new line is "Everyone is a Fleet Engineer. Nobody waits.", and the Fleet
+Engineer's definition now says many work in parallel. Why: Pavlos, 2026-11-09.
 .font sans
