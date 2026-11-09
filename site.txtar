@@ -1,11 +1,12 @@
 repani.com -- the site as one archive. Render a page:
     pica html -txtar site.txtar -page index -o index.html
     pica html -txtar site.txtar -page fleet-engineer -o fleet-engineer/index.html
+    pica html -txtar site.txtar -page decision-desk -o decision-desk/index.html
     pica html -txtar site.txtar -page privacy -o legal/privacy.html
     pica html -txtar site.txtar -page terms -o legal/terms.html
     pica html -txtar site.txtar -page company -o legal/company.html
 Members: page.tmpl (html/template shell), index.t.tmpl,
-fleet-engineer.t.tmpl, privacy.t.tmpl, terms.t.tmpl and company.t.tmpl (pica documents
+fleet-engineer.t.tmpl, decision-desk.t.tmpl, privacy.t.tmpl, terms.t.tmpl and company.t.tmpl (pica documents
 as text/templates over the facts), data.fact (the site's facts, stated once), logo.svg (the mark and the name).
 -- page.tmpl --
 {{- /* Site links are relative ($up is the way back to the site root),
@@ -79,7 +80,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
   <a href="{{$up}}" aria-label="{{.Facts.site.title}}">{{.Raw.logo}}</a>
 </header>
 {{.Article}}
-<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}fleet-engineer/">Fleet Engineer</a> &middot; <a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
+<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}fleet-engineer/">Fleet Engineer</a> &middot; <a href="{{$up}}decision-desk/">Decision Desk</a> &middot; <a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
 </body>
 </html>
 -- index.t.tmpl --
@@ -151,18 +152,16 @@ The waiting goes.
 
 # The Decision Desk
 
-## What is left is judgment.
+## {{.site.decision_desk_judgment}}
 
-Agents are not only the makers. In operations too, embedded agents, local and
-hosted, do the work, and people approve it.
+{{.site.decision_desk_shift}}
 
-The Decision Desk is what an operations team becomes when it no longer has to do
-the work: approving what the agents have done, deciding the cases that are not routine, saying no when the machine is
-wrong, answering for the result.
+{{.site.decision_desk}} It approves what the agents have done, decides the cases
+that are not routine, says no when the machine is wrong, and answers for the
+result.
 
-The experienced people on it are the stars. Engineers have seldom given their
-operations colleagues a thought. In this way of working, those colleagues are
-the point.
+{{.site.decision_desk_people}}
+.link decision-desk/ The definition
 
 # The reference
 
@@ -233,6 +232,44 @@ agents. The way of working is called Zero Handoff. {{.site.zero_handoff}}
 {{.company.name}}, "Fleet Engineer", {{.company.site}}/fleet-engineer/
 
 .width 64
+-- decision-desk.t.tmpl --
+Decision Desk
+.rem Rendered by: pica html -txtar site.txtar -page decision-desk -o decision-desk/index.html
+
+{{.site.decision_desk}}
+
+Repani's use of the term is defined here.
+
+# What changes
+
+## {{.site.decision_desk_judgment}}
+
+{{.site.decision_desk_shift}}
+
+# What the desk does
+
+.term Decides
+The desk decides the cases that are not routine.
+.term Approves
+It approves what the agents have done.
+.term Says no
+It says no when the machine is wrong.
+.term Notices
+It notices what looks off, because its people have seen it before.
+.term Teaches
+It teaches the agents how things are really done.
+.term Answers
+It answers for the result.
+
+# The people
+
+{{.site.decision_desk_people}}
+
+# Citing this page
+
+{{.company.name}}, "Decision Desk", {{.company.site}}/decision-desk/
+
+.width 64
 -- privacy.t.tmpl --
 Privacy
 .rem Rendered by: pica html -txtar site.txtar -page privacy -o legal/privacy.html
@@ -293,6 +330,10 @@ site.headline: str = "Make the impossible boring."
 site.subhead: str = "The end of the software project."
 site.fleet_engineer: str = "A Fleet Engineer takes a piece of work end to end with a fleet of agents, in parallel with others doing the same, vets what the agents produce, and signs for it."
 site.fleet_engineer_skill: str = "Agents do not make the engineer cheaper. The role takes more experience and broader knowledge than the old specialisms did."
+site.decision_desk: str = "The Decision Desk is what an operations team becomes when it no longer has to do the work."
+site.decision_desk_judgment: str = "What is left is judgment."
+site.decision_desk_shift: str = "Agents are not only the makers. In operations too, embedded agents, local and hosted, do the work, and people approve it."
+site.decision_desk_people: str = "The experienced people on the desk are the stars. Engineers have seldom given their operations colleagues a thought. In this way of working, those colleagues are the point."
 site.zero_handoff: str = "Every engineer takes their work from the first conversation to production, and nobody waits for anybody."
 -- logo.svg --
 <svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">

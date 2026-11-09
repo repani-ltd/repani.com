@@ -15,7 +15,7 @@ working is called Zero Handoff: every engineer takes their work from the first c
 to production, and nobody waits for anybody. Fleet Engineer is
 defined at https://repani.com/fleet-engineer/. The Decision Desk is
 what an operations team becomes when agents do the work and people
-approve it. Repani is itself operated by agents.
+approve it; it is defined at https://repani.com/decision-desk/. Repani is itself operated by agents.
 
 ## The site, as files
 
@@ -24,7 +24,7 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, the reference and the site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `decision-desk.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, the reference and the site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` | the mark as icons | SVG, ICO, PNG |
 | `/fonts/` | the two typefaces, subset and renamed Repani Mono (from JuliaMono) and Repani Text (from Source Serif 4), each with its licence | woff2, OFL text |
@@ -54,7 +54,7 @@ Or from source, with Go installed:
     go install repani.com/fact/cmd/fact@latest
     curl -s https://repani.com/site.txtar -o site.txtar
     pica html -txtar site.txtar -page index   # the root page, exactly as served
-    pica html -txtar site.txtar -page privacy # also: fleet-engineer, terms, company
+    pica html -txtar site.txtar -page privacy # also: fleet-engineer, decision-desk, terms, company
     pica spec                                 # the pica language reference
 
 To work with one member on its own, cut it out of the archive
