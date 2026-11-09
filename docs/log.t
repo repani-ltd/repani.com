@@ -230,4 +230,7 @@ Rebuild the team around the agents.", as the first and most prominent section
 after the mission, supported by what happened, the factory-electricity precedent
 and a table of the usual team against the rebuilt one. Why: Pavlos, 2026-11-09;
 the reorganisation, not the agents alone, produced the gain.
+.item 2026-11-09. The reference gains its first numbers: an ongoing project
+moved from normal agile delivery, the whole software rewritten in six months
+with less than half the team. Why: Pavlos, 2026-11-09, who states them as fact.
 .font sans

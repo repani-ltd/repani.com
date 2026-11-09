@@ -53,10 +53,12 @@ Don't add agents to the team. Rebuild the team around the agents.
 
 Supported, directly beneath it, by:
 
-.item What happened, in these words: "Adding agents to the existing way of
-working would not have got us there. The step change came only when we changed
-how the team was organised and how it worked: one human role in place of the
-usual split of specialists, with release and management rebuilt to match."
+.item What happened, in these words: "We moved an ongoing project from normal
+agile delivery to this way of working, and rewrote the whole software in six
+months with less than half the team. Adding agents to the existing way of
+working would not have got us there. The change that did: one human role in
+place of the usual split of specialists, with release and management rebuilt to
+match."
 .item The precedent, briefly: when factories first got electricity, most swapped
 the steam engine for a motor and kept the layout, and productivity barely moved
 for decades; the gains came when the floor was redesigned around the new power.
@@ -85,8 +87,9 @@ Everything claimed is shown or can be checked.
 delivered by agents, with one human role in place of the usual split of
 specialists, and every line vetted by a human. The client stays unnamed, and
 nothing may identify it: no country, no business line, no product.
-.item Numbers (time, team, cost) appear only once Pavlos has cleared each one.
-Until then write the sentence without the number.
+.item Numbers appear only once Pavlos has cleared each one. Cleared: the whole
+software rewritten in six months; less than half the team. For any other number,
+write the sentence without it.
 .item The public code: pica, fact and the other modules, linked, because an
 engineer can inspect them today.
 .item The method: enough to show that it exists and how it differs. Not the
