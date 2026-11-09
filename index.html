@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="el-CY">
 <head>
 <meta charset="utf-8">
-<title>Repani Limited</title>
+<title>Δουλεύκουμε με ατζέντηες</title>
 
 <meta name="go-import" content="repani.com git https://github.com/repani-ltd/repani">
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
@@ -43,52 +43,20 @@
   body > footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
   body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   body > footer a:hover { color: var(--ink); }
+  body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
+              display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
+  body.home > svg { width: min(60vmin, 24rem); height: auto; }
+  body.home article h1 { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
 </style>
 </head>
-<body>
-<header>
-  <svg aria-hidden="true" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
+<body class="home">
+<svg aria-hidden="true" viewBox="0 0 64 70" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.2">
 <g transform="translate(2,2)" stroke="none"><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z" fill="#E63946"/><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z" fill="#52B788"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z" fill="#52B788"/></g>
 <g stroke="#2B2D42"><path d="M34,20 C34,12 40,6 48,6 C48,14 42,20 34,20 Z"/><path d="M31,20 C31,14 26,10 20,10 C20,16 25,20 31,20 Z"/><path d="M32,22 C44,22 50,30 50,40 C50,50 40,56 32,64 C24,56 14,50 14,40 C14,30 20,22 32,22 Z"/><path d="M21,33 Q25,34 29,33.6"/><path d="M36,30 Q40,31 44,30.8"/><path d="M24,44 Q28.5,45 33,44.5"/></g>
 </svg>
-  <div class="name"><a href="./">repani.com</a></div>
-</header>
 <article>
-<h1>Repani Limited</h1>
-<p>Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts.</p>
-<h2>What Repani makes</h2>
-<p>Formats and tools precise enough that an agent builds against them correctly, and the operating model that turns that into delivered, audited software: one human role, every line vetted, release and change control designed for agents rather than bolted on.</p>
-<h2>Public projects</h2>
-<p>All public code is one Go module, repani.com.</p>
-<p class="link"><a href="https://github.com/repani-ltd/repani">https://github.com/repani-ltd/repani</a></p>
-<table>
-<thead>
-<tr><th>module</th><th>what it is</th></tr>
-</thead>
-<tbody>
-<tr><td>repani.com/pica</td><td>A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF.</td></tr>
-<tr><td>repani.com/fact</td><td>FACT, a line-oriented format for facts about systems, built for agents: one complete typed fact per line, no nesting, no external schema.</td></tr>
-<tr><td>repani.com/ascon</td><td>Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP 800-232.</td></tr>
-<tr><td>repani.com/golay</td><td>The extended Golay(24,12) code: systematic encoder and syndrome-table decoder, correcting up to 3 bit errors per codeword and detecting 4.</td></tr>
-<tr><td>repani.com/lz4s</td><td>LZ4s: the LZ4 sequence architecture with its economics re-tuned for small texts.</td></tr>
-</tbody>
-</table>
-<p>This page is a pica document. This site&#39;s facts are the data.fact member of site.txtar.</p>
-<pre>go install repani.com/pica/cmd/pica@latest
-go install repani.com/fact/cmd/fact@latest</pre>
-<p>Prebuilt binaries for linux, macOS and Windows, with checksums, are on each release. The code is licensed under the Apache-2.0 licence.</p>
-<p class="link"><a href="https://github.com/repani-ltd/repani/releases">Releases</a></p>
-<h2>How Repani is run</h2>
-<p>Repani is operated by agents in two standing roles. Build makes the products: specifications, code and documentation. Run keeps the company&#39;s presence and operation: this site, publishing, operations and outreach. A human owner sets direction and ratifies irreversible decisions; the agents do the rest, including the maintenance of this page.</p>
-<h2>For agents</h2>
-<p>This site is made of the formats it describes, and its single source is one file: site.txtar holds the pica pages, the facts, the mark and the page template; pica html assembles each page from it. Point your agent at AGENTS.md.</p>
-<p class="link"><a href="https://repani.com/AGENTS.md">AGENTS.md</a></p>
-<p class="link"><a href="https://repani.com/site.txtar">site.txtar</a></p>
-<h2>Legal</h2>
-<p>Privacy, terms of use and company details are on the legal page. Contact: hello@repani.com.</p>
-<p class="link"><a href="https://repani.com/legal/">Legal</a></p>
+<h1>Δουλεύκουμε με ατζέντηες</h1>
 </article>
 
-<footer>&copy; 2026 Repani Limited &middot; <a href="./legal/#privacy">Privacy</a> &middot; <a href="./legal/#terms">Terms</a> &middot; <a href="./legal/#company">Company</a> &middot; <a href="./AGENTS.md">Agents</a> &middot; <a href="./site.txtar">Source</a></footer>
 </body>
 </html>

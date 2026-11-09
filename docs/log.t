@@ -125,4 +125,9 @@ with an underscore (dot paths it serves). /draft/ could be a Go package path, so
 it is reserved instead: the repani module may never have a top-level draft
 directory, stated in its CLAUDE.md. Why: Pavlos, 2026-10-25, choosing /draft/
 over /.draft/ for the cleaner URL.
+.item 2026-11-09. MOCK (branch atzenties, not merged): the root page is the
+mark, enlarged and centred, over one line in Cypriot Greek, "Δουλεύκουμε με
+ατζέντηες" (site.slogan); no header, sections or footer. The go-import and
+go-source tags are unchanged and /legal/ still renders, unlinked from the root.
+Why: Pavlos, 2026-11-09, who chose the wording.
 .font sans

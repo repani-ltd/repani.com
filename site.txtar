@@ -9,7 +9,7 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
        so a page works at / and under /draft/ alike. */ -}}
 {{- $up := "./"}}{{if ne .Page "index"}}{{$up = "../"}}{{end -}}
 <!doctype html>
-<html lang="en">
+<html lang="{{if eq .Page "index"}}el-CY{{else}}en{{end}}">
 <head>
 <meta charset="utf-8">
 <title>{{.Title}}</title>
@@ -58,8 +58,18 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
   body > footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
   body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   body > footer a:hover { color: var(--ink); }
+  body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
+              display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
+  body.home > svg { width: min(60vmin, 24rem); height: auto; }
+  body.home article h1 { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
 </style>
 </head>
+{{- if eq .Page "index"}}
+<body class="home">
+{{.Raw.mark}}
+{{.Article}}
+</body>
+{{- else}}
 <body>
 <header>
   {{.Raw.mark}}
@@ -68,59 +78,11 @@ data.fact (the site's facts, stated once), mark.svg (the mark).
 {{.Article}}
 <footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}legal/#privacy">Privacy</a> &middot; <a href="{{$up}}legal/#terms">Terms</a> &middot; <a href="{{$up}}legal/#company">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
 </body>
+{{- end}}
 </html>
 -- index.t.tmpl --
-{{.company.name}}
+{{.site.slogan}}
 .rem Root page. Rendered by: pica html -txtar site.txtar -page index -o index.html
-
-{{.company.statement}}
-
-# What Repani makes
-
-Formats and tools precise enough that an agent builds against them
-correctly, and the operating model that turns that into delivered,
-audited software: one human role, every line vetted, release and
-change control designed for agents rather than bolted on.
-
-# Public projects
-
-All public code is one Go module, {{.go.module}}.
-.link {{.go.repo}} {{.go.repo}}
-
-{{table "18L *L" "module | what it is" .go.projects "path" "summary"}}
-
-{{.site.note_pica}} {{.site.note_fact}}
-
-.pre
-{{.project.pica.cli}}
-{{.project.fact.cli}}
-.end
-
-Prebuilt binaries for linux, macOS and Windows, with checksums,
-are on each release. The code is licensed under the {{.go.license}} licence.
-.link {{.go.releases}} Releases
-
-# How Repani is run
-
-Repani is operated by agents in two standing roles. Build makes
-{{.role.build.scope}}. Run keeps {{.role.run.scope}}. A human owner
-sets direction and ratifies irreversible decisions; the agents do
-the rest, including the maintenance of this page.
-
-# For agents
-
-This site is made of the formats it describes, and its single
-source is one file: site.txtar holds the pica pages, the facts,
-the mark and the page template; pica html assembles each page
-from it. Point your agent at AGENTS.md.
-.link {{.site.agent_contract}} AGENTS.md
-.link {{.site.bundle}} site.txtar
-
-# Legal
-
-Privacy, terms of use and company details are on the legal page.
-Contact: {{.company.contact_email}}.
-.link {{.company.site}}/legal/ Legal
 
 .width 64
 -- legal.t.tmpl --
@@ -202,6 +164,7 @@ project:pica.path: str = "repani.com/pica"
 project:pica.summary: str = "A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF."
 role:build.scope: str = "the products: specifications, code and documentation"
 role:run.scope: str = "the company's presence and operation: this site, publishing, operations and outreach"
+site.slogan: str = "Δουλεύκουμε με ατζέντηες"
 site.note_pica: str = "This page is a pica document."
 site.note_fact: str = "This site's facts are the data.fact member of site.txtar."
 site.agent_contract: str = "https://repani.com/AGENTS.md"
