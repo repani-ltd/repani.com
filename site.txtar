@@ -63,7 +63,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), ma
   body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
               display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
   body.home > svg { width: min(60vmin, 24rem); height: auto; margin-top: auto; }
-  body.home article h1 { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
+  body.home article h1, body.home article p { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); font-weight: normal; }
   body.home > footer { margin-top: auto; padding-top: 0; border-top: none; }
 </style>
 </head>
@@ -85,8 +85,10 @@ as text/templates over the facts), data.fact (the site's facts, stated once), ma
 {{- end}}
 </html>
 -- index.t.tmpl --
-{{.site.slogan}}
+{{.site.slogan_first}}
 .rem Root page. Rendered by: pica html -txtar site.txtar -page index -o index.html
+
+{{.site.slogan_second}}
 
 .width 64
 -- privacy.t.tmpl --
@@ -166,7 +168,8 @@ project:pica.path: str = "repani.com/pica"
 project:pica.summary: str = "A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF."
 role:build.scope: str = "the products: specifications, code and documentation"
 role:run.scope: str = "the company's presence and operation: this site, publishing, operations and outreach"
-site.slogan: str = "Δουλεύκουμε με ατζέντηες"
+site.slogan_first: str = "Δουλεύκουν οι ατζέντηες"
+site.slogan_second: str = "εμείς μετρούμεν κύματα"
 site.note_pica: str = "This page is a pica document."
 site.note_fact: str = "This site's facts are the data.fact member of site.txtar."
 site.agent_contract: str = "https://repani.com/AGENTS.md"

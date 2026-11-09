@@ -146,4 +146,8 @@ became the mark and one line. It will be worked on and released later; the
 branch does not deploy. Why: Pavlos, 2026-11-09.
 .item 2026-11-09. The contact address is removed from the Company page and from
 data.fact: the mailbox does not exist yet. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. The root page's line becomes two: "Δουλεύκουν οι ατζέντηες" /
+"εμείς μετρούμεν κύματα" (agents do the work, we count the waves;
+site.slogan_first and site.slogan_second). No article, single μ and final -ν are
+Pavlos's choices. Why: Pavlos, 2026-11-09.
 .font sans
