@@ -53,12 +53,14 @@ Don't add agents to the team. Rebuild the team around the agents.
 
 Supported, directly beneath it, by:
 
-.item What happened, in these words: "We moved an ongoing project from normal
-agile delivery to this way of working, and rewrote the whole software in six
-months with less than half the team. Adding agents to the existing way of
-working would not have got us there. The change that did: one human role in
-place of the usual split of specialists, with release and management rebuilt to
-match."
+.item What happened. Yours to write, and the heart of the page: a few short
+sentences at most, inspiring, never executive speak. The gist: a live project,
+in the middle of normal agile delivery, threw out the way software teams have
+worked for decades. Agents added to the old team would never have done it, so
+the team itself was rebuilt, one kind of human role where there used to be a
+chain of specialists. The whole software was rewritten in six months, by less
+than half the team. The reader should feel that another way of building has
+already arrived. Those facts are the limit: add none.
 .item The precedent, briefly: when factories first got electricity, most swapped
 the steam engine for a motor and kept the layout, and productivity barely moved
 for decades; the gains came when the floor was redesigned around the new power.
@@ -100,8 +102,10 @@ and never the headline.
 
 # Voice
 
-Restrained engineering house. Plain declarative sentences; no marketing
-register. English only. The radish appears as the logo and nowhere else.
+An engineering house with something to say. Short declarative sentences, few of
+them, that make the reader sit up: aspirational, never hype, never corporate. If
+a sentence could appear on a consultancy's website, rewrite it. English only.
+The radish appears as the logo and nowhere else.
 
 # Site map
 

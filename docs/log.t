@@ -233,4 +233,9 @@ the reorganisation, not the agents alone, produced the gain.
 .item 2026-11-09. The reference gains its first numbers: an ongoing project
 moved from normal agile delivery, the whole software rewritten in six months
 with less than half the team. Why: Pavlos, 2026-11-09, who states them as fact.
+.item 2026-11-09. The brief no longer dictates the words of what happened at the
+reference; it gives the gist and the facts and leaves the writing to the site's
+designer. Voice moves from restrained to short, aspirational and never
+corporate, replacing "no marketing register". Why: Pavlos, 2026-11-09; the
+dictated paragraph was dry and verbose.
 .font sans
