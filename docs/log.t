@@ -150,4 +150,7 @@ data.fact: the mailbox does not exist yet. Why: Pavlos, 2026-11-09.
 "εμείς μετρούμεν κύματα" (agents do the work, we count the waves;
 site.slogan_first and site.slogan_second). No article, single μ and final -ν are
 Pavlos's choices. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. Light mode only, for now: the dark palette is removed from
+page.tmpl, reversing "dark mode respected" of 2026-08-19. Enlarged, the mark's
+navy outline had too little contrast on the dark paper. Why: Pavlos, 2026-11-09.
 .font sans
