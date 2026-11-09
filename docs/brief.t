@@ -97,8 +97,10 @@ read as deliberate, never unfinished.
 
 .item Numbered sections, a strong type hierarchy, exact spacing, generous
 margins. Evidence in tables where a table is the honest form.
-.item JuliaMono throughout, matching the logo: Regular and Bold, the two cuts in
-pica/pdf/fonts of the public module.
+.item Two typefaces. JuliaMono, matching the logo, for the headline, section
+labels, tables and module paths: Regular and Bold, the two cuts in
+pica/pdf/fonts of the public module. Source Serif 4 for all running prose, so
+that a reader short of time reads paragraphs in a fine text face.
 .item Perfect on a phone. An executive will open this from an email.
 .item No hero image, gradient, animation, card grid, testimonial, logo strip or
 call-to-action button, and nothing else that makes it look like a template.
@@ -110,10 +112,11 @@ Pages are rendered before commit (pica html), never at deploy; the deploy
 workflow only copies (main to /, the draft branch to /draft/). No JavaScript,
 analytics, or external assets (fonts, CDNs). A font served from this site is not
 external.
-.item The font is subset to the characters the site uses and served as woff2.
-JuliaMono is a Reserved Font Name under its licence (OFL, in pica/pdf/fonts) and
-a subset is a modified version, so the served files carry another family name,
-and the licence text is served beside them.
+.item Both fonts are subset to the characters the site uses and served from this
+site as woff2. Both are under the OFL, and a subset is a modified version: where
+the licence reserves a font's name (JuliaMono does, see pica/pdf/fonts; check
+Source Serif's), the served file carries another family name. Each licence text
+is served beside its font.
 .item The logo, its colours and the paper colour are settled; use them as they
 are. Light mode only, for now.
 

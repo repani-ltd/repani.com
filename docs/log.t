@@ -221,4 +221,8 @@ brief's Never list, and each fact must have a consumer.
 specification rather than a landing page, JuliaMono throughout and served from
 this site, overriding the system fonts chosen above. Why: Pavlos, 2026-11-09; a
 distinct engineering look instead of a templated site.
+.item 2026-11-09. Two typefaces, not JuliaMono throughout: JuliaMono for the
+headline, labels, tables and module paths, Source Serif 4 for running prose,
+both served from this site. Why: Pavlos, 2026-11-09; mono in some places, a fine
+text face for reading.
 .font sans
