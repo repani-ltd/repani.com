@@ -2,54 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Company</title>
+<title>Company | Repani</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts.">
+<meta name="description" content="One engineer. A fleet of agents. Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. A Fleet Engineer directs them and signs for it.">
 <link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>
-  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA; }
-  html { background: var(--paper); }
-  body { max-width: 64ch; margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
-         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 15px; line-height: 1.5; }
-  header { margin-bottom: 2.2em; }
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #5F6778; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA;
+          --mono: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+          --text: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif; }
+  html { background: var(--paper); -webkit-text-size-adjust: 100%; }
+  body { box-sizing: border-box; max-width: 46rem; margin: 0 auto; padding: 2.25rem 1.5rem 2.5rem; color: var(--ink);
+         font-family: var(--text); font-size: 1.125rem; line-height: 1.55; }
+  header { margin-bottom: 3.25rem; }
   header a { display: inline-block; }
-  header svg { display: block; height: 2.85em; width: auto; }
-  article h1 { font-size: 1.25em; font-weight: bold; margin: 0 0 1.2em; }
-  article h2 { font-size: 1em; font-weight: bold; margin: 2em 0 .8em; }
-  article h2::before { content: "# "; color: var(--muted); }
-  article h3 { font-size: 1em; font-weight: bold; margin: 1.6em 0 .6em; }
-  article h3::before { content: "## "; color: var(--muted); }
+  header svg { display: block; height: 2.6rem; width: auto; }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  article h1 { font-family: var(--mono); font-size: 1.75rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 1.1rem; }
+  article h2 { font-family: var(--mono); font-size: .95rem; margin: 2.75rem 0 .8rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
+  article h3 { font-family: var(--mono); font-size: .95rem; margin: 1.6rem 0 .6rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
-  article p.link { margin: -.4em 0 1em; }
-  article p.link::before { content: "\2192  "; color: var(--muted); }
+  article p.link { font-family: var(--mono); font-size: .95rem; margin: 0 0 1em; }
+  article p.link::before { content: "\2192\00a0"; color: var(--muted); }
+  article p.link:has(+ p:not(.link)) { margin-bottom: .1rem; }
+  article p.link + p:not(.link) { margin-bottom: 1.1em; }
   article ul { padding-left: 1.2em; margin: 0 0 1em; }
-  article pre { background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
+  article li { margin: 0 0 .45em; }
+  article dl { margin: 0 0 1em; }
+  article dt { font-family: var(--mono); font-size: .95rem; font-weight: bold; }
+  article dd { margin: 0 0 .8em; }
+  article pre { font-family: var(--mono); font-size: .9rem; background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
   article blockquote { margin: 0 1.2em 1em; color: var(--muted); }
   article table { border-collapse: collapse; margin: 0 0 1em; width: 100%; }
   article th, article td { text-align: left; vertical-align: top; padding: .3em .8em .3em 0; border-bottom: 1px solid var(--rule); }
-  article th { font-weight: bold; }
-  article tr.total td { font-weight: bold; border-top: 1px solid var(--ink); }
-  article tr.note td { font-size: .85em; color: var(--muted); border-bottom: none; }
   article footer { margin-top: 2em; color: var(--muted); }
-  a { color: var(--red); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  body > footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
+  body.home article h1 { font-size: clamp(2rem, 5.6vw, 2.6rem); margin-bottom: .3em; }
+  body.home article h1 + p { font-family: var(--mono); font-size: clamp(1.15rem, 3vw, 1.45rem); line-height: 1.3; margin-bottom: 1.5rem; }
+  body.home article h1 + p + p { font-size: 1.3rem; line-height: 1.45; }
+  body > footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted);
+                  font-family: var(--mono); font-size: .85rem; }
   body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   body > footer a:hover { color: var(--ink); }
-  body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
-              display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
-  body.home > svg { width: min(84vw, 38rem); height: auto; margin-top: auto; }
-  body.home article h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-  body.home article p { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); }
-  body.home > footer { margin-top: auto; padding-top: 0; border-top: none; }
 </style>
 </head>
+
 <body>
 <header>
-  <a href="../" aria-label="repani"><svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">
+  <a href="../" aria-label="Repani"><svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">
 <path d="M32.72,27.69 C40.86,32.01 43.39,40.32 39.43,47.77 C35.11,55.90 27.52,57.08 21.66,58.31 C17.74,59.13 15.43,62.82 13.72,68.00 C14.35,62.25 15.03,57.69 13.53,53.99 C11.26,48.44 8.00,41.49 12.33,33.36 C16.29,25.90 24.59,23.37 32.72,27.69 Z" fill="#C9184A"/>
 <path d="M34.82,26.37 C36.14,17.34 44.08,10.26 53.74,8.44 C54.56,19.31 46.45,28.03 34.82,26.37 Z" fill="#2D9A6B"/>
 <path d="M32.65,25.22 C35.78,18.02 33.87,9.18 26.91,2.00 C18.98,9.08 22.36,19.40 32.65,25.22 Z" fill="#2D9A6B"/>
@@ -62,6 +64,6 @@
 <p>Registered office: 118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus.</p>
 </article>
 
-<footer>&copy; 2026 Repani Limited &middot; <a href="../legal/privacy.html">Privacy</a> &middot; <a href="../legal/terms.html">Terms</a> &middot; <a href="../legal/company.html">Company</a> &middot; <a href="../AGENTS.md">Agents</a> &middot; <a href="../site.txtar">Source</a></footer>
+<footer>&copy; 2026 Repani Limited &middot; <a href="../fleet-engineer/">Fleet Engineer</a> &middot; <a href="../legal/privacy.html">Privacy</a> &middot; <a href="../legal/terms.html">Terms</a> &middot; <a href="../legal/company.html">Company</a> &middot; <a href="../AGENTS.md">Agents</a> &middot; <a href="../site.txtar">Source</a></footer>
 </body>
 </html>

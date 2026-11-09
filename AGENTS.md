@@ -8,10 +8,12 @@ other action.
 
 ## Who this is
 
-Repani Limited builds the tools, the method and the agentic setup
-for delivering enterprise software with AI agents, and owns them as
-source code. The company is itself run by agents, with a human
-owner where it counts.
+Repani Limited takes on the software institutions have been told
+cannot be built or replaced, and turns it into routine work. One
+engineer, a fleet of agents: agents do the work, and a Fleet Engineer
+directs them and signs for it. The term is defined at
+https://repani.com/fleet-engineer/. Repani is itself operated by
+agents.
 
 ## The site, as files
 
@@ -21,7 +23,7 @@ it does not.
 
 | file | what | format |
 |---|---|---|
-| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects, roles and site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
+| `/site.txtar` | the whole site: `page.tmpl` (the page shell, a Go html/template), `index.t.tmpl`, `fleet-engineer.t.tmpl`, `privacy.t.tmpl`, `terms.t.tmpl` and `company.t.tmpl` (the pages: pica documents as text/templates over the facts, so each fact is stated once), `data.fact` (the company, projects and site as facts), `logo.svg` (the mark and the name) | txtar (`-- name --` sections) |
 | `/AGENTS.md` | this file | Markdown |
 | `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` | the mark as icons | SVG, ICO, PNG |
 | `/docs/mark/logo.svg`, `mark.svg` | the logo (mark and name, letters as outlines) and the mark alone | SVG |
@@ -51,7 +53,7 @@ Or from source, with Go installed:
     go install repani.com/fact/cmd/fact@latest
     curl -s https://repani.com/site.txtar -o site.txtar
     pica html -txtar site.txtar -page index   # the root page, exactly as served
-    pica html -txtar site.txtar -page privacy # also: terms, company
+    pica html -txtar site.txtar -page privacy # also: fleet-engineer, terms, company
     pica spec                                 # the pica language reference
 
 To work with one member on its own, cut it out of the archive

@@ -189,4 +189,32 @@ Mission above the fold, "Make the impossible boring. One engineer. A fleet of
 agents."; Fleet Engineer defined on its own page; evidence over adjectives;
 English only, so the Greek lines leave the root page when the site is rebuilt.
 The site itself is unchanged by this entry. Why: Pavlos, 2026-11-09.
+.item 2026-11-09. Site rebuilt to the new brief. The root page is one page in
+this order: the two mission lines, the company statement, Fleet Engineer, the
+reference, the method, public code, the company. The Greek lines leave and the
+page is lang="en". The reference carries no numbers, since none is cleared. No
+contact address, since the mailbox does not exist. Why: the brief of 2026-11-09.
+.item 2026-11-09. /fleet-engineer/ is the definition's page, rendered from
+fleet-engineer.t.tmpl to fleet-engineer/index.html; no top-level directory of
+that name exists in the repani module. The definition is one fact
+(site.fleet_engineer), opening with "one engineer, a fleet of agents", and both
+pages reference it; the page ends with a citation line. Why: the brief asks for
+a page that can be cited and for the title never to be read as infrastructure.
+.item 2026-11-09. Typography: system fonts only, monospace for the headline,
+section labels and module paths, a system serif for prose, because a reader
+short of time should not read paragraphs in monospace. One column of 46rem,
+section rules, the logo at the top of every page. --muted darkens to #5F6778
+(5.4:1 on the paper). The logo, its colours, the paper and the link colour are
+unchanged. Why: designer's call, within the brief.
+.item 2026-11-09. Project index: twelve modules, each a source link and one
+sentence from its package documentation or specification, products first, then
+primitives. seal is left out: it is a design document and nothing in it is
+built. Why: the brief asks for code an engineer can inspect today.
+.item 2026-11-09. Facts: company.statement becomes the brief's statement, and
+AGENTS.md follows it. The old statement's claim of ownership goes, and with
+company.human_roles and the role facts the page data no longer implies a
+headcount. Facts no page uses are removed: the install lines, the Greek lines
+and the site.* bookkeeping that had gone stale. project:*.path becomes
+project:*.dir, from which the module path and source link are built. Why: the
+brief's Never list, and each fact must have a consumer.
 .font sans

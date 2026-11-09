@@ -1,20 +1,21 @@
 repani.com -- the site as one archive. Render a page:
     pica html -txtar site.txtar -page index -o index.html
+    pica html -txtar site.txtar -page fleet-engineer -o fleet-engineer/index.html
     pica html -txtar site.txtar -page privacy -o legal/privacy.html
     pica html -txtar site.txtar -page terms -o legal/terms.html
     pica html -txtar site.txtar -page company -o legal/company.html
 Members: page.tmpl (html/template shell), index.t.tmpl,
-privacy.t.tmpl, terms.t.tmpl and company.t.tmpl (pica documents
+fleet-engineer.t.tmpl, privacy.t.tmpl, terms.t.tmpl and company.t.tmpl (pica documents
 as text/templates over the facts), data.fact (the site's facts, stated once), logo.svg (the mark and the name).
 -- page.tmpl --
 {{- /* Site links are relative ($up is the way back to the site root),
        so a page works at / and under /draft/ alike. */ -}}
 {{- $up := "./"}}{{if ne .Page "index"}}{{$up = "../"}}{{end -}}
 <!doctype html>
-<html lang="{{if eq .Page "index"}}el-CY{{else}}en{{end}}">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>{{.Title}}</title>
+<title>{{if eq .Page "index"}}{{.Facts.site.title}}. {{.Title}}{{else}}{{.Title}} | {{.Facts.site.title}}{{end}}</title>
 {{- if eq .Page "index"}}
 <!-- Load-bearing: these two tags make `go get repani.com/...` resolve.
      The module root is the repo root; every path under it (ascon, golay,
@@ -24,72 +25,148 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{{.Facts.company.statement}}">
+<meta name="description" content="{{.Facts.site.subhead}} {{.Facts.company.statement}}">
 <link rel="icon" href="{{$up}}favicon.ico" sizes="32x32">
 <link rel="icon" href="{{$up}}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{$up}}apple-touch-icon.png">
 <style>
-  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #6B7383; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA; }
-  html { background: var(--paper); }
-  body { max-width: {{.Layout.Width}}ch; margin: 0 auto; padding: 2.5em 1.25em 3em; color: var(--ink);
-         font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 15px; line-height: 1.5; }
-  header { margin-bottom: 2.2em; }
+  :root { --paper: #FEFAE0; --ink: #2B2D42; --muted: #5F6778; --red: #C1121F; --rule: #E3DFC8; --code-bg: #F5F1DA;
+          --mono: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+          --text: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif; }
+  html { background: var(--paper); -webkit-text-size-adjust: 100%; }
+  body { box-sizing: border-box; max-width: 46rem; margin: 0 auto; padding: 2.25rem 1.5rem 2.5rem; color: var(--ink);
+         font-family: var(--text); font-size: 1.125rem; line-height: 1.55; }
+  header { margin-bottom: 3.25rem; }
   header a { display: inline-block; }
-  header svg { display: block; height: 2.85em; width: auto; }
-  article h1 { font-size: 1.25em; font-weight: bold; margin: 0 0 1.2em; }
-  article h2 { font-size: 1em; font-weight: bold; margin: 2em 0 .8em; }
-  article h2::before { content: "# "; color: var(--muted); }
-  article h3 { font-size: 1em; font-weight: bold; margin: 1.6em 0 .6em; }
-  article h3::before { content: "## "; color: var(--muted); }
+  header svg { display: block; height: 2.6rem; width: auto; }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  article h1 { font-family: var(--mono); font-size: 1.75rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 1.1rem; }
+  article h2 { font-family: var(--mono); font-size: .95rem; margin: 2.75rem 0 .8rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
+  article h3 { font-family: var(--mono); font-size: .95rem; margin: 1.6rem 0 .6rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
-  article p.link { margin: -.4em 0 1em; }
-  article p.link::before { content: "\2192  "; color: var(--muted); }
+  article p.link { font-family: var(--mono); font-size: .95rem; margin: 0 0 1em; }
+  article p.link::before { content: "\2192\00a0"; color: var(--muted); }
+  article p.link:has(+ p:not(.link)) { margin-bottom: .1rem; }
+  article p.link + p:not(.link) { margin-bottom: 1.1em; }
   article ul { padding-left: 1.2em; margin: 0 0 1em; }
-  article pre { background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
+  article li { margin: 0 0 .45em; }
+  article dl { margin: 0 0 1em; }
+  article dt { font-family: var(--mono); font-size: .95rem; font-weight: bold; }
+  article dd { margin: 0 0 .8em; }
+  article pre { font-family: var(--mono); font-size: .9rem; background: var(--code-bg); padding: .7em .9em; overflow-x: auto; margin: 0 0 1em; }
   article blockquote { margin: 0 1.2em 1em; color: var(--muted); }
   article table { border-collapse: collapse; margin: 0 0 1em; width: 100%; }
   article th, article td { text-align: left; vertical-align: top; padding: .3em .8em .3em 0; border-bottom: 1px solid var(--rule); }
-  article th { font-weight: bold; }
-  article tr.total td { font-weight: bold; border-top: 1px solid var(--ink); }
-  article tr.note td { font-size: .85em; color: var(--muted); border-bottom: none; }
   article footer { margin-top: 2em; color: var(--muted); }
-  a { color: var(--red); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  body > footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); }
+  body.home article h1 { font-size: clamp(2rem, 5.6vw, 2.6rem); margin-bottom: .3em; }
+  body.home article h1 + p { font-family: var(--mono); font-size: clamp(1.15rem, 3vw, 1.45rem); line-height: 1.3; margin-bottom: 1.5rem; }
+  body.home article h1 + p + p { font-size: 1.3rem; line-height: 1.45; }
+  body > footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted);
+                  font-family: var(--mono); font-size: .85rem; }
   body > footer a { color: var(--muted); text-decoration: underline; text-underline-offset: .15em; }
   body > footer a:hover { color: var(--ink); }
-  body.home { box-sizing: border-box; max-width: none; min-height: 100vh; min-height: 100svh; margin: 0; padding: 1.25em;
-              display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2em; text-align: center; }
-  body.home > svg { width: min(84vw, 38rem); height: auto; margin-top: auto; }
-  body.home article h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-  body.home article p { margin: 0; font-size: clamp(1.1rem, 5vw, 2rem); }
-  body.home > footer { margin-top: auto; padding-top: 0; border-top: none; }
 </style>
 </head>
-{{- if eq .Page "index"}}
-<body class="home">
-{{.Raw.logo}}
-{{.Article}}
-<footer lang="en"><a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a></footer>
-</body>
-{{- else}}
-<body>
+
+<body{{if eq .Page "index"}} class="home"{{end}}>
 <header>
   <a href="{{$up}}" aria-label="{{.Facts.site.title}}">{{.Raw.logo}}</a>
 </header>
 {{.Article}}
-<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
+<footer>&copy; {{.Facts.company.copyright_year}} {{.Facts.company.name}} &middot; <a href="{{$up}}fleet-engineer/">Fleet Engineer</a> &middot; <a href="{{$up}}legal/privacy.html">Privacy</a> &middot; <a href="{{$up}}legal/terms.html">Terms</a> &middot; <a href="{{$up}}legal/company.html">Company</a> &middot; <a href="{{$up}}AGENTS.md">Agents</a> &middot; <a href="{{$up}}site.txtar">Source</a></footer>
 </body>
-{{- end}}
 </html>
 -- index.t.tmpl --
-{{.site.title}}
+{{.site.headline}}
 .rem Root page. Rendered by: pica html -txtar site.txtar -page index -o index.html
 
-{{.site.slogan_first}}
+{{.site.subhead}}
 
-{{.site.slogan_second}}
+{{.company.statement}}
+
+# Fleet Engineer
+
+{{.site.fleet_engineer}}
+.link fleet-engineer/ The definition
+
+# The reference
+
+A platform of global importance at a tier-1 global bank, delivered by agents.
+One human role took the place of the usual split of specialists, and a human
+vetted every line. The client is not named.
+
+# The method
+
+The method is an operating model for delivering software with agents. It
+differs from a conventional delivery in four ways.
+
+.item One human role directs the whole delivery.
+.item Agents build against formats and tools precise enough for an agent to use
+correctly. pica and fact, below, are public examples.
+.item Every line an agent produces is vetted by a human.
+.item Release and change control are designed for agents, not added afterwards.
+
+The prompts, the playbooks and the internal setup are not published.
+
+Repani is itself operated by agents, including the maintenance of this site.
+{{.site.note_pica}} {{.site.note_fact}}
+.link site.txtar site.txtar
+
+# Public code
+
+Repani publishes its formats and tools as one Go module, {{.go.module}}, under
+the {{.go.license}} licence. The code can be read today.
+.link {{.go.repo}} Repository
+.link {{.go.releases}} Releases, with prebuilt binaries and checksums
+
+## Modules
+
+{{range .go.projects}}.link {{$.go.repo}}/tree/{{$.go.branch}}/{{.dir}} {{$.go.module}}/{{.dir}}
+{{.summary}}
+
+{{end}}# The company
+
+{{.company.name}} is a company registered in {{.company.jurisdiction}}.
+.link legal/company.html Company details
+
+.width 64
+-- fleet-engineer.t.tmpl --
+Fleet Engineer
+.rem Rendered by: pica html -txtar site.txtar -page fleet-engineer -o fleet-engineer/index.html
+
+{{.site.fleet_engineer}}
+
+The term is Repani's, and this page is where it is defined.
+
+# The role
+
+.term Directs
+The Fleet Engineer directs the agents across the whole delivery, not one phase
+of it.
+.term Vets
+The Fleet Engineer vets what the agents produce. Every line is vetted by a
+human.
+.term Signs
+The Fleet Engineer signs for the delivery. The signature is a person's, not an
+agent's.
+
+# What it replaces
+
+One human role takes the place of the usual split of specialists.
+
+# What it is not
+
+The title has nothing to do with server infrastructure. The fleet is a fleet of
+agents, not of machines.
+
+A developer using an AI assistant works on part of a delivery. A Fleet Engineer
+is responsible for all of it.
+
+# Citing this page
+
+{{.company.name}}, "Fleet Engineer", {{.company.site}}/fleet-engineer/
 
 .width 64
 -- privacy.t.tmpl --
@@ -140,45 +217,47 @@ Registered office: {{.company.registered_office}}.
 .width 64
 -- data.fact --
 company.copyright_year: int = 2026
-company.domain: str = "repani.com"
-company.human_roles: list(str) = ["owner"]
 company.jurisdiction: str = "Cyprus"
 company.name: str = "Repani Limited"
 company.registered_office: str = "118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus"
-company.run_by: enum(agents|humans|mixed) = agents
 company.site: str = "https://repani.com"
-company.statement: str = "Repani builds the tools, the method and the agentic setup for delivering enterprise software with AI agents, and owns them as source code. The company is itself run by agents, with a human owner where it counts."
+company.statement: str = "Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. A Fleet Engineer directs them and signs for it."
 go.branch: str = "main"
 go.license: str = "Apache-2.0"
 go.module: str = "repani.com"
-go.projects: list(ref(project)) = [project:pica, project:fact, project:ascon, project:golay, project:lz4s]
+go.projects: list(ref(project)) = [project:pica, project:fact, project:row, project:kv, project:kiosk, project:chrometest, project:ascon, project:durable, project:golay, project:lz4s, project:trudge, project:typeset]
 go.releases: str = "https://github.com/repani-ltd/repani/releases"
 go.repo: str = "https://github.com/repani-ltd/repani"
-org.roles: list(ref(role)) = [role:build, role:run]
-project:ascon.path: str = "repani.com/ascon"
+project:ascon.dir: str = "ascon"
 project:ascon.summary: str = "Ascon-XOF128 and Ascon-AEAD128 as specified in NIST SP 800-232."
-project:fact.cli: str = "go install repani.com/fact/cmd/fact@latest"
-project:fact.path: str = "repani.com/fact"
+project:chrometest.dir: str = "chrometest"
+project:chrometest.summary: str = "Drives headless Chrome over the DevTools protocol for Go tests of browser code."
+project:durable.dir: str = "durable"
+project:durable.summary: str = "Writes a file so that a crash leaves either the old contents or the new, never a torn mix."
+project:fact.dir: str = "fact"
 project:fact.summary: str = "FACT, a line-oriented format for facts about systems, built for agents: one complete typed fact per line, no nesting, no external schema."
-project:golay.path: str = "repani.com/golay"
+project:golay.dir: str = "golay"
 project:golay.summary: str = "The extended Golay(24,12) code: systematic encoder and syndrome-table decoder, correcting up to 3 bit errors per codeword and detecting 4."
-project:lz4s.path: str = "repani.com/lz4s"
+project:kiosk.dir: str = "kiosk"
+project:kiosk.summary: str = "Serves a publication over HTTP: the unattended public stand where a reader collects a copy and hands nothing back."
+project:kv.dir: str = "kv"
+project:kv.summary: str = "ASCON-KV, an end-to-end encrypted, authenticated key-value store that a user's devices synchronise through a blind relay server."
+project:lz4s.dir: str = "lz4s"
 project:lz4s.summary: str = "LZ4s: the LZ4 sequence architecture with its economics re-tuned for small texts."
-project:pica.cli: str = "go install repani.com/pica/cmd/pica@latest"
-project:pica.path: str = "repani.com/pica"
-project:pica.summary: str = "A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text and PDF."
-role:build.scope: str = "the products: specifications, code and documentation"
-role:run.scope: str = "the company's presence and operation: this site, publishing, operations and outreach"
-site.title: str = "repani"
-site.slogan_first: str = "Δουλεύκουν οι ατζέντηες"
-site.slogan_second: str = "εμείς μετρούμεν κύμματα"
+project:pica.dir: str = "pica"
+project:pica.summary: str = "A minimal, troff-inspired source language and typesetter: one parse to a typed block model, writers for fixed-width text, HTML and PDF."
+project:row.dir: str = "row"
+project:row.summary: str = "ROW v1: typed rows, a short sequence of typed values encoded as bytes, each starting with a byte that says what it is."
+project:trudge.dir: str = "trudge"
+project:trudge.summary: str = "trudge1, a deliberately slow, memory-hard password-based key derivation function built on Ascon-XOF128."
+project:typeset.dir: str = "typeset"
+project:typeset.summary: str = "The typesetting family, one package per member: format, wrap, tbl and raster."
+site.title: str = "Repani"
+site.headline: str = "Make the impossible boring."
+site.subhead: str = "One engineer. A fleet of agents."
+site.fleet_engineer: str = "One engineer, a fleet of agents. A Fleet Engineer is one person who directs a fleet of agents across a whole delivery, vets what they produce, and signs for it."
 site.note_pica: str = "This page is a pica document."
 site.note_fact: str = "This site's facts are the data.fact member of site.txtar."
-site.agent_contract: str = "https://repani.com/AGENTS.md"
-site.bundle: str = "https://repani.com/site.txtar"
-site.renderer: str = "pica html -txtar site.txtar -page NAME (repani.com/pica)"
-site.sources: list(str) = ["site.txtar (members: page.tmpl, index.t.tmpl, privacy.t.tmpl, terms.t.tmpl, company.t.tmpl, data.fact, logo.svg)", "AGENTS.md", "favicon.svg", "docs/mark/mark-colour.stream", "docs/mark/mark-mono.stream"]
-site.updated: datetime = 2026-08-20
 -- logo.svg --
 <svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">
 <path d="M32.72,27.69 C40.86,32.01 43.39,40.32 39.43,47.77 C35.11,55.90 27.52,57.08 21.66,58.31 C17.74,59.13 15.43,62.82 13.72,68.00 C14.35,62.25 15.03,57.69 13.53,53.99 C11.26,48.44 8.00,41.49 12.33,33.36 C16.29,25.90 24.59,23.37 32.72,27.69 Z" fill="#C9184A"/>

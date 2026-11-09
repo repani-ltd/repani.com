@@ -52,10 +52,10 @@ forks the text.
   Site links in `page.tmpl` are relative (`$up`) so a page works at
   both roots. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,
-  privacy.t.tmpl, terms.t.tmpl, company.t.tmpl, data.fact,
+  fleet-engineer.t.tmpl, privacy.t.tmpl, terms.t.tmpl, company.t.tmpl, data.fact,
   logo.svg; facts are stated once, in
   data.fact, and the pages reference them) and `pica html -txtar site.txtar -page NAME`
-  produces `index.html` / `legal/NAME.html`; both the archive and
+  produces `index.html` / `fleet-engineer/index.html` / `legal/NAME.html`; both the archive and
   the rendered pages are committed. Edit the archive, re-render,
   commit. Never edit the HTML by hand.
 
