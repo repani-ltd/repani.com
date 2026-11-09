@@ -129,7 +129,7 @@ Paul A. David, "The Dynamo and the Computer", American Economic Review, 1990.
 .table 18L 22L *L
 ^ | The usual team | The rebuilt team
 Who does the work | A chain of specialists | Agents, directed by Fleet Engineers
-Who answers for it | Split among the specialists | The Fleet Engineer who signs for it
+Who answers for it | Divided along the chain | The Fleet Engineer who signs
 Human roles | Analyst, backend developer, frontend developer, QA | One: Fleet Engineer
 Who waits for whom | Specialists wait on each other | Nobody waits
 .end

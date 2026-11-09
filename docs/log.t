@@ -278,4 +278,8 @@ fontTools Subsetter over the characters in the body text of the rendered pages
 plus 0-9, full stop, U+2192 and U+00A0, name IDs 0-6, 13, 14, hinting dropped,
 saved as woff2 to fonts/. /fonts has no index page, so it 404s and shadows no
 module path. Each licence text is in fonts/. Why: the brief, Design constraints.
+.item 2026-11-09. The team table's "Who answers for it" row reads "Divided along
+the chain" against "The Fleet Engineer who signs", replacing "Split among the
+specialists". The two cells are parallel and add no new fact. Why: the session
+holding the brief, asked on Pavlos's instruction, 2026-11-09.
 .font sans
