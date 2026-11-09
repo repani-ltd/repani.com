@@ -217,4 +217,8 @@ headcount. Facts no page uses are removed: the install lines, the Greek lines
 and the site.* bookkeeping that had gone stale. project:*.path becomes
 project:*.dir, from which the module path and source link are built. Why: the
 brief's Never list, and each fact must have a consumer.
+.item 2026-11-09. The brief gains a Look section: a typeset term sheet or
+specification rather than a landing page, JuliaMono throughout and served from
+this site, overriding the system fonts chosen above. Why: Pavlos, 2026-11-09; a
+distinct engineering look instead of a templated site.
 .font sans

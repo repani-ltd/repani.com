@@ -89,12 +89,31 @@ may be drawn from.
 
 A contact address appears once the mailbox exists, and not before.
 
+# Look
+
+A distinct engineering look: closer to a beautifully typeset term sheet or
+specification than to a landing page. The plainness is the message, and it must
+read as deliberate, never unfinished.
+
+.item Numbered sections, a strong type hierarchy, exact spacing, generous
+margins. Evidence in tables where a table is the honest form.
+.item JuliaMono throughout, matching the logo: Regular and Bold, the two cuts in
+pica/pdf/fonts of the public module.
+.item Perfect on a phone. An executive will open this from an email.
+.item No hero image, gradient, animation, card grid, testimonial, logo strip or
+call-to-action button, and nothing else that makes it look like a template.
+
 # Design constraints
 
 .item No build step: the served files are the committed files, byte for byte.
 Pages are rendered before commit (pica html), never at deploy; the deploy
 workflow only copies (main to /, the draft branch to /draft/). No JavaScript,
-analytics, or external assets (fonts, CDNs).
+analytics, or external assets (fonts, CDNs). A font served from this site is not
+external.
+.item The font is subset to the characters the site uses and served as woff2.
+JuliaMono is a Reserved Font Name under its licence (OFL, in pica/pdf/fonts) and
+a subset is a modified version, so the served files carry another family name,
+and the licence text is served beside them.
 .item The logo, its colours and the paper colour are settled; use them as they
 are. Light mode only, for now.
 
