@@ -156,4 +156,14 @@ navy outline had too little contrast on the dark paper. Why: Pavlos, 2026-11-09.
 .item 2026-11-09. The second line spells κύμματα, with the double μ of the
 Cypriot pronunciation, replacing the single μ set earlier today. Why: Pavlos,
 2026-11-09.
+.item 2026-11-09. New mark, replacing "Pointed offset" of 2026-08-19: three flat
+shapes with no outline or offset fill, a round body tilted 28 degrees to the
+right that tapers into one curved tail, and two leaves separated from it by a
+gap. Red #C9184A and leaf green #2D9A6B replace the warm #E63946 and #52B788 in
+the mark only; the page's link colour is untouched. Same 64 x 70 grid, in
+mark.svg and favicon.svg; drawn from scratch. Exploration canvas:
+https://claude.ai/artifact/8b9jQQ3CJo8UgHmuAXZbij. Why: Pavlos, 2026-11-09;
+outside feedback that the old mark read as a strawberry (body a cone with no
+root, ridge strokes reading as seeds and as a face), and a solid shape holds at
+favicon size where an outline does not. docs/mark/ still holds the old drawing.
 .font sans
