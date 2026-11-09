@@ -140,4 +140,8 @@ leave the page. This is new direction over the brief's site map and fold order.
 ids), so its footer links only reached the top of the page. The root page gains
 a footer of those three links, pinned to the foot of the viewport. Why: Pavlos,
 2026-11-09; the notices must be reachable from the root.
+.item 2026-11-09. The full site (company statement, project index, org section)
+is kept on branch full-site, at da6bc4d, the last commit before the root page
+became the mark and one line. It will be worked on and released later; the
+branch does not deploy. Why: Pavlos, 2026-11-09.
 .font sans
