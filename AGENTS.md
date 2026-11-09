@@ -30,7 +30,6 @@ it does not.
 | `/fonts/` | the two typefaces, subset and renamed Repani Mono (from JuliaMono) and Repani Text (from Source Serif 4), each with its licence | woff2, OFL text |
 | `/docs/mark/logo.svg`, `mark.svg` | the logo (mark and name, letters as outlines) and the mark alone | SVG |
 | `/docs/mark/mark-colour.stream`, `mark-mono.stream` | the mark as PDF content streams | PDF operators |
-| `/docs/log.t`, `/docs/brief.t` | the site's decision log (append-only) and brief | pica source |
 
 One fetch is the site:
 

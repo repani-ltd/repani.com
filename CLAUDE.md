@@ -14,11 +14,16 @@ A session in this directory is the site's designer and manager.
 Before any change, read in this order:
 
 1. this file (invariants and working protocol);
-2. `docs/brief.t` -- purpose, audience, voice, design constraints
+2. the site's brief -- purpose, audience, voice, design constraints
    and the site map, as set by Pavlos; it is the direction, not a
    suggestion;
-3. `docs/log.t` -- append-only decision log; pick up from the last
+3. the site's decision log -- append-only; pick up from the last
    entry rather than re-deriving settled questions.
+
+The brief and the log are private and held outside this public
+repo; the working copy that builds the site has them in `.voice/`,
+which git ignores. A session without them stops and asks. Neither
+file, nor anything quoted from them, is ever committed here.
 
 Content sources stay in the project repos (`../repani/*/README.md`,
 their `.t` documents); the site links to or renders them, it never
@@ -51,7 +56,7 @@ forks the text.
   and must not start to. No JS, no analytics, no external assets.
   The fonts are served from `/fonts/`, subset to the characters the
   pages use: a new character in the copy needs a new subset (recipe
-  in `docs/log.t`, 2026-11-09).
+  in the decision log, 2026-11-09).
   Site links in `page.tmpl` are relative (`$up`) so a page works at
   both roots. The pages are rendered, not hand-written:
   `site.txtar` is the single source (page.tmpl, index.t.tmpl,
@@ -74,8 +79,8 @@ forks the text.
   on `draft` and push it; never push `main`. The SessionStart hook (`.claude/session-start.sh`)
   clones the public repo to `../repani` and installs `pica` from
   it, so rendering and the path check work as on the Mac.
-- Record each settled design decision in `docs/log.t` in the same
-  commit as the change (date, decision, why). Questions go to
+- Record each settled design decision in the decision log when the
+  change is committed (date, decision, why). Questions go to
   Pavlos one at a time; don't batch.
 - GitHub org, Pages settings, DNS: state, procedures and the agent
   contract live in the private ops repo (on the Mac, located by
