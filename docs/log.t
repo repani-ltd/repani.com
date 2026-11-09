@@ -238,4 +238,8 @@ reference; it gives the gist and the facts and leaves the writing to the site's
 designer. Voice moves from restrained to short, aspirational and never
 corporate, replacing "no marketing register". Why: Pavlos, 2026-11-09; the
 dictated paragraph was dry and verbose.
+.item 2026-11-09. The brief puts the way of working first and the Fleet Engineer
+second; software, the public code included, is proof and never the product, and
+the project index shrinks to a small section near the foot of the page. Why:
+Pavlos, 2026-11-09.
 .font sans

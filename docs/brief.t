@@ -81,6 +81,13 @@ produce, and signs for it. Always introduce the title together with "one
 engineer, a fleet of agents", so that it is not read as server infrastructure.
 The definition has its own page so that it can be cited.
 
+# What matters most
+
+The way of working is the subject of this site. The Fleet Engineer is the role
+that carries it. The software built this way, at the bank and in the public code
+alike, is the proof that it works and never the product. A reader who leaves
+remembering a module and not the way of working has been failed.
+
 # Evidence
 
 Everything claimed is shown or can be checked.
@@ -92,8 +99,8 @@ nothing may identify it: no country, no business line, no product.
 .item Numbers appear only once Pavlos has cleared each one. Cleared: the whole
 software rewritten in six months; less than half the team. For any other number,
 write the sentence without it.
-.item The public code: pica, fact and the other modules, linked, because an
-engineer can inspect them today.
+.item The public code: a small section near the foot of the page, linked,
+because an engineer can inspect it today. Proof, not a catalogue.
 .item The method: enough to show that it exists and how it differs. Not the
 prompts, the playbooks or the internal setup.
 
