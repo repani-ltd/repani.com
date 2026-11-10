@@ -52,6 +52,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
   article h2::before { content: counter(section) "."; display: inline-block; min-width: 2.2em; color: var(--muted); font-weight: 400; }
   article h3 { font-size: clamp(1.3rem, 4.4vw, 1.6rem); line-height: 1.25; letter-spacing: -.02em; margin: 0 0 1.25rem; }
   article h3 + h3 { margin-top: -.85rem; }
+  article p + h3 { margin-top: 1.75rem; }
   article p { margin: 0 0 1em; }
   article p.byline { color: var(--muted); }
   article p.link { font-size: .9rem; margin: 0 0 1em; }
@@ -164,15 +165,20 @@ routine, says no when the machine is wrong, and answers for the result.
 
 # The loop
 
-## {{.site.loop}}
+{{.site.loop}}
 
 ## {{.site.no_line}}
-
-{{.site.loop_job}}
 
 A software project is a build that ends in a handoff to operations. Take that
 line away and the project is gone: there is only a system that keeps improving.
 This is Zero Handoff, applied to the largest handoff of all.
+
+The first version comes early, without a long phase of guessing what people
+need. It runs on real cases beside the old system, which stays in charge until
+the desk trusts the new one.
+
+From then on, the desk works alongside the Fleet Engineers in a tight loop.
+{{.site.loop_job}}
 
 .term Real use
 Features follow real use, not a specification written months before.
@@ -253,7 +259,7 @@ agents. The way of working is called Zero Handoff. {{.site.zero_handoff}}
 
 # The counterpart
 
-## {{.site.loop}}
+{{.site.loop}}
 
 ## {{.site.no_line}}
 
@@ -313,7 +319,7 @@ Not a screen to watch. The desk decides.
 
 # The counterpart
 
-## {{.site.loop}}
+{{.site.loop}}
 
 ## {{.site.no_line}}
 
@@ -393,7 +399,7 @@ site.decision_desk_judgment: str = "What is left is judgment."
 site.decision_desk_shift: str = "Agents are not only the makers. In operations too, embedded agents, local and hosted, do the work, and people approve it."
 site.decision_desk_people: str = "The experienced people on the desk are the stars. Engineers have seldom given their operations colleagues a thought. In this way of working, those colleagues are the point."
 site.loop: str = "Fleet Engineers build. The Decision Desk runs. Between them, one loop."
-site.loop_job: str = "The first version comes early, without a long phase of guessing what people need. It runs on real cases beside the old system, which stays in charge until the desk trusts the new one. From then on, the desk works alongside the Fleet Engineers in a tight loop. What the desk notices, the Fleet Engineers change; what they change, the desk judges. No tickets, no queue, nobody waits. The loop is fast. The people who will run the system shape it from the start, so nothing is handed over."
+site.loop_job: str = "What the desk notices, the Fleet Engineers change; what they change, the desk judges. No tickets, no queue, nobody waits. The loop is fast. The people who will run the system shape it from the start, so nothing is handed over."
 site.no_line: str = "There is no line between building a system and running it."
 site.terms_year: int = 2026
 site.zero_handoff: str = "Every engineer takes their work from the first conversation to production, and nobody waits for anybody."
