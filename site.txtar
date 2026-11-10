@@ -152,9 +152,10 @@ The waiting goes.
 
 # The Decision Desk
 
-{{.site.decision_desk}} It approves what the agents have done, decides the cases
-that are not routine, says no when the machine is wrong, and answers for the
-result.
+## {{.site.decision_desk}}
+
+The desk approves what the agents have done, decides the cases that are not
+routine, says no when the machine is wrong, and answers for the result.
 
 {{.site.decision_desk_shift}} {{.site.decision_desk_judgment}}
 
@@ -165,7 +166,6 @@ result.
 
 ## {{.site.loop}}
 
-The Decision Desk is the other half of the same way of working.
 {{.site.loop_job}}
 
 It is Zero Handoff carried past go-live: no handoff between the people who run
@@ -191,7 +191,7 @@ Platform | Of global importance
 Delivery | By agents
 Human roles on the team | One, in place of the usual split of specialists
 Vetting | Every line, by a human
-The loop | Operations and the Fleet Engineers, in a tight feedback loop; features turned around very fast
+The loop | Operations and Fleet Engineers in one tight loop; features turned around very fast
 Result | {{.reference.result}}
 .end
 
