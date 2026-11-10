@@ -123,7 +123,7 @@ the floor was redesigned around the new power.
 
 Paul A. David, "The Dynamo and the Computer", American Economic Review, 1990.
 
-.table 18L 22L *L
+.fmt 18L 22L *L
 ^ | The usual team | The rebuilt team
 Who does the work | A chain of specialists | Agents, directed by Fleet Engineers
 Who answers for it | Divided along the chain | The Fleet Engineer who signs
@@ -194,7 +194,7 @@ reach, because there is no project.
 
 # The reference
 
-.table 18L *L
+.fmt 18L *L
 ^ | Tier-1 global bank
 Platform | Of global importance
 Delivery | By agents
