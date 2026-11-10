@@ -26,7 +26,7 @@ as text/templates over the facts), data.fact (the site's facts, stated once), lo
 <meta name="go-source" content="repani.com https://github.com/repani-ltd/repani https://github.com/repani-ltd/repani/tree/main{/dir} https://github.com/repani-ltd/repani/blob/main{/dir}/{file}#L{line}">
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{{.Facts.site.subhead}} {{.Facts.company.statement}}">
+<meta name="description" content="{{if eq .Page "fleet-engineer"}}{{.Facts.site.fleet_engineer}}{{else if eq .Page "decision-desk"}}{{.Facts.site.decision_desk}}{{else}}{{.Facts.site.subhead}} {{.Facts.company.statement}}{{end}}">
 <link rel="icon" href="{{$up}}favicon.ico" sizes="32x32">
 <link rel="icon" href="{{$up}}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{$up}}apple-touch-icon.png">
@@ -152,16 +152,36 @@ The waiting goes.
 
 # The Decision Desk
 
-## {{.site.decision_desk_judgment}}
-
-{{.site.decision_desk_shift}}
-
 {{.site.decision_desk}} It approves what the agents have done, decides the cases
 that are not routine, says no when the machine is wrong, and answers for the
 result.
 
+{{.site.decision_desk_shift}} {{.site.decision_desk_judgment}}
+
 {{.site.decision_desk_people}}
 .link decision-desk/ The definition
+
+# The loop
+
+## {{.site.loop}}
+
+The Decision Desk is the other half of the same way of working.
+{{.site.loop_job}}
+
+It is Zero Handoff carried past go-live: no handoff between the people who run
+the system and the people who build it.
+
+.term Real use
+Features follow real use, not a specification written months before.
+.term Nothing lost
+What operations knows goes straight into the system and into the agents, instead
+of being lost in a ticket.
+.term One conversation
+The people who know how things are really done are one conversation away from
+the people who change it.
+.term No end
+The system keeps improving after go-live. There is no project end to reach,
+because there is no project.
 
 # The reference
 
@@ -171,6 +191,7 @@ Platform | Of global importance
 Delivery | By agents
 Human roles on the team | One, in place of the usual split of specialists
 Vetting | Every line, by a human
+The loop | Operations and the Fleet Engineers, in a tight feedback loop; features turned around very fast
 Result | {{.reference.result}}
 .end
 
@@ -190,9 +211,9 @@ itself operated by agents, including the maintenance of this site.
 Fleet Engineer
 .rem Rendered by: pica html -txtar site.txtar -page fleet-engineer -o fleet-engineer/index.html
 
-{{.site.fleet_engineer}}
+Fleet Engineer is Repani's term, and this page is its definition.
 
-Repani's use of the term is defined here.
+{{.site.fleet_engineer}}
 
 # The role
 
@@ -227,18 +248,27 @@ The Fleet Engineer is what is left when the team has been rebuilt around the
 agents. The way of working is called Zero Handoff. {{.site.zero_handoff}}
 .link ../ Zero Handoff
 
+# The counterpart
+
+## {{.site.loop}}
+
+{{.site.decision_desk}} It is the other half of the same way of working.
+
+{{.site.loop_job}}
+.link ../decision-desk/ The Decision Desk
+
 # Citing this page
 
-{{.company.name}}, "Fleet Engineer", {{.company.site}}/fleet-engineer/
+{{.company.name}}, "Fleet Engineer", {{.site.terms_year}}, {{.company.site}}/fleet-engineer/
 
 .width 64
 -- decision-desk.t.tmpl --
 Decision Desk
 .rem Rendered by: pica html -txtar site.txtar -page decision-desk -o decision-desk/index.html
 
-{{.site.decision_desk}}
+Decision Desk is Repani's term, and this page is its definition.
 
-Repani's use of the term is defined here.
+{{.site.decision_desk}}
 
 # What changes
 
@@ -261,13 +291,34 @@ It teaches the agents how things are really done.
 .term Answers
 It answers for the result.
 
+# What it replaces
+
+Operations doing the work by hand, case after case. Agents do that work now, and
+the desk approves it.
+
+# What it is not
+
+Not a rubber stamp. The desk says no when the machine is wrong.
+
+Not a screen to watch. The desk decides.
+
 # The people
 
 {{.site.decision_desk_people}}
 
+# The counterpart
+
+## {{.site.loop}}
+
+{{.site.fleet_engineer}} The Decision Desk is the other half of the same way of
+working.
+
+{{.site.loop_job}}
+.link ../fleet-engineer/ Fleet Engineer
+
 # Citing this page
 
-{{.company.name}}, "Decision Desk", {{.company.site}}/decision-desk/
+{{.company.name}}, "Decision Desk", {{.site.terms_year}}, {{.company.site}}/decision-desk/
 
 .width 64
 -- privacy.t.tmpl --
@@ -334,6 +385,9 @@ site.decision_desk: str = "The Decision Desk is what an operations team becomes 
 site.decision_desk_judgment: str = "What is left is judgment."
 site.decision_desk_shift: str = "Agents are not only the makers. In operations too, embedded agents, local and hosted, do the work, and people approve it."
 site.decision_desk_people: str = "The experienced people on the desk are the stars. Engineers have seldom given their operations colleagues a thought. In this way of working, those colleagues are the point."
+site.loop: str = "Fleet Engineers build. The Decision Desk runs. Between them, one loop."
+site.loop_job: str = "Once the core of the system is there, the desk has a second job: it works alongside the Fleet Engineers to improve the system. What the desk notices, the Fleet Engineers change; what they change, the desk judges. No tickets, no queue, nobody waits. The loop is fast."
+site.terms_year: int = 2026
 site.zero_handoff: str = "Every engineer takes their work from the first conversation to production, and nobody waits for anybody."
 -- logo.svg --
 <svg aria-hidden="true" viewBox="6 0 214.13 70" fill="none">
