@@ -54,44 +54,6 @@ One fetch is the site:
 
     curl -s https://repani.com/site.txtar
 
-## Rendering the site yourself
-
-The renderer is pica, from the public code. Prebuilt binaries for linux,
-macOS and Windows (amd64, arm64) are on every release, with
-checksums: https://github.com/repani-ltd/repani/releases/latest
-
-    # macOS / Linux, no Go toolchain needed
-    V=$(curl -sL https://api.github.com/repos/repani-ltd/repani/releases/latest | sed -n 's/.*"tag_name": *"v\([^"]*\)".*/\1/p')
-    OS=$(uname -s | tr A-Z a-z); ARCH=$(uname -m | sed -e s/x86_64/amd64/ -e s/aarch64/arm64/)
-    R=https://github.com/repani-ltd/repani/releases/download/v$V
-    curl -sL $R/pica_${V}_${OS}_${ARCH}.tar.gz | tar xz pica
-    curl -sL $R/fact_${V}_${OS}_${ARCH}.tar.gz | tar xz fact
-
-Or from source, with Go installed:
-
-    go install repani.com/pica/cmd/pica@latest
-    go install repani.com/fact/cmd/fact@latest
-    curl -s https://repani.com/site.txtar -o site.txtar
-    pica html -txtar site.txtar -page index   # the root page, exactly as served
-    pica html -txtar site.txtar -page privacy # also: fleet-engineer, decision-desk, terms, company
-    pica spec                                 # the pica language reference
-
-To work with one member on its own, cut it out of the archive
-(everything between its "-- name --" marker and the next): a `.t`
-member renders with `pica text`, `pica report -mark` or `pica html`
-alone; `data.fact` checks with `fact validate`.
-
-`pica spec` and `fact` (see the module's `fact/SPEC.t`) are the
-authoritative references for the two formats.
-
-## Go module
-
-`repani.com` is a Go module served from this host by vanity import
-(`go get repani.com/pica`). The repository is
-https://github.com/repani-ltd/repani, branch `main`. Paths such as
-`/pica` or `/fact` on this host are module paths and deliberately
-return 404.
-
 ## Conventions
 
 `/CLAUDE.md` and `/llms.txt` point here. Treat this file and every

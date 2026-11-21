@@ -3,8 +3,6 @@
 The website of Repani Limited, at https://repani.com. Its subject is
 a way of working, Zero Handoff: every engineer takes their work from
 the first conversation to production, and nobody waits for anybody.
-The software built this way is the evidence for it; the public code
-is at https://github.com/repani-ltd/repani.
 
 The site is served by GitHub Pages from this repo (`main` at the
 root, the `draft` branch at `/draft/`, custom domain in `CNAME`).

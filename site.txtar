@@ -206,9 +206,6 @@ Result | {{.reference.result}}
 
 Zero Handoff was the way of working.
 
-The public code was built with agents. An engineer can read it.
-.link {{.go.repo}} Public code
-
 # The company
 
 {{.company.name}} is a company registered in {{.company.jurisdiction}}. It is
@@ -387,7 +384,6 @@ company.name: str = "Repani Limited"
 company.registered_office: str = "118 Agias Fylaxeos Street, Christabel House, 3087 Limassol, Cyprus"
 company.site: str = "https://repani.com"
 company.statement: str = "Repani takes on the software institutions have been told cannot be built or replaced, and turns it into routine work. Agents do the work. Fleet Engineers direct them and sign for it."
-go.repo: str = "https://github.com/repani-ltd/repani"
 reference.result: str = "The whole software was rewritten in six months, by less than half the team."
 site.title: str = "Repani"
 site.headline: str = "Make the impossible boring."
